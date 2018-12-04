@@ -1,0 +1,20 @@
+site_name: DrivingApp
+site_url: https://drivingapp.readthedocs.io
+repo_url: https://github.com/cenidetiot/DrivingApp
+site_description: DrivingApp Documentation
+docs_dir: doc/
+theme: readthedocs
+markdown_extensions: [toc,fenced_code]
+extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.org/style/fiware_readthedocs_core.css"]
+edit_uri: 'edit/master/docs/'
+pages:
+  - Home: index.md
+  - Getting Started: gettingStarted.md
+  - User & Programmers Manual: 
+    - Introduction: userManual/index.md
+    - DrivingApp Functionalities: userManual/functionalities.md
+    - DrivingApp Configurations: userManual/config.md
+  - Installation & Administration Manual: 
+    - DrivingApp Web Services: adminManual/index.md
+    - DrivingApp Deployment with docker: adminManual/dockeDeployment.md 
+
