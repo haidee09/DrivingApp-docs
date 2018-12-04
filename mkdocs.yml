@@ -9,9 +9,9 @@ extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.o
 edit_uri: 'edit/master/docs/'
 pages:
   - Home: index.md
-  - Getting Started: gettingStarted.md
   - User & Programmers Manual: 
-    - Introduction: userManual/index.md
+    - Requirements: userManual/index.md
+    - Getting Started: userManual/gettingStarted.md
     - DrivingApp Functionalities: userManual/functionalities.md
     - DrivingApp Configurations: userManual/config.md
   - Installation & Administration Manual: 
