@@ -12,5 +12,7 @@ Also, DrivingApp allows the users generate traffic, security and accidents alert
 
 ## Documentation Links:
 
-Documentación en Español: https://drivingapp.readthedocs.io/es/latest/ Rama master en Github
-Documentation in English: https://drivingapp.readthedocs.io/en/latest/ English branch in Github
+- Documentación en Español: https://drivingapp.readthedocs.io/es/latest/ 
+  - Rama master en Github
+- Documentation in English: https://drivingapp.readthedocs.io/en/latest/ 
+  - English branch in Github
