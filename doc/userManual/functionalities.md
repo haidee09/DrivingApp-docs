@@ -47,3 +47,20 @@ Las alertas enviadas por los usuarios son agrupadas en listado de alertas de Dri
 3. La aplicación muestra la ubicación de la alerta en el mapa, mediante un marcador que muestra la subcategoría y descripción del evento.
 
 ![Visualización de Alertas](img/visualizacionAlertas.png)
+
+### Vista de manejo para conducción de vehículo.
+
+Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de infracción en la conducción de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
+
+![Botón Vista de Manejo](img/botonVistaManejo.png)
+
+La vista de manejo muestra la velocidad del vehículo en km/hr, y el límite máximo y mínimo de velocidad permitida en la calle de la zona. Además, esta vista muestra mensajes al usuario como:
+
+- Estás manejando de forma correcta.
+- Te estás deteniendo.
+- Estás detenido.
+- Estás acelerando.
+
+El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de infracción. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
+
+![Botones de la Vista de Manejo](img/botonesEventosAutomaticos.png)
