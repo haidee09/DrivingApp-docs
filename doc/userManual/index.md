@@ -1,5 +1,3 @@
-# DrivingApp
-
 ## Requerimientos para utilizar DrivingApp
 
 Los requerimientos para instalar y utilizar la aplicación DrivingApp con los siguientes:

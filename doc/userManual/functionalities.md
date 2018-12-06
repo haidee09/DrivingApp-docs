@@ -1,5 +1,3 @@
-# DrivingApp
-
 ## Funcionalidades de DrivingApp
 
 ### Identificación de la ubicación del usuario
@@ -13,7 +11,7 @@ Cuando el usuario inicia sesión en DrivingApp, la vista de Inicio de la aplicac
 
 DrivingApp permite a los usuarios generar alertas manuales de tráfico, seguridad y accidentes automovilísticos. Estas alertas pueden ser de 3 tipos: embotellamiento, accidente automovilístico y emergencia desconocida. Cada una de estas alertas puede ser enviada con un nivel de severidad de acuerdo con la gravedad del evento observado por el usuario. Los niveles de severidad de cada alerta pueden ser: informacional, bajo, medio, alto o crítico. Las alertas de eventos de emergencia desconocida se envían siempre con el nivel de severidad crítico, debido a que se desconoce el tipo de evento que está ocurriendo. 
 
-Para generar un alerta manual de tráfico, siga los siguientes pasos:
+Para generar un alerta manual de tráfico, siga los pasos siguientes:
 
 1. Presionar el botón flotante de alertas en la pantalla de Inicio de la aplicación y seleccionar el tipo de alerta a generar presionando el botón flotante de embotellamiento o accidente automovilístico.
 2. Seleccionar el nivel de severidad de la alerta presionando el botón con el ícono del color correspondiente y escribir una descripción que identifique al evento de alerta. Posteriormente, presionar en el botón de Enviar Alerta.
@@ -21,7 +19,7 @@ Para generar un alerta manual de tráfico, siga los siguientes pasos:
 
 ![Crear Alerta de Tráfico](img/crearAlertaTrafico.png)
 
-Para generar una alerta de emergencia desconocida, siga los siguientes pasos: 
+Para generar una alerta de emergencia desconocida, siga los pasos siguientes: 
 
 1. Presionar el botón flotante de alertas en la pantalla de Inicio de la aplicación y seleccionar la opción: emergencia desconocida.
 2. Confirmar el envío de la alerta presionando la opción SI.
@@ -67,20 +65,20 @@ El usuario que conduce un automóvil, puede identificar de manera automática a 
 
 Las alertas en la conducción de un vehículo se representan mediante los siguientes colores:
 
-1. Botón de evento de velocidad: 
+1.- Botón de evento de velocidad: 
 
 - Color Naranja: indica que la velocidad del vehículo está por debajo del límite mínimo permitido.
 - Color Rojo: indica que el vehículo ha excedido el límite de velocidad máximo permitido.
 - Color Verde: indica que está conduciendo dentro del rango de límite de velocidad permitida. 
 
-2. Botón de evento de paradas:
+2.- Botón de evento de paradas:
 
 - Color azul: indica que el vehículo se encuentra acelerando.
 - Color Naranja: significa que el vehículo disminuye su velocidad.
 - Color Rojo: indica que el vehículo se ha detenido.
 - Color verde: significa que está conduciendo de forma correcta.
 
-3. Botón de evento de contrasentido:
+3.- Botón de evento de contrasentido:
 
 - Color verde: indica que el usuario está conduciendo el vehículo en el sentido correcto de la calle.
 - Color rojo: indica que el usuario está conduciendo el vehículo en el sentido incorrecto de la calle.
