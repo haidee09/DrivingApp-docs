@@ -64,3 +64,29 @@ La vista de manejo muestra la velocidad del vehículo en km/hr, y el límite má
 El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de infracción. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
 
 ![Botones de la Vista de Manejo](img/botonesEventosAutomaticos.png)
+
+Las alertas en la conducción de un vehículo se representan mediante los siguientes colores:
+
+1. Botón de evento de velocidad: 
+
+- Color Naranja: indica que la velocidad del vehículo está por debajo del límite mínimo permitido.
+- Color Rojo: indica que el vehículo ha excedido el límite de velocidad máximo permitido.
+- Color Verde: indica que está conduciendo dentro del rango de límite de velocidad permitida. 
+
+2. Botón de evento de paradas:
+
+- Color azul: indica que el vehículo se encuentra acelerando.
+- Color Naranja: significa que el vehículo disminuye su velocidad.
+- Color Rojo: indica que el vehículo se ha detenido.
+- Color verde: significa que está conduciendo de forma correcta.
+
+3. Botón de evento de contrasentido:
+
+- Color verde: indica que el usuario está conduciendo el vehículo en el sentido correcto de la calle.
+- Color rojo: indica que el usuario está conduciendo el vehículo en el sentido incorrecto de la calle.
+
+Las siguientes imágenes muestran ejemplos de la vista de manejo, donde se detectan diferentes eventos mediante la iluminación de cada uno de los botones.
+
+![Vistas de Manejo](img/vistasManejo1.png)
+
+![Vistas de Manejo ](img/vistasManejo2.png)
