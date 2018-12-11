@@ -5,7 +5,7 @@
 DrivingApp identifica la ubicación del usuario cuando se encuentra dentro del área de una zona delimitada. Esta zona debe ser registrada por el administrador o guardia de seguridad del sistema, a través de la interfaz de ViVA. 
 Cuando el usuario inicia sesión en DrivingApp, la vista de Inicio de la aplicación muestra la zona en la que se encuentra el usuario, el nombre y dirección de la misma. Además, la vista del mapa de zona muestra la delimitación de la zona, sus estacionamientos y la ubicación actual del dispositivo dentro de dicha zona. Las siguientes imágenes muestran un ejemplo de estas vistas:
 
-![Ubicacion del Usuario - Vista de Inicio](img/ubicacionUsuarioInicio.png)
+![Ubicacion del Usuario - Vista de Inicio](img/drivingapp/ubicacionUsuarioInicio.png)
 
 ### Generación manual de alertas.
 
@@ -17,7 +17,7 @@ Para generar un alerta manual de tráfico, siga los pasos siguientes:
 2. Seleccionar el nivel de severidad de la alerta presionando el botón con el ícono del color correspondiente y escribir una descripción que identifique al evento de alerta. Posteriormente, presionar en el botón de Enviar Alerta.
 3. La aplicación le informará del envío exitoso de la alerta mediante un mensaje.
 
-![Crear Alerta de Tráfico](img/crearAlertaTrafico.png)
+![Crear Alerta de Tráfico](img/drivingapp/crearAlertaTrafico.png)
 
 Para generar una alerta de emergencia desconocida, siga los pasos siguientes: 
 
@@ -25,7 +25,7 @@ Para generar una alerta de emergencia desconocida, siga los pasos siguientes:
 2. Confirmar el envío de la alerta presionando la opción SI.
 3. La aplicación le informará del envío exitoso de la alerta mediante un mensaje.
 
-![Crear Alerta de Emergencia Desconocida](img/crearAlertaEmergencia.png)
+![Crear Alerta de Emergencia Desconocida](img/drivingapp/crearAlertaEmergencia.png)
 
 ### Notificaciones de alertas y su visualización en el mapa.
 
@@ -34,7 +34,7 @@ Las alertas que emiten los usuarios a través de DrivingApp, son replicadas en f
 1. Una notificación de alerta llega al dispositivo móvil y se ubica en la barra de notificaciones. Esta notificación muestra la categoría y la subcategoría del evento de alerta.
 2. El usuario presiona la notificación y la aplicación muestra la localización de la alerta en el mapa.
 
-![Notificación de Alerta](img/notificacionAlerta.png)
+![Notificación de Alerta](img/drivingapp/notificacionAlerta.png)
 
 ### Listado de alertas y su visualización en el mapa.
 
@@ -44,13 +44,13 @@ Las alertas enviadas por los usuarios son agrupadas en listado de alertas de Dri
 2. Oprimir la opción ver en el mapa para observar la ubicación de la alerta en el mapa.
 3. La aplicación muestra la ubicación de la alerta en el mapa, mediante un marcador que muestra la subcategoría y descripción del evento.
 
-![Visualización de Alertas](img/visualizacionAlertas.png)
+![Visualización de Alertas](img/drivingapp/visualizacionAlertas.png)
 
 ### Vista de manejo para conducción de vehículo.
 
 Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de infracción en la conducción de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
 
-![Botón Vista de Manejo](img/botonVistaManejo.png)
+![Botón Vista de Manejo](img/drivingapp/botonVistaManejo.png)
 
 La vista de manejo muestra la velocidad del vehículo en km/hr, y el límite máximo y mínimo de velocidad permitida en la calle de la zona. Además, esta vista muestra mensajes al usuario como:
 
@@ -61,7 +61,7 @@ La vista de manejo muestra la velocidad del vehículo en km/hr, y el límite má
 
 El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de infracción. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
 
-![Botones de la Vista de Manejo](img/botonesEventosAutomaticos.png)
+![Botones de la Vista de Manejo](img/drivingapp/botonesEventosAutomaticos.png)
 
 Las alertas en la conducción de un vehículo se representan mediante los siguientes colores:
 
@@ -85,6 +85,6 @@ Las alertas en la conducción de un vehículo se representan mediante los siguie
 
 Las siguientes imágenes muestran ejemplos de la vista de manejo, donde se detectan diferentes eventos mediante la iluminación de cada uno de los botones.
 
-![Vistas de Manejo](img/vistasManejo1.png)
+![Vistas de Manejo](img/drivingapp/vistasManejo1.png)
 
-![Vistas de Manejo ](img/vistasManejo2.png)
+![Vistas de Manejo ](img/drivingapp/vistasManejo2.png)
