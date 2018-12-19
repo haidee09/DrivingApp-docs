@@ -51,16 +51,16 @@ Notifications Service está compuesto por dos rutas descritas a continuación.
 
 - **/notify**: Esta ruta es utilizada para generar las notificaciones de alerta que se envían a los dispositivos móviles. El servicio lleva a cabo las siguientes funciones en esta ruta:
 
-1.	Recibe la entidad de  alerta.
-2.	Obtiene la localización de la alerta
-3.	Obtiene las zonas registradas en DrivingApp Service
-4.	Determina la zona en la que sucedió la alerta
-5.	Obtiene de DrivingApp Service los dispositivos en la zona de la alerta 
-6.	Obtiene de DrivingApp Service los dispositivos cercanos a la alerta
-7.	Verifica que los dispositivos cercanos y los que están en la zona no se repitan
-8.	Crea la lista de dispositivos finales
-9.	Obtiene de DrivingApp Service  los tokens de los dispositivos  finales
-10.	Envía la notificación a cada uno de los dispositivos 
+1. Recibe la entidad de  alerta.
+2. Obtiene la localización de la alerta
+3. Obtiene las zonas registradas en DrivingApp Service
+4. Determina la zona en la que sucedió la alerta
+5. Obtiene de DrivingApp Service los dispositivos en la zona de la alerta 
+6. Obtiene de DrivingApp Service los dispositivos cercanos a la alerta
+7. Verifica que los dispositivos cercanos y los que están en la zona no se repitan
+8. Crea la lista de dispositivos finales
+9. Obtiene de DrivingApp Service  los tokens de los dispositivos  finales
+10. Envía la notificación a cada uno de los dispositivos 
 
 La ruta **/notify** recibe los datos de las entidades de alerta enviadas por  el Orion ContextBroker a través de una petición POST. El servicio recibe la alerta y extrae la información relevante para enviar la notificación de la alerta a los dispositivos que tienen la aplicación DrivingApp instalada. La entidad de alerta que recibe el servicio debe ser un objeto JSON con el siguiente formato: 
 
