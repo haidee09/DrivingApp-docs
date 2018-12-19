@@ -5,7 +5,7 @@ El proyecto DrivingApp contiene archivos de configuración para modificar las UR
 
 #### 1.- Descargar el proyecto DrivingApp
 
-Este [enlace](https://github.com/cenidetiot/DrivingApp.git) envía al repositorio del proyecto DrvingApp en Github. Si desea descargar el proyecto a través del software de control de versiones git, ejecute el siguiente comando en consola: 
+Este [enlace](https://github.com/cenidetiot/DrivingApp.git) envía al repositorio del proyecto DrivingApp en Github. Si desea descargar el proyecto a través del software de control de versiones git, ejecute el siguiente comando en consola: 
 
 ```sh
 git clone https://github.com/cenidetiot/DrivingApp.git.  
@@ -15,13 +15,13 @@ Además, Github también proporciona la opción de descargar un proyecto mediant
 
 #### 2.- Abrir el proyecto DrivingApp en Android Studio
 
-Cuando haya descargado el proyecto DrivingApp, ábralo con el entorno de desarrollo Android Studio. Para más información acerca la descarga y configuración de Android Studio visite el este [enlace](https://developer.android.com/studio/)
+Cuando haya descargado el proyecto DrivingApp, ábralo con el entorno de desarrollo Android Studio. Para más información acerca la descarga y configuración de Android Studio visite el siguiente [enlace](https://developer.android.com/studio/)
 
 **NOTA**: El Android SDK número 23 está configurado como la versión mínima del proyecto DrivingApp.
 
 #### 3.- Configurar  los servicios de la aplicación DrivingApp
 
-Abra el proyecto DrivingApp y configure lo siguiente:
+Abra el proyecto DrivingApp en Android Studio y configure lo siguiente:
 
 ##### 3.1 Configurar la conexión con una instancia Orion ContextBroker
 
@@ -41,7 +41,7 @@ http.apiversion = v2 // Change if for your Orion api version
 
 ##### 3.2	Configurar DrivingAppService
 
-DrivingApp utiliza DrivingAppService para manipular las entidades públicas del proyecto,basadas en modelos de datos FIWARE; además de las entidades privadas creadas para este proyecto. DrivingAppService proporciona una API RESTFul para la administración de estas entidades públicas y privadas que utiliza la aplicación móvil DrivingApp. Además, DrivingApp también utiliza el servicio DrivingAppService para realizar consultas de contexto y gestionar la información de las alertas. Puede consultar el código fuente de este servicio web en este [link](https://github.com/cenidetiot/smartsecurity-web-service)
+DrivingApp utiliza DrivingAppService para manipular las entidades públicas del proyecto,basadas en modelos de datos FIWARE; además de las entidades privadas creadas para este proyecto. DrivingAppService proporciona una API RESTFul para la administración de estas entidades públicas y privadas que utiliza la aplicación móvil DrivingApp. Además, DrivingApp también utiliza el servicio DrivingAppService para realizar consultas de contexto y gestionar la información de las alertas. Puede consultar el código fuente de este servicio web en este [enlace](https://github.com/cenidetiot/smartsecurity-web-service)
 
 Para configurar DrivingAppService en el proyecto DrivingApp debe modificar el archivo `ConfigServer.java`, con configurar la URL de DrivingAppService. Este archivo está en la ruta: cenidetsdk/src/main/java/mx/edu/cenidet/cenidetsdk/utilities/ del proyecto DrivingApp. 
 

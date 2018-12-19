@@ -16,5 +16,6 @@ pages:
     - Configuraciones de DrivingApp: userManual/configurations.md
   - Manual de Instalación y Administración: 
     - Servicios Web de DrivingApp: adminManual/index.md
-    - Despliegue de DrivingApp con Docker: adminManual/dockerDeployment.md 
+    - Despliegue de Servicios Web: adminManual/deployment.md 
+    - Despliegue de DrvingApp con Docker: adminManual/dockerDeployment.md
 
