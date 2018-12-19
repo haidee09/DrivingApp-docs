@@ -50,17 +50,17 @@ exports.crate = "URL"; // CrateDB Host
 
 A continuación se describen a detalle cada uno de los parámetros del archivo `config.js`:
 
-- **exports.mysql**: Objeto JSON que contiene los parámetros para la conexión con la base de datos de *MariaDB*. Esta conexión se realiza utilizando el módulo npm llamado *Sequelize*. Los datos que utiliza *Sequelize para realizar la conexión con la base de datos son los siguientes:
+- **exports.mysql**: Objeto JSON que contiene los parámetros para la conexión con la base de datos de *MariaDB*. Esta conexión se realiza utilizando el módulo npm llamado *Sequelize*. Los datos que utiliza *Sequelize* para realizar la conexión con la base de datos son los siguientes:
     * **host**: URL en la que se encuentra MariaDB.
     * **db**: Nombre de la base de datos con la que se establece la conexión.
     * **user**: Nombre de usuario que tiene los privilegios para LEER, EDITAR, CREAR y ELIMINAR datos en la base de datos especificada.
     * **password**: Contraseña de acceso para el nombre de usuario especificado.
 
-La conexión entre *DrivingApp Service* y *MariaDB* se realiza por defecto a través del puerto 3306, si desea modificar configuraciones adicionales de *Sequelize* edite el archivo `DataModelsAPI/db/sequelize.js`. Para más información consulte la documentación de *Sequelize* en este [enlace](http://docs.sequelizejs.com/)
+La conexión entre *DrivingApp Service* y *MariaDB* se realiza por defecto a través del puerto 3306, si desea modificar configuraciones adicionales de *Sequelize* edite el archivo `DataModelsAPI/db/sequelize.js`. Para más información consulte la documentación de *Sequelize* en este [enlace](http://docs.sequelizejs.com/).
 
-- **exports.context**: La variable **context** debe contener la URL de la instancia Orion ContextBroker utilizada. Esta URL debe incluir el protocolo HTTP o HTTPS para que *DrivingApp Service* pueda conectarse al Orion ContextBroker,además de la versión de la API NGSI utilizada. Un ejemplo de una URL de instancia Orion ContextBroker es: http://35.185.120.11:1026/v2
+- **exports.context**: La variable **context** debe contener la URL de la instancia Orion ContextBroker utilizada. Esta URL debe incluir el protocolo HTTP o HTTPS para que *DrivingApp Service* pueda conectarse al Orion ContextBroker,además de la versión de la API NGSI utilizada. Un ejemplo de una URL de instancia Orion ContextBroker es: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
 
-La conexión entre DrivingApp Service y el Orion ContextBroker se establece a través de la librería NGSI de JavaScript, puede consultar la documentación oficial de esta librería en este [enlace](https://ngsi-js-library.readthedocs.io/en/latest/)
+La conexión entre DrivingApp Service y el Orion ContextBroker se establece a través de la librería NGSI de JavaScript, puede consultar la documentación oficial de esta librería en este [enlace](https://ngsi-js-library.readthedocs.io/en/latest/).
 
 - **exports.keyrock**: La variable **keyrock** hace referencia a la URL del servicio de identificación utilizado: este puede ser *IDM-Keyrock de FIWARE* o *Keystone de Openstack*. *DrivingApp Service* utiliza este servicio de identificación para autenticar a los usuarios en la aplicación móvil *DrivingApp*. Puede consultar en este [enlace]
 (https://developer.openstack.org/api-ref/identity/v3/index.html) la documentación de la API Identity v3 implementada en el IDM-KeyRock y KeyStone.
@@ -71,7 +71,7 @@ Las versiones del *IDM - KeyRock* menores a las 7 utilizan el puerto 5000 con un
 
 - **exports.crate**: La variable **crate** especifica la URL de la base de datos de series de tiempo *CrateDB*. Por defecto *CrateDB* utiliza el puerto 4200 para realizar la conexión con la base de datos.
 
-*DrivingApp Service* utiliza el módulo npm llamado **node-crate** para realizar la conexión con *CrateDB* y consultar los datos almacenados en la base de datos. Puede consultar la documentación de **node-crate** en el siguiente [enlace](https://www.npmjs.com/package/node-crate)
+*DrivingApp Service* utiliza el módulo npm llamado **node-crate** para realizar la conexión con *CrateDB* y consultar los datos almacenados en la base de datos. Puede consultar la documentación de **node-crate** en el siguiente [enlace](https://www.npmjs.com/package/node-crate).
 
 #### Despliegue de DrivingApp Service
 
@@ -121,7 +121,7 @@ $ forever stop <id>
 
 - **Docker**: Para más información acerca de Docker y su instalación consulta el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
 
-La imagen oficial de Docker de *DrivingApp Service* se llama **cenidetiot/drivingapp-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace](https://hub.docker.com/r/cenidetiot/drivingapp-service/) 
+La imagen oficial de Docker de *DrivingApp Service* se llama **cenidetiot/drivingapp-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace](https://hub.docker.com/r/cenidetiot/drivingapp-service/).
 
 ##### Variables de entorno
 
