@@ -272,6 +272,7 @@ $ python run.py
 - Utilizando Flask
 
 Para ejecutar NotificationsService con Flask realice los pasos siguientes:
+
 1.- Exporte como variable de entorno el nombre del archivo principal del proyecto,  con el comando: 
 ```sh
 $ export FLASK_APP=run.py 
