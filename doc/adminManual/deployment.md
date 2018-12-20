@@ -14,19 +14,20 @@
 #### Requerimientos opcionales
 
 - Persistencia de datos por series de tiempo: 
-
 *DrivingApp Service* proporciona la funcionalidad de obtener los datos de localización de un usuario en una zona específica. Para implementar esta funcionalidad es necesario desplegar la *API QuantumLeap de FIWARE* y configurar *DrivingApp Service* para establecer una conexión el SGBD *CrateDB*. Puedes obtener más información acerca del despliegue y utilización de la *API de QuantumLeap* en el siguiente [enlace](https://quantumleap.readthedocs.io/en/latest/)
 
 #### Instalación
 
-1. Descargar el código fuente del servicio web desde su repositorio oficial en GitHub utilizando el comando: 
+1.- Descargar el código fuente del servicio web desde su repositorio oficial en GitHub utilizando el comando: 
 ```sh
 $ git clone https://github.com/smartsdkCenidet/DrivingApp-service.git
 ```
-2. Instalar los módulos npm requeridos por el servicios web, utilizando el siguiente comando dentro de la carpeta del proyecto: 
+
+2.- Instalar los módulos npm requeridos por el servicios web, utilizando el siguiente comando dentro de la carpeta del proyecto: 
 ```sh
 $ npm install
 ```
+
 Opcionalmente, puede utilizar yarn para instalar estos mismos módulos de manera más rápida, utilizando el comando: 
 ```sh
 $ yarn install 
@@ -175,13 +176,13 @@ El archivo de configuración de Notifications Service es config.py. Este archivo
 - **smart**: El atributo smart contiene la URL de DrivingApp Service. El servicio Notifications Service utiliza DrvingApp Service para consumir los datos de zonas y dispositivos registrados. Recuerde que DrivingApp Service utiliza por defecto el puerto 4005.
 - **fcm**: El atributo fcm contiene el código de la aplicación configurada en Firebase en esta [sección](../userManual/configurations#configuracion-fcm). Para  obtener el código de un proyecto Firebase siga los pasos siguientes.
 
-1. Dentro de la consola del proyecto en Firebase, seleccione el símbolo del engrane en la sección **Project Overview** y  en el menú emergente de click en **Configuración del Proyecto**.
+1.- Dentro de la consola del proyecto en Firebase, seleccione el símbolo del engrane en la sección **Project Overview** y  en el menú emergente de click en **Configuración del Proyecto**.
 ![FCM key Server 1](./img/FCMkeyServer1.png)
 
-2. Ingrese a la sección de **Mensajería en la nube**.
+2.- Ingrese a la sección de **Mensajería en la nube**.
 ![FCM key Server 2](./img/FCMkeyServer2.png)
 
-3. Copie la clave del servidor y agregue esta clave a la variable fcm del archivo config.py 
+3.- Copie la clave del servidor y agregue esta clave a la variable fcm del archivo config.py 
 ![FCM key Server 3](./img/FCMkeyServer3.png)
 
 #### Configuración Opcional
