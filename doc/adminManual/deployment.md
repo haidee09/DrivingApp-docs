@@ -95,13 +95,14 @@ $ yarn start
 
 DrivingApp Service puede ejecutarse además como un demonio, utilizando el módulo npm llamado **forever** como se describe a continuación:
 
-1. Instalar forever de forma global en el sistema con el comando: 
+1.- Instalar forever de forma global en el sistema con el comando: 
 ```sh
 $ sudo npm install -g forever 
 ```
+
 Así el paquete forever puede utilizarse como un comando de la terminal.
 
-2. Ejecutar dentro de la carpeta del servicio el archivo principal del proyecto, con el comando: 
+2.- Ejecutar dentro de la carpeta del servicio el archivo principal del proyecto, con el comando: 
 ```sh
 $ sudo forever start server.js
 ```
@@ -262,28 +263,32 @@ docker. A continuación se detallan cada una de estas opciones.
 ##### Despliegue Local
 
 - Utilizando Python
+
 Para ejecutar NotificationsService con Python utilice el siguiente comando que  ejecuta el archivo principal del proyecto:  
 ```sh
 $ python run.py
 ```
 
 - Utilizando Flask
-Para ejecutar NotificationsService con Flask realice los pasos siguientes:
 
-1.  Exporte como variable de entorno el nombre del archivo principal del proyecto,  con el comando: 
+Para ejecutar NotificationsService con Flask realice los pasos siguientes:
+1.- Exporte como variable de entorno el nombre del archivo principal del proyecto,  con el comando: 
 ```sh
 $ export FLASK_APP=run.py 
 ```
 Puede consultar la documentación oficial de Flask en el siguiente [enlace](http://flask.pocoo.org/) 
 
-2. Ejecutar el servicio utilizando el siguiente comando: $ flask run
+2.- Ejecutar el servicio utilizando el siguiente comando: 
+```sh
+$ flask run
+```
 
 - Utilizando Gunicorn
+
 Ejecuta el siguiente comando: 
 ```sh
 $ gunicorn app:app 
 ```
-
 Puede consultar la documentación oficial de gunicorn en el siguiente [enlace](https://gunicorn.org/#docs)
 
 ##### Despliegue con Docker
