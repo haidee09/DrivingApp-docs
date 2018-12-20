@@ -51,7 +51,7 @@ Un ejemplo de la configuración de este archivo es el siguiente:
 http_host("https://smartsecurity-webservice.herokuapp.com")
 ```
 
-##### 3.3 Configuración del proyecto Firebase Cloud Messaging (FCM) para la aplicación DrivingApp
+##### [3.3 Configuración del proyecto Firebase Cloud Messaging (FCM) para la aplicación DrivingApp](#configuracion-fcm)
 
 Firebase Cloud Messaging (FCM) es una solución multiplataforma en la nube para envío de mensajes y notificaciones a dispositivos Android, iOS y aplicaciones web. Este servicio es proporcionado por Firebase y actualmente se puede utilizar sin costo alguno.
 La aplicación DrivingApp utiliza los servicios de FCM para replicar las notificaciones de alertas a los dispositivos de los usuarios. Los algoritmos de la aplicación para el envío de alertas pueden utilizarse para replicar y recibir notificaciones de alertas, sin realizar modificaciones adicionales al código. Por otro lado, para implementar notificaciones de alertas personalizadas en DrivingApp ó en otra aplicación, realice las instrucciones que se presentan a continuación para configurar los servicios de FCM en la aplicación móvil:
