@@ -42,14 +42,14 @@ Notifications Service está compuesto por dos rutas descritas a continuación.
 
 ##### Ruta raíz
 
-- **/**: Esta es la ruta por defecto de Notifications Service. La solicitud a esta ruta comprueba que el despliegue del servicio se ha realizado de manera exitosa. El servicio web responde a esta solicitud con el siguiente mensaje.
+**/**: Esta es la ruta por defecto de Notifications Service. La solicitud a esta ruta comprueba que el despliegue del servicio se ha realizado de manera exitosa. El servicio web responde a esta solicitud con el siguiente mensaje.
 
 > **SmartSecurity Notifications is running....**
 © Cenidet 2018
 
 ##### Ruta de notificación
 
-- **/notify**: Esta ruta es utilizada para generar las notificaciones de alerta que se envían a los dispositivos móviles. El servicio lleva a cabo las siguientes funciones en esta ruta:
+**/notify**: Esta ruta es utilizada para generar las notificaciones de alerta que se envían a los dispositivos móviles. El servicio lleva a cabo las siguientes funciones en esta ruta:
 
 1. Recibe la entidad de  alerta.
 2. Obtiene la localización de la alerta
