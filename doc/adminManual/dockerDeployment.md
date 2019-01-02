@@ -38,7 +38,7 @@ Docker Compose es una herramienta para definir y ejecutar aplicaciones Docker de
 ![docker-compose up -d](./img/dockerDeploy1.png)
 
 
-3. Verificar que todos los contenedores están ejecutándose con el comando:
+1. Verificar que todos los contenedores están ejecutándose con el comando:
 
         docker ps 
 
