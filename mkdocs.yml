@@ -17,5 +17,7 @@ pages:
   - Manual de Instalación y Administración: 
     - Servicios Web de DrivingApp: adminManual/index.md
     - Despliegue de Servicios Web: adminManual/deployment.md 
-    - Despliegue de DrvingApp con Docker: adminManual/dockerDeployment.md
+    - Despliegue de DrivingApp con Docker: adminManual/dockerDeployment.md
+    - Pruebas de Ejecución de Servicios: adminManual/tests.md
+    - Revisión de Ejecución de servicios: aminManual/checks.md
 

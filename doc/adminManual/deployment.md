@@ -14,7 +14,7 @@
 #### Requerimientos opcionales
 
 - Persistencia de datos por series de tiempo: 
-*DrivingApp Service* proporciona la funcionalidad de obtener los datos de localización de un usuario en una zona específica. Para implementar esta funcionalidad es necesario desplegar la *API QuantumLeap de FIWARE* y configurar *DrivingApp Service* para establecer una conexión el SGBD *CrateDB*. Puedes obtener más información acerca del despliegue y utilización de la *API de QuantumLeap* en el siguiente [enlace](https://quantumleap.readthedocs.io/en/latest/)
+*DrivingApp Service* brinda la funcionalidad de obtener los datos de localización de un usuario en una zona específica. Para implementar esta funcionalidad, es necesario desplegar la *API QuantumLeap de FIWARE* y configurar *DrivingApp Service* para establecer una conexión el SGBD *CrateDB*. Puede obtener más información acerca del despliegue y utilización de la *API de QuantumLeap* en el siguiente [enlace](https://quantumleap.readthedocs.io/en/latest/)
 
 #### Instalación
 
@@ -57,7 +57,7 @@ A continuación se describen a detalle cada uno de los parámetros del archivo `
     * **user**: Nombre de usuario que tiene los privilegios para LEER, EDITAR, CREAR y ELIMINAR datos en la base de datos especificada.
     * **password**: Contraseña de acceso para el nombre de usuario especificado.
 
-La conexión entre *DrivingApp Service* y *MariaDB* se realiza por defecto a través del puerto 3306, si desea modificar configuraciones adicionales de *Sequelize* edite el archivo `DataModelsAPI/db/sequelize.js`. Para más información consulte la documentación de *Sequelize* en este [enlace](http://docs.sequelizejs.com/).
+La conexión entre *DrivingApp Service* y *MariaDB* se realiza por defecto a través del puerto 3306, si desea modificar la configuración de *Sequelize* edite el archivo `DataModelsAPI/db/sequelize.js`. Para más información consulte la documentación de *Sequelize* en este [enlace](http://docs.sequelizejs.com/).
 
 - **exports.context**: La variable **context** debe contener la URL de la instancia Orion ContextBroker utilizada. Esta URL debe incluir el protocolo HTTP o HTTPS para que *DrivingApp Service* pueda conectarse al Orion ContextBroker,además de la versión de la API NGSI utilizada. Un ejemplo de una URL de instancia Orion ContextBroker es: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
 
@@ -82,11 +82,11 @@ El despliegue de DrivingApp Service puede realizarse de tres maneras: local, com
 
 DrivingApp Service puede ser ejecutado utilizando npm o yarn como se detalla a continuación:
 
-- Para ejecutar DrivingApService utilizando npm escriba el siguiente comando en consola, dentro de la carpeta del servicio: 
+- Para ejecutar DrivingApp Service utilizando npm escriba el siguiente comando en consola, dentro de la carpeta del servicio: 
 ```sh
 $ npm run start 
 ```
-- Para ejecutar DrivingApService utilizando yarn escriba el siguiente comando en consola, dentro de la carpeta del servicio: 
+- Para ejecutar DrivingApp Service utilizando yarn escriba el siguiente comando en consola, dentro de la carpeta del servicio: 
 ```sh
 $ yarn start
 ```
@@ -140,7 +140,7 @@ Las variables que inician con **MYSQL_** hacen referencia a la variable mysql de
 
 ##### Ejecución
 
-La imagen Docker de DrivingApp Service se ejecuta por defecto el  puerto 4005, el comando utilizado para ejecutar la imagen es el siguiente: 
+La imagen Docker de DrivingApp Service se ejecuta por defecto el  puerto 4005, el comando para ejecutar la imagen es el siguiente: 
 ```sh
 $ docker run -p 4005:4005 --env="MYSQL_HOST=<MYSQL_HOST>" --env="MYSQL_DB=<MYSQL_DB_NAME>" \ --env="MYSQL_USER=<MYSQL_AUTORIZED_USER>" --env="MYSQL_PASSWORD=<MYSQL_PASSWORD>" \  --env="CRATEDB=<CRATEDB_HOST>" --env="ORION=<ORION_CONTEXT_BROKER_URL>"  \ cenidetiot/drivingapp-service
 ```
@@ -169,10 +169,10 @@ $ pip install -r requirements.txt
 
 El archivo de configuración de Notifications Service es config.py. Este archivo está en la carpeta raíz del proyecto y contiene los parámetros de configuración necesarios para que el proyecto funcione. El archivo config.py especifica los siguientes parámetros: 
 
-    smart = "https://smartsecurity-webservice.herokuapp.com"
-    fcm = "*******"
-    username = 'daniel'
-    password = "sm2"
+> smart = "https://smartsecurity-webservice.herokuapp.com"  
+fcm = "*******"  
+username = 'daniel'  
+password = "sm2"
 
 - **smart**: El atributo smart contiene la URL de DrivingApp Service. El servicio Notifications Service utiliza DrvingApp Service para consumir los datos de zonas y dispositivos registrados. Recuerde que DrivingApp Service utiliza por defecto el puerto 4005.
 - **fcm**: El atributo fcm contiene el código de la aplicación configurada en Firebase en esta [sección](../userManual/configurations#configuracion-fcm). Para  obtener el código de un proyecto Firebase siga los pasos siguientes.
@@ -311,7 +311,7 @@ Las variables de entorno de la imagen Docker de NotificationsService  se reempla
 
 ##### Ejecución
 
-La imagen Docker de NotificationsService utiliza por defecto el puerto 3001, el comando utilizado para ejecutar la imagen es el siguiente: 
+La imagen Docker de NotificationsService utiliza por defecto el puerto 3001, el comando  para ejecutar la imagen es el siguiente: 
 
 ```sh
 $ docker run -ti --env="SMART_SERVICE=<DRIVINGAPP_SERVICE>" \ --env="FCM_SERVER_TOKEN=<FCM_SERVER_TOKEN>" --env="PASSWORD=<USER_PASSWORD>" \ --env="USER_NAME=<USER_NAME>" -p 3001:3001 cenidetiot/notifications-service
