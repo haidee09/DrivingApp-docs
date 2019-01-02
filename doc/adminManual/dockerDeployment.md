@@ -23,14 +23,14 @@ Docker Compose es una herramienta para definir y ejecutar aplicaciones Docker de
 
 ### Ejecución 
 
-1. Descargar los archivos del repositorio oficial de DrivingApp-docker:
+1.- Descargar los archivos del repositorio oficial de DrivingApp-docker:
 
-        git clone https://github.com/smartsdkCenidet/DrivingApp-docker.git
+    $ git clone https://github.com/smartsdkCenidet/DrivingApp-docker.git
 
 
-2. Ejecutar el archivo docker-compose.yml utilizando el comando: 
+2.- Ejecutar el archivo docker-compose.yml utilizando el comando: 
 
-        docker-compose up -d 
+    $ docker-compose up -d 
 
 
 **docker-compose** descarga y ejecuta automáticamente las imágenes docker y los contenedores de cada imagen, este proceso puede tardar algunos minutos. La siguiente imagen muestra este proceso en consola:
@@ -38,9 +38,9 @@ Docker Compose es una herramienta para definir y ejecutar aplicaciones Docker de
 ![docker-compose up -d](./img/dockerDeploy1.png)
 
 
-1. Verificar que todos los contenedores están ejecutándose con el comando:
+3.- Verificar que todos los contenedores están ejecutándose con el comando:
 
-        docker ps 
+    $ docker ps 
 
 ![docker ps](./img/dockerDeploy2.png)
 
