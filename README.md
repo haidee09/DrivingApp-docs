@@ -7,7 +7,7 @@ Además, DrivingApp permite a los usuarios generar alertas de tráfico, segurida
 
 ## Documentación en Español:
 
-- Consulta la documentación de DrvingApp en Español en este [enlace](https://drivingapp.readthedocs.io/es/latest/) 
+- Consulta la documentación de DrivingApp en Español en este [enlace](https://drivingapp.readthedocs.io/es/latest/) 
 
 ## Welcome to DrivingApp documentation
 
@@ -16,4 +16,4 @@ Also, DrivingApp allows the users generate traffic, security and accidents alert
 
 ## Documentation in English:
 
-- Refer to this [link](https://drivingapp.readthedocs.io/en/latest) to consult the DrvingApp documentation in English 
+- Refer to this [link](https://drivingapp.readthedocs.io/en/latest) to consult the DrivingApp documentation in English 

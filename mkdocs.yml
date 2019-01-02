@@ -19,5 +19,5 @@ pages:
     - Despliegue de Servicios Web: adminManual/deployment.md 
     - Despliegue de DrivingApp con Docker: adminManual/dockerDeployment.md
     - Pruebas de Ejecución de Servicios: adminManual/tests.md
-    - Revisión de Ejecución de servicios: aminManual/checks.md
+    - Revisión de Ejecución de servicios: adminManual/checks.md
 
