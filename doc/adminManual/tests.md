@@ -111,21 +111,21 @@ El IDM- KeyRock o KeyStone debe retornar como respuesta:
 
 ## Creación de Suscripciones 
 
-Para que el sistema de DrivingApp funcione correctamente, es necesaria la creación de algunas suscripciones en el Orion ContextBroker. Con estas suscripciones los componentes Orion ContextBroker, QuantumLeap y Notifications Service pueden comunicarse entre sí. Las suscripciones que deben crearse en el Orion ContextBroker se encuentran en la carpeta Subscriptions del proyecto DrivingApp-docker. Para registrar estas suscripciones en el Orion ContextBroker utilice los siguientes comandos:
+Para que el sistema de DrivingApp funcione correctamente, es necesario crear algunas suscripciones en el Orion ContextBroker. Con estas suscripciones los componentes Orion ContextBroker, QuantumLeap y Notifications Service pueden comunicarse entre sí. Las suscripciones que deben crearse en el Orion ContextBroker se encuentran en la carpeta Subscriptions del proyecto DrivingApp-docker. Para registrar estas suscripciones en el Orion ContextBroker utilice los siguientes comandos:
 
-1. Para crear la suscripción de la entidad Device a QuantumLeap utilice el siguiente comando en consola:
+1.- Para crear la suscripción de la entidad Device a QuantumLeap utilice el siguiente comando en consola:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/DeviceToQL.json --header "Content-Type: application/json"
 ```
 
-2. Para crear la suscripción de la entidad Alert a QuantumLeap utilice el siguiente comando en consola:
+2.- Para crear la suscripción de la entidad Alert a QuantumLeap utilice el siguiente comando en consola:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToQL.json --header "Content-Type: application/json"
 ```
 
-3. Para crear la suscripción de la entidad Device a Notifications Service utilice el siguiente comando en consola:
+3.- Para crear la suscripción de la entidad Device a Notifications Service utilice el siguiente comando en consola:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToNotifications.json --header "Content-Type: application/json"
@@ -133,35 +133,35 @@ $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToNo
 
 ***NOTA***: La creación de estas suscripciones es necesaria para que el sistema funcione correctamente, de lo contrario algunas funciones no estarán disponibles en la aplicación DrivingApp.
 
-## [Prueba de Integración de Servicios](#prueba-de-integracion-de-servicios)
+## [Creación de entidades para la Integración de Servicios](#creacion-de-entidades-para-la-integracion-de-servicios)
 
-La siguiente prueba le permite verificar que los servicios se comunican correctamente entre ellos, para realizar esta prueba es necesario crear las siguientes entidades en el orden que se indica:
+La creación de las siguientes entidades le permiten verificar que los servicios se comunican correctamente entre ellos, es necesario crear las siguientes entidades en el orden que se indica:
 
-1. Crear una entidad de prueba tipo Device en el Orion ContextBroker utilizando el siguiente comando:
+1.- Crear una entidad de prueba tipo Device en el Orion ContextBroker utilizando el siguiente comando:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/entities -d @"Orion Entities/Device.json" --header "Content-Type: application/json"
 ```
 
-2. Crear una entidad de prueba tipo DeviceToken en DrivingApp Service utilizando el siguiente comando:
+2.- Crear una entidad de prueba tipo DeviceToken en DrivingApp Service utilizando el siguiente comando:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:4005/api/device/token -d @"Private Entities/DeviceToken.json" --header "Content-Type: application/json"  
 ```
 
-3. Crear una entidad de prueba tipo Zone en DrivingApp Service utilizando el siguiente comando:
+3.- Crear una entidad de prueba tipo Zone en DrivingApp Service utilizando el siguiente comando:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:4005/api/zone  -d @"Private Entities/Zone.json" --header "Content-Type: application/json"
 ```
 
-4. Crear una entidad de prueba tipo User en DrivingApp Service utilizando el siguiente comando:
+4.- Crear una entidad de prueba tipo User en DrivingApp Service utilizando el siguiente comando:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:4005/api/user  -d @"Private Entities/User.json" --header "Content-Type: application/json"
 ```
 
-5. Crear una entidad de prueba tipo Alert en el Orion Context Broker utilizando el siguiente comando:
+5.- Crear una entidad de prueba tipo Alert en el Orion Context Broker utilizando el siguiente comando:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/entities -d @"Orion Entities/Alert.json" --header "Content-Type: application/json"

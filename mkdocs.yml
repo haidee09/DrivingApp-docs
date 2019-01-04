@@ -15,7 +15,8 @@ pages:
     - Funcionalidades de DrivingApp: userManual/functionalities.md
     - Configuraciones de DrivingApp: userManual/configurations.md
   - Manual de Instalación y Administración: 
-    - Servicios Web de DrivingApp: adminManual/index.md
+    - Arquitectura del sistema DrivingApp: adminManual/architecture.md
+    - Servicios Web de DrivingApp: adminManual/webServices.md
     - Despliegue de Servicios Web: adminManual/deployment.md 
     - Despliegue de DrivingApp con Docker: adminManual/dockerDeployment.md
     - Pruebas de Ejecución de Servicios: adminManual/tests.md

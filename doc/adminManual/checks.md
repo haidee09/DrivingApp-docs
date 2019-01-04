@@ -1,8 +1,8 @@
-## [Revisión manual de ejecución de servicios en contenedores Docker](#revision-manual)
+## [Chequeo manual de ejecución de servicios en contenedores Docker](#chequeo-manual)
 
-Para verificar que los servicios se comunican correctamente, es necesario revisar los logs de los contenedores docker de QuantumLeap y Notifications Service. Para revisar estos contenedores realice las siguientes instrucciones:
+Para verificar que los servicios se comunican correctamente, es necesario revisar los logs de los contenedores docker de QuantumLeap y Notifications Service. Para revisar estos contenedores¿ sigua las siguientes instrucciones:
 
-1. Ejecutar el siguiente comando en consola para revisar los logs del contenedor QuantumLeap:
+1.- Ejecutar el siguiente comando en consola para revisar los logs del contenedor QuantumLeap:
 
 ```sh
 $ docker logs drivingapp-docker_quantumleap_1
@@ -12,7 +12,7 @@ La siguiente imagen muestra la petición HTTP de tipo POST a la ruta /v2/notify 
 
 ![Docker Logs QuantumLeap](./img/manualReview1.png)
 
-2. Ejecutar el siguiente comando en consola para revisar los logs de Notifications Service:
+2.- Ejecutar el siguiente comando en consola para revisar los logs de Notifications Service:
 
 La siguiente imagen muestra la petición HTTP de tipo POST a la ruta /notify de Notifications Service, señalada con flechas rojas. La respuesta que retorna Notifications Service a esta petición es de status 201, lo que significa que la conexión entre el Orion Context Broker y Notifications Service se realizó de manera correcta.
 
@@ -26,9 +26,9 @@ Para  verificar el nombre de los contenedores docker utiliza el comando:
 $ docker ps 
 ```
 
-## Revisión Automatizada de Ejecución de Servicios
+## Chequeo Automático de Ejecución de Servicios
 
-La revisión automatizada de servicios se realiza a través del script en Python **test.py**. Este script realiza automáticamente la creación de las suscripciones necesarias y la ejecución de las pruebas unitarias de servicios. Para ejecutar este el script **test.py** siga las siguientes indicaciones: 
+El chequeo automático de ejecucion de servicios se realiza a través del script en Python **test.py**. Este script realiza automáticamente la creación de las suscripciones necesarias y la ejecución de las pruebas unitarias de servicios. Para ejecutar este el script **test.py** siga las siguientes indicaciones: 
 
 ### Requerimientos
 
@@ -59,7 +59,7 @@ La siguiente imagen muestra un ejemplo de algunos errores que puede retornar el 
 
 El script **test.py** le permite ejecutar la revisión de cada servicio de manera separada. A través de comandos se puede verificar que los servicios se ejecutan correctamente y crear de suscripciones de cada servicio; además de ejecutar las pruebas de funcionalidad de cada servicio. A continuación se indican los comandos utilizados en el script para realizar cada una de estas acciones.
 
-1. Para revisar la ejecución correcta de cada servicio utilice en siguiente comando en consola:
+1.- Para revisar la ejecución correcta de cada servicio utilice en siguiente comando en consola:
 
 ```sh
 $ python test.py check
@@ -67,7 +67,7 @@ $ python test.py check
 
 ![Revisar la ejecución de cada servicio](./img/automatedReview3.png)
 
-2. Para crear las suscripciones en el Orion ContextBroker utilice el siguiente comando en consola:
+2.- Para crear las suscripciones en el Orion ContextBroker utilice el siguiente comando en consola:
 
 ```sh
 $ python test.py create_subs
@@ -75,7 +75,7 @@ $ python test.py create_subs
 
 ![Creación e suscripciones en el Orion](./img/automatedReview4.png)
 
-3. Para ejecutar las pruebas de funcionalidad de cada servicio se realiza lo siguiente:
+3.- Para ejecutar las pruebas de funcionalidad de cada servicio se realiza lo siguiente:  
 
 - Preparar los servicios creando entidades de prueba utilizadas por cada servicio del sistema. El comando para preparar los servicios es: 
 
@@ -83,7 +83,7 @@ $ python test.py create_subs
 $ python test.py prepare
 ```
 
-![Preparar los servicios creando entidades](./img/automatedReview5.png)
+![Preparar los servicios creando entidades](./img/automatedReview5.png)  
 
 - Crear una entidad de alerta para verificar la comunicación entre los servicios desplegados, utilizando el siguiente comando:
 
