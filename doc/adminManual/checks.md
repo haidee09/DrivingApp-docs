@@ -93,4 +93,4 @@ $ python test.py create_alert
 
 ![Crear una entidad de alerta](./img/automatedReview6.png)
 
-***NOTA***: Cada vez que es utilizado este comando se crea una alerta con id diferente. Observe que en la sección de [integración de servicios](./tests.md#creacion-de-entidades-para-la-integracion-de-servicioss) se crea también una alerta en el paso 5 pero con un id determinado. 
+***NOTA***: Cada vez que es utilizado este comando se crea una alerta con id diferente. Observe que en la sección de [integración de servicios](./tests.md#creacion-de-entidades-para-la-integracion-de-servicios) se crea también una alerta en el paso 5 pero con un id determinado. 
