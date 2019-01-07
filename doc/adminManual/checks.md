@@ -1,4 +1,4 @@
-## [Chequeo manual de ejecución de servicios en contenedores Docker](#chequeo-manual-de-ejecucion-de-servicios)
+## [Chequeo manual de ejecución de servicios en contenedores Docker](#chequeo-manual-de-ejecucion-de-servicios-en-contenedores-docker)
 
 Para verificar que los servicios se comunican correctamente, es necesario revisar los logs de los contenedores docker de QuantumLeap y Notifications Service. Para revisar estos contenedores sigua las siguientes instrucciones:
 
@@ -51,7 +51,7 @@ El script muestra en consola los siguientes mensajes:
 - El mensaje "OK" en color verde que indica que las acciones se efectuaron correctamente.
 - El mensaje "CREATED" de color verde que indica la creación correcta de las entidades en cada servicio. Junto a este mensaje se muestra la dirección del servicio para consultar la entidad creada.
 
-***NOTA***: El script **test.py** no verifica la comunicación entre servicios, para esto es necesario revisar de forma manual los logs de los contenedores docker de QuantumLeap y Notifications Service, tal como se describe en  esta [sección](#chequeo-manual-de-ejecucion-de-servicios)
+***NOTA***: El script **test.py** no verifica la comunicación entre servicios, para esto es necesario revisar de forma manual los logs de los contenedores docker de QuantumLeap y Notifications Service, tal como se describe en  esta [sección](./checks.md#chequeo-manual-de-ejecucion-de-servicios-en-contenedores-docker).
 
 La siguiente imagen muestra un ejemplo de algunos errores que puede retornar el script **test.py**, marcados en color rojo.
 
