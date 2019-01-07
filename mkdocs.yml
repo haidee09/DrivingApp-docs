@@ -8,18 +8,17 @@ markdown_extensions: [toc,fenced_code]
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.org/style/fiware_readthedocs_core.css"]
 edit_uri: 'edit/master/doc/'
 pages:
-  - Inicio: index.md
-  - Manual del Usuario y Programador: 
-    - Requerimientos: userManual/index.md
-    - Guía de Inicio: userManual/gettingStarted.md
-    - Funcionalidades de DrivingApp: userManual/functionalities.md
-    - Configuraciones de DrivingApp: userManual/configurations.md
-  - Manual de Instalación y Administración: 
-    - Arquitectura del sistema DrivingApp: adminManual/architecture.md
-    - Servicios Web de DrivingApp: adminManual/webServices.md
-    - Despliegue de Servicios Web: adminManual/deployment.md 
-    - Despliegue de DrivingApp con Docker: adminManual/dockerDeployment.md
-    - Pruebas de Ejecución de Servicios: adminManual/tests.md
-    - Revisión de Ejecución de servicios: adminManual/checks.md
-    - Administración del sistema de DrivingApp: adminManual/admin.md
-
+  - Home: index.md
+  - User & Programmers Manual: 
+    - Requirements: userManual/index.md
+    - Getting Started: userManual/gettingStarted.md
+    - DrivingApp Functionalities: userManual/functionalities.md
+    - DrivingApp Configurations: userManual/config.md
+  - Installation & Administration Manual: 
+    - DrivingApp System Architecture: adminManual/architecture.md
+    - DrvingApp Web Services: adminManual/webServices.md
+    - Web Services Deployment: adminManual/deployment.md 
+    - DrivingApp Deployment with Docker: adminManual/dockerDeployment.md
+    - Tests Services Execution: adminManual/tests.md
+    - Services Health Check: adminManual/checks.md
+    - DrivingApp System Administration: adminManual/admin.md
