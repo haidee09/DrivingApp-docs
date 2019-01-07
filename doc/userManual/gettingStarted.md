@@ -1,69 +1,69 @@
-## Instalación y ejecución de DrivingApp
+## Installation and execution of DrivingApp
 
-La aplicación móvil está disponible en Google Play Store con el nombre DrivingApp, desarrollada por Alicia Martínez – CENIDET. [Aquí](https://play.google.com/store/apps/details?id=mx.edu.cenidet.app) podrá encontrar el enlace de descarga de la aplicación, o puede buscarla en Google Play Store como muestra la siguiente imagen:
+The mobile application is available in the Google Play Store with the name DrivingApp, developed by Alicia Martínez - CENIDET. [Here] (https://play.google.com/store/apps/details?id=mx.edu.cenidet.app) you can find the download link for the application, or you can search it in the Google Play Store as shown next image:
 
 ![Buscar DrivingApp en Google Play Store](img/drivingapp/descargaApp1.png)
 
-Para instalar la aplicación DrivingApp siga los pasos que se muestran en las siguientes imágenes. 
+To install the DrivingApp application follow the steps shown in the next images.
 
 ![Descargar DrivingApp en Google Play Store](img/drivingapp/descargaApp1.png)
 
-DrivingApp le solicita que acepte los permisos de ubicación GPS y uso de número su de telefónico al abrir la aplicación por primera vez. Es importante aceptar estos permisos para que pueda utilizar las funcionalidades que ofrece la aplicación. Las siguientes imágenes muestran estos permisos:
+DrivingApp asks you to accept GPS location permits and phone number usage when opening the application for the first time. It is important to accept these permissions for you can use the features offered by the application. The following images show these permissions:
 
 ![Permisos de DrivingApp](img/drivingapp/permisosApp.png)
 
-## Registro de cuenta de usuario e inicio de sesión
+## User account registration and login
 
-Para comenzar a utilizar DrivingApp, el primer paso es registrar una cuenta de usuario. Esta cuenta de usuario debe ser generada como una cuenta de tipo *usuario móvil* o *guardia de seguridad*.
+To start using DrivingApp, the first step is to register a user account. This user account must be generated as a type *mobile user* or *security guard* account.
 
-### Cuenta de usuario móvil
+### Mobile user account
 
-Para crear una cuenta de usuario móvil e iniciar sesión, abra la aplicación DrivingApp y siga los pasos que se muestran en las siguientes imágenes:
+To create a mobile user account and log in, open the DrivingApp application and follow the steps shown in the next images:
 
-1.- Presionar el enlace de *Regístrate*.
+1.- Press the link of *Register*.
 
 ![Registrar Cuenta de Usuario Movil](img/drivingapp/registrate.png)
 
-2.- Presionar el botón de cuenta *Usuario Móvil*.
+2.- Press the account button *Mobile User*.
 
 ![Botón Cuenta de Usuario Móvil](img/drivingapp/crearCuentaUsuarioMovil.png)
 
-3.- Completar las entradas de texto con sus datos personales y, cuando haya completado la información, acepte los Términos y Condiciones y presione el botón *Crear Cuenta*. Si la cuenta se ha generado de forma exitosa, la aplicación le mostrará el mensaje: *Cuenta generada exitosamente*. 
+3.- Complete the text inputs with your personal data and, when you have completed the information, accept the Terms and Conditions and press the button *Create Account*. If the account has been generated successfully, the application will show you the message: *Account generated successfully*.
 
 ![Formulario Crear Cuenta de Usuario Móvil](img/drivingapp/crearCuentaUsuarioMovilForm.png)
 
-4.- Por último, inicie sesión en la aplicación móvil con la cuenta que ha creado anteriormente,como se muestra en las siguientes imágenes. Diríjase a la vista principal y presione el botón *Iniciar Sesión*. En la vista siguiente presione el botón *Usuario Móvil*, este botón lo redirigirá a la vista de inicio de sesión, en donde debe ingresar el número telefónico y contraseña que utilizó para crear su cuenta de *usuario móvil*.  
+4.- Finally, log in to the mobile application with the account you created previously, as shown in the following images. Go to the main view and press the *Start Session* button. In the next view press the button *Mobile User*, this button will redirect you to the login view, where you must enter the phone number and password used to create your *mobile user* account.
 
 ![Iniciar Sesión Usuario Móvil](img/drivingapp/iniciarSesionUsuarioMovil.png)
 
-### Cuenta de guardia de seguridad
+### Security guard account
 
-DrivingApp también permite a los usuarios el inicio de sesión con cuenta de tipo guardia de seguridad. Sin embargo, las cuentas de usuario de guardia de seguridad no pueden crearse desde la aplicación móvil. Para crear una cuenta de este tipo, usted debe acceder a la [aplicación web ViVA](https://viva-smartsdk.duckdns.org ) y registrarse. Cuando se haya registrado debe esperar a que el administrador de ViVA active su cuenta de usuario para que pueda iniciar sesión en DrivingApp. 
-Para realizar su registro en ViVA e iniciar sesión en DrivingApp, abra la aplicación y siga los pasos que se muestran a continuación.
+DrivingApp also allows users to log in with a security guard type account. However, security guard user accounts can not be created from the mobile application. To create an account of this type, you must access to the [ViVA web application](https://viva-smartsdk.duckdns.org) and register you. When you have registered, you must wait for the ViVA administrator to activate your user account so you can log in to DrivingApp.
+To register in ViVA and log in to DrivingApp, open the application and follow the steps shown below.
 
-1.- Presionar el enlace de *Regístrate*.
+1.- Press the link of *Register*.
 
 ![Registrar Cuenta de Usuario Movil](img/drivingapp/registrate.png)
 
-2.- Presionar el botón de cuenta de *Guardia de Seguridad*.
+2.- Press the *Security Guard* account button.
 
 ![Botón Cuenta Guardia de Seguridad](img/drivingapp/crearCuentaGuardiaSeg.png)
 
-3.- Realizar el registro de sus datos en ViVA, cuando complete su registro presione el botón de regresar.
+3.- Register your data in ViVA, when you complete your registration press the return button.
 
 ![Registro en VIVA](img/drivingapp/registroVIVA.png)
 
-4.-	Por último, inicie sesión en la aplicación móvil con la cuenta de usuario creada anteriormente, como se muestra en las siguientes imágenes. Diríjase a la vista principal de la aplicación DrivingApp y presione el botón *Guardia de seguridad*. En la vista siguiente ingrese el email y contraseña que utilizó para realizar su registro en ViVA, cuando haya completado esta información presione el botón *Iniciar Sesión*. 
+4.-	Finally, log in to the mobile application with the user account previously created, as shown in the following images. Go to the main view of the DrivingApp application and press the *Security Guard* button. In the next view enter the email and password that you used to register in ViVA, when you have completed this information press the button *Login*.
 
 ![Iniciar Sesión Guardia de Seguridad](img/drivingapp/iniciarSesionGuardiaSeg.png)
 
-### Habilitar GPS del dispositivo móvil
+### Enable GPS of the mobile device
 
-DrivingApp le solicitará que habilite del sensor GPS en su dispositivo móvil en caso de que el sensor no se esté habilitado al momento de iniciar sesión en la aplicación, como muestra la siguiente imagen:
+DrivingApp will ask you to enable the GPS sensor on your mobile device if this is not enabled when log in to the application, as shown in the following image:
 
 ![Habilitar GPS](img/drivingapp/habilitarGPS.png)
 
-Cuando habilite los servicios de ubicación GPS, presione el botón de regresar de su teléfono móvil para regresar a la vista de Inicio de la aplicación.
+When you enable GPS location services, press the back button on your mobile phone to return to the Start view of the application.
 
 
 
