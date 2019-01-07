@@ -4,24 +4,24 @@ Esta Guía proporciona información acerca de cómo administrar el sistema de la
 
 ### ViVA
 
-ViVA es una aplicación de Video Vigilancia que busca asistir al guardia de seguridad para prevenir situaciones de riesgo y consecuentemente mejorar la calidad de vida de las personas que viven el área vigilada. La aplicación ViVA se enfoca en detectar y analizar situaciones de riesgo, tales como: robo, control de acceso, detección de personas, peleas, análisis de multitudes, etc., a través de la combinación de video cámaras y sensores tanto en interiores como exteriores. Por ejemplo, estacionamientos y edificios. Puede consultar su documentación oficial en el siguiente [enlace](https://video-surveillance-application.readthedocs.io/en/latest/)
+ViVA es una aplicación de Video Vigilancia que busca asistir al guardia de seguridad para prevenir situaciones de riesgo y consecuentemente mejorar la calidad de vida de las personas que viven el área vigilada. La aplicación ViVA se enfoca en detectar y analizar situaciones de riesgo, tales como: robo, control de acceso, detección de personas, peleas, análisis de multitudes, etc., a través de la combinación de video cámaras y sensores tanto en interiores como exteriores. Por ejemplo, estacionamientos y edificios. Puede consultar su documentación oficial en el siguiente [enlace](https://video-surveillance-application.readthedocs.io/en/latest/).
 
 ViVA incluye módulos para la administración de datos de zonas, estacionamientos y calles, necesarios para que la aplicación DrivingApp pueda funcionar correctamente. Además ViVA, tiene un módulo para consultar la localización de los usuarios de DrivingApp que se encuentren, o que se encontraron dentro de alguna de las zonas registradas. Puede acceder la aplicación web ViVA en [este](https://viva-smartsdk.duckdns.org/) enlace.
 
 ### Aplicación de Administración de DrivingApp
 
-Con el objetivo de ofrecer una herramienta ligera que incluya los módulos de administración de areas y consulta de localización de usuarios, se desarrolló una aplicación de administración simple para DrivingApp utilizando el framework Web2py. Esta aplicación de administración contiene los módulos que incluye ViVA para manipular la información de zonas, estacionamientos y calles, así como consultar la localización de los usuarios de DrivingApp. El código fuente de esta aplicación está en su repositorio oficial en el siguiente [enlace](https://github.com/smartsdkCenidet/SimpleAdmin)
+Con el objetivo de ofrecer una herramienta ligera que incluya los módulos de administración de areas y consulta de localización de usuarios, se desarrolló una aplicación de administración simple para DrivingApp utilizando el framework Web2py. Esta aplicación de administración contiene los módulos que incluye ViVA para manipular la información de zonas, estacionamientos y calles, así como consultar la localización de los usuarios de DrivingApp. El código fuente de esta aplicación está en su repositorio oficial en el siguiente [enlace](https://github.com/smartsdkCenidet/SimpleAdmin).
 
 #### Requerimientos
 
-- **Sistema de control de versiones Git**, puede consultar la documentación oficial de Git en el siguiente [enlace](https://git-scm.com/.
-- **Python 2.7.X**, puede encontrar información sobre cómo instalar Python en su sistema operativo en el siguiente [enlace](https://www.python.org/downloads/release/python-2715/)
+- **Sistema de control de versiones Git**, puede consultar la documentación oficial de Git en el siguiente [enlace](https://git-scm.com/).
+- **Python 2.7.X**, puede encontrar información sobre cómo instalar Python en su sistema operativo en el siguiente [enlace](https://www.python.org/downloads/release/python-2715/).
 
 #### Instalación 
 
 1.- Descargar el proyecto Web2Py con el siguiente comando git:
 ```sh
-git clone --recursive https://github.com/web2py/web2py.git
+$ git clone --recursive https://github.com/web2py/web2py.git
 ```
 2.-	Descargar el proyecto SimpleAdmin dentro de la carpeta /applications del proyecto Web2py.
 
@@ -52,7 +52,7 @@ Este comando despliega una ventana donde es necesario configurar una clave para 
 
 ![Web2py admin](./img/web2pyAdmin.png)
 
-Después de escribir la contraseña, de click en el botón Start Server y el servidor comenzará a ejecutarse. Puede acceder a la aplicación SimpleAdmin en la siguiente dirección: http://127.0.0.1:8000/appmapasWeb2py/default/index.
+Después de escribir la contraseña, de click en el botón Start Server y el servidor comenzará a ejecutarse. Puede acceder a la aplicación SimpleAdmin en la siguiente dirección: [http://127.0.0.1:8000/appmapasWeb2py/default/index](http://127.0.0.1:8000/appmapasWeb2py/default/index).
 
 
 #### Configuración
@@ -128,7 +128,7 @@ La lista de segmentos de calles registrados en el sistema muestra la informació
 
 La vista de Registro de calle y segmento de calle muestra un formulario para la creación de nuevos segmentos de calles. Para registrar un segmento de calle se deben seleccionar e ingresar los datos siguientes en la vista.  
 
-1. Seleccionar si el segmento de calle pertenece a una calle que está dentro de un estacionamiento o a una zona.  
+1. Seleccionar si el segmento de calle pertenece a una calle que está dentro de un estacionamiento o a una zona.
     - Si el segmento de calle pertenece a una calle de una zona, seleccione la zona y el nombre de la calle. 
     - Si el segmento de calle pertenece a una calle de un estacionamiento, seleccione: la zona del estacionamiento, el nombre del estacionamiento y el nombre de la calle.  
 
@@ -195,12 +195,12 @@ se utiliza en la aplicación SmartSecurity para definir las calles de estacionam
 Entidades de contexto del Orion ContextBroker almacenadas en MongoDB  
 
 - Device: Las entidades Device están basadas en el modelo de datos [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) de FIWARE, utilizando los atributos requeridos y algunos opcionales.
-- Alert: Las entidades Alert están basadas en el modelo de datos [Alert]( https://github.com/Fiware/dataModels/blob/master/specs/Alert/.) de FIWARE 
+- Alert: Las entidades Alert están basadas en el modelo de datos [Alert]( https://github.com/Fiware/dataModels/blob/master/specs/Alert/) de FIWARE.
 
 Tablas de la base de datos de series de tiempo en CrateDB  
 
 - etDevice: La tabla etDevice está basada en el modelo de datos [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) de FIWARE. La API de QuantumLeap convierte las entidades de modelo Device del Orion en registros relacionales, para almacenarlos en la base de datos CrateDB. Para más información consulte esta [sección]( https://smartsdk.github.io/ngsi-timeseries-api/user/#data-insertion) en la documentación oficial de QuantumLeap. 
-- etAlert: La tabla etAlert está basada en el modelo de datos [Alert] de FIWARE. La API de QuantumLeap convierte las entidades de modelo Alert del Orion en registros relacionales, para almacenarlos en la base de datos CrateDB. Para más información consulte esta [sección](https://smartsdk.github.io/ngsi-timeseries-api/user/#data-insertion) en la documentación oficial de QuantuamLeap.
+- etAlert: La tabla etAlert está basada en el modelo de datos [Alert](https://github.com/Fiware/dataModels/blob/master/specs/Alert/) de FIWARE. La API de QuantumLeap convierte las entidades de modelo Alert del Orion en registros relacionales, para almacenarlos en la base de datos CrateDB. Para más información consulte esta [sección](https://smartsdk.github.io/ngsi-timeseries-api/user/#data-insertion) en la documentación oficial de QuantuamLeap.
 
 
 
