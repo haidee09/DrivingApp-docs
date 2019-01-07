@@ -13,7 +13,7 @@ pages:
     - Requirements: userManual/index.md
     - Getting Started: userManual/gettingStarted.md
     - DrivingApp Functionalities: userManual/functionalities.md
-    - DrivingApp Configurations: userManual/config.md
+    - DrivingApp Configurations: userManual/configurations.md
   - Installation & Administration Manual: 
     - DrivingApp System Architecture: adminManual/architecture.md
     - DrvingApp Web Services: adminManual/webServices.md
