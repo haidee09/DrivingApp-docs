@@ -82,6 +82,6 @@ La aplicación DrivingApp utiliza los servicios de FCM para replicar las notific
 
 ![Archivos de los servicios de Gradle](img/fcm/7.png)
 
-7.- Finalmente, Firebase le muestra las estadísticas de los usuarios que utilizan la aplicación Android que ha configurado.
+7.- Finalmente, Firebase le muestra las estadísticas de los usuarios que utilizan la aplicación Android configurada.
 
 ![Firebase Panel de Administración](img/fcm/8.png)
