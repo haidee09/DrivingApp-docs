@@ -1,6 +1,6 @@
 ## Requerimientos para utilizar DrivingApp
 
-Los requerimientos para instalar y utilizar la aplicación DrivingApp con los siguientes:
+Los requerimientos para instalar y utilizar la aplicación DrivingApp son los siguientes:
 
 - Sistema operativo Android versión superior o igual a la 5.1.1 (Lollipop) y menor o igual a la 7.1.2 (Nougat)
 - Sensor GPS incluido.
