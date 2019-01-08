@@ -29,7 +29,7 @@ El archivo `config.properties` del proyecto DrivingApp está ubicado en la ruta:
 
 - La propiedad `host` define la url ó IP de la instancia del Orion ContextBroker.
 - La propiedad `port` especifica el puerto de la instancia Orion ContextBroker definida.
-- La propiedad `apiversion` define la versión de la API con la que son definidas las solicitudes al Orion ContextBroker.
+- La propiedad `apiversion` define la versión de la API del Orion ContextBroker.
 
 Un ejemplo de la configuración del archivo `config.properties` es la siguiente:
 
