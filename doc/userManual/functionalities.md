@@ -1,17 +1,17 @@
-## Funcionalidades de DrivingApp
+## DrivingApp functionalities
 
-### Identificación de la ubicación del usuario
+### Identification of the user's location
 
-DrivingApp identifica la ubicación del usuario cuando se encuentra dentro del área de una zona delimitada. Esta zona debe ser registrada por el administrador o guardia de seguridad del sistema, a través de la interfaz de ViVA. 
-Cuando el usuario inicia sesión en DrivingApp, la vista de Inicio de la aplicación muestra la zona en la que se encuentra el usuario, el nombre y dirección de la misma. Además, la vista del mapa de zona muestra la delimitación de la zona, sus estacionamientos y la ubicación actual del dispositivo dentro de dicha zona. Las siguientes imágenes muestran un ejemplo de estas vistas:
+DrivingApp identifies the user's location when it is within the area of a delimited area. This zone must be registered by the administrator or security guard of the system, through the ViVA interface.
+When the user logs into DrivingApp, the application's Home view shows the user's area, name and address. In addition, the zone map view shows the delimitation of the zone, its parking lots and the current location of the device within the zone. The following images show an example of these views.
 
 ![Ubicacion del Usuario - Vista de Inicio](img/drivingapp/ubicacionUsuarioInicio.png)
 
-### Generación manual de alertas.
+### Manual generation of alerts
 
-DrivingApp permite a los usuarios generar alertas manuales de tráfico, seguridad y accidentes automovilísticos. Estas alertas pueden ser de 3 tipos: embotellamiento, accidente automovilístico y emergencia desconocida. Cada una de estas alertas puede ser enviada con un nivel de severidad de acuerdo con la gravedad del evento observado por el usuario. Los niveles de severidad de cada alerta pueden ser: informacional, bajo, medio, alto o crítico. Las alertas de eventos de emergencia desconocida se envían siempre con el nivel de severidad crítico, debido a que se desconoce el tipo de evento que está ocurriendo. 
+DrivingApp allows users to generate manual traffic alerts, security and car accidents. These alerts can be of 3 types: traffic jam, car accident and unknown emergency. Each of these alerts can be sent with a level of severity according to the severity of the event observed by the user. The severity levels of each alert can be: informational, low, medium, high or critical. The alerts of unknown emergency events are always sent with the level of critical severity, because the type of event ocurred is unknown.
 
-Para generar un alerta manual de tráfico, siga los pasos siguientes:
+To generate a manual traffic alert, follow the steps below:
 
 1. Presionar el botón flotante de alertas en la pantalla de Inicio de la aplicación y seleccionar el tipo de alerta a generar presionando el botón flotante de embotellamiento o accidente automovilístico.
 2. Seleccionar el nivel de severidad de la alerta presionando el botón con el ícono del color correspondiente y escribir una descripción que identifique al evento de alerta. Posteriormente, presionar en el botón de Enviar Alerta.
