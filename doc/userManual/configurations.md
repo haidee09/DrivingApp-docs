@@ -5,25 +5,27 @@ The DrivingApp project contains configuration files to modify the URLs of the se
 
 #### 1.- Download the DrivingApp project
 
-Este [enlace](https://github.com/cenidetiot/DrivingApp.git) envía al repositorio del proyecto DrivingApp en Github. Si desea descargar el proyecto a través del software de control de versiones git, ejecute el siguiente comando en consola: 
+You can consult the DrivingApp project in this [repository] (https://github.com/cenidetiot/DrivingApp.git) of Github. If you want to download the project through the git version control software, run the following console command:
 
 ```sh
 git clone https://github.com/cenidetiot/DrivingApp.git.  
 ```
 
-Además, Github también proporciona la opción de descargar un proyecto mediante un archivo comprimido .zip
+In addition, Github also provides the option to download a project in a .zip file.
 
-#### 2.- Abrir el proyecto DrivingApp en Android Studio
+#### 2.- Open the DrivingApp project in Android Studio
 
-Cuando haya descargado el proyecto DrivingApp, ábralo con el entorno de desarrollo Android Studio. Para más información acerca la descarga y configuración de Android Studio visite el siguiente [enlace](https://developer.android.com/studio/)
+Once you have downloaded the DrivingApp project, open it with the Android Studio development environment. For more information about downloading and configuring Android Studio visit the following [link](https://developer.android.com/studio/)
 
-**NOTA**: El Android SDK número 23 está configurado como la versión mínima del proyecto DrivingApp.
+**NOTE**: The Android SDK number 23 is configured as the minimum version of the DrivingApp project.
 
-#### 3.- Configurar  los servicios de la aplicación DrivingApp
+#### 3.- Configure the services of the DrivingApp application
 
-Abra el proyecto DrivingApp en Android Studio y configure lo siguiente:
+Open the DrivingApp project in Android Studio and configure the following:
 
-##### 3.1 Configurar la conexión con una instancia Orion ContextBroker
+##### 3.1 Configure the connection with an Orion ContextBroker instance
+
+The `config.properties` file of the DrivingApp project is located in the path: ngsi/src/main/assets/, and contains the configuration properties for the connection to an Orion ContetxBroker instance. This file defines the properties: `host`,` port` and `apiversion`, which specify the following:
 
 El archivo `config.properties` del proyecto DrivingApp está ubicado en la ruta: ngsi/src/main/assets/, y contiene las propiedades de configuración para la conexión con una instancia Orion ContetxBroker. Este archivo define las propiedades: `host`, `port` y `apiversion`, las cuales especifican lo siguiente:
 
