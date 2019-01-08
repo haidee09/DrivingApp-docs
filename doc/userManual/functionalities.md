@@ -63,7 +63,7 @@ El usuario que conduce un automóvil, puede identificar de manera automática a 
 
 ![Botones de la Vista de Manejo](img/drivingapp/botonesEventosAutomaticos.png)
 
-Las alertas en la conducción de un vehículo se representan mediante los siguientes colores:
+Las alertas automáticas en la conducción de vehículo se representan mediante los siguientes colores:
 
 1.- Botón de evento de velocidad: 
 
