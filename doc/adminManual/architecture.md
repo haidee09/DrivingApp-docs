@@ -1,21 +1,22 @@
 ## Arquitectura del sistema de DrivingApp
 
-La arquitectura del sistema de DrivingApp está compuesta por dos capas: el fronted y el backend. La imagen siguiente muestra los componentes que integran la arquitectura en cada una de sus capas.
+The architecture of the DrivingApp system is composed of two layers: the fronted and the backend. The following image shows the components of the architecture in each of its layers.
 
 ![Arquitectura del sistema DrivingApp](./img/architecture.png)
 
 ### Fronted
 
-La capa Frontend del sistema de DrivingApp contiene las aplicaciones de usuario final. La arquitectura muestra en la capa de Fronted la aplicación móvil DrivingApp, sin embargo si usted desea agregar otra aplicación a este proyecto, puede incluirla dentro de la capa Frontend.
-La aplicación móvil DrivingApp envía de manera constantemente **(1)** al Orion ContextBroker los datos del dispositivo, y las entidades de alertas creadas por el usuario de la aplicación. Además, la aplicación DrivingApp utiliza **(2)** los servicios de DrivingApp Service para llevar a cabo sus funciones.
+The Frontend layer of the DrivingApp system contains the end-user applications. The architecture shows in the Fronted layer the mobile application DrivingApp, however if you want to add another application to this project, you can include it within the Frontend layer.
+
+The mobile application DrivingApp constantly sends **(1)** to the Orion ContextBroker the device data, and the alert entities created by the user of the application. In addition, the DrivingApp application uses **(2)** the services of DrivingApp Service to perform queries functions and data models administration. 
 
 ### Backend
 
-La capa Backend está compuesta por los servicios y SGBD que utiliza la aplicación DrivingApp. Los servicios se pueden clasificar de manera general en tres tipos: los servicios del entorno QuantumLeap, los servicios de uso específico para la aplicación DrivingApp y el servicio de autenticación IDM-Keyrock.
+The Backend layer is composed by the services and DBMS that the DrivingApp application uses. The services can be broadly classified into three types: the QuantumLeap environment services, the specific use services for the DrivingApp application and the IDM-Keyrock authentication service.
 
 #### Servicios del Entorno QuantumLeap
 
-El entorno QuantumLeap es un conjunto de servicios que permiten el almacenamiento de datos FIWARE-NGSIv2 en series de tiempo, además brinda la posibilidad de representar estos datos gráficamente para facilitar su monitoreo. A continuación se describen los servicios que componen el entorno QuantumLeap.
+El entorno QuantumLeap es un conjunto de servicios que permiten almacenar datos FIWARE-NGSIv2 en series de tiempo, y representarlos de manera gráfica para facilitar su monitoreo. A continuación se describen los servicios que componen el entorno QuantumLeap.
 
 ##### Orion ContextBroker
 
