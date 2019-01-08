@@ -13,42 +13,42 @@ DrivingApp allows users to generate manual traffic alerts, security and car acci
 
 To generate a manual traffic alert, follow the steps below:
 
-1. Presionar el botón flotante de alertas en la pantalla de Inicio de la aplicación y seleccionar el tipo de alerta a generar presionando el botón flotante de embotellamiento o accidente automovilístico.
-2. Seleccionar el nivel de severidad de la alerta presionando el botón con el ícono del color correspondiente y escribir una descripción que identifique al evento de alerta. Posteriormente, presionar en el botón de Enviar Alerta.
-3. La aplicación le informará del envío exitoso de la alerta mediante un mensaje.
+1. Press the floating alert button (red color) on the application's Home screen, and select the type of alert to be generated pressing the floating button of traffic jam or car accident.
+2. Select the  severity level of the alert pressing the button with the corresponding color icon and write a description that identifies the alert event. Afterwards, click on the Send Alert button.
+3. The application will inform you of the successful sending of the alert through a message.
 
 ![Crear Alerta de Tráfico](img/drivingapp/crearAlertaTrafico.png)
 
-Para generar una alerta de emergencia desconocida, siga los pasos siguientes: 
+To generate an unknown emergency alert, follow the steps below:
 
-1. Presionar el botón flotante de alertas en la pantalla de Inicio de la aplicación y seleccionar la opción: emergencia desconocida.
-2. Confirmar el envío de la alerta presionando la opción SI.
-3. La aplicación le informará del envío exitoso de la alerta mediante un mensaje.
+1. Press the floating alert button (red color) in the application's Start screen and select the option: unknown emergency.
+2. Confirm the sending of the alert by pressing the option YES.
+3. The application will inform you of the successful sending of the alert through a message.
 
 ![Crear Alerta de Emergencia Desconocida](img/drivingapp/crearAlertaEmergencia.png)
 
-### Notificaciones de alertas y su visualización en el mapa.
+### Notifications of alerts and their visualization on the map
 
-Las alertas que emiten los usuarios a través de DrivingApp, son replicadas en forma de notificaciones a los dispositivos móviles de los demás usuarios. Estas notificaciones de alertas muestran la categoría y subcategoría del evento de alerta. El usuario puede abrir las notificaciones de alertas para visualizar la localización de cada alerta en el mapa. Las siguientes imágenes muestran un ejemplo de la notificación de una alerta: 
+The alerts that users issue through DrivingApp, are replicated in the form of notifications to the mobile devices of other users. These alert notifications show the category and subcategory of the alert event. The user can open the alert notifications to visualize the location of each alert on the map. The following images show an example of the notification of an alert:
 
-1. Una notificación de alerta llega al dispositivo móvil y se ubica en la barra de notificaciones. Esta notificación muestra la categoría y la subcategoría del evento de alerta.
-2. El usuario presiona la notificación y la aplicación muestra la localización de la alerta en el mapa.
+1. An alert notification arrives at the mobile device and is located in the notification bar. This notification shows the category and subcategory of the alert event.
+2. The user presses the notification and the application shows the location of the alert on the map.
 
 ![Notificación de Alerta](img/drivingapp/notificacionAlerta.png)
 
-### Listado de alertas y su visualización en el mapa.
+### List of alerts and their display on the map
 
-Las alertas enviadas por los usuarios son agrupadas en listado de alertas de DrivingApp, cada alerta del listado muestra la subcategoría y descripción de la alerta. Para visualizar la localización de una alerta del listado, siga los pasos que se enumeran a continuación:
+The alerts sent by the users are grouped in the DrivingApp alerts list, each alert in the list shows the subcategory and description of the alert. To view the location of a listing alert, follow the steps listed below:
 
-1. Mantener presionada la alerta que desea ubicar en el mapa. 
-2. Oprimir la opción ver en el mapa para observar la ubicación de la alerta en el mapa.
-3. La aplicación muestra la ubicación de la alerta en el mapa, mediante un marcador que muestra la subcategoría y descripción del evento.
+1. Press and hold the alert you want to locate on the map.
+2. Press the option see on the map to observe the location of the alert on the map.
+3. The application shows the location of the alert on the map, using a marker that shows the subcategory and description of the event.
 
 ![Visualización de Alertas](img/drivingapp/visualizacionAlertas.png)
 
-### Vista de manejo para conducción de vehículo.
+### Driving view for vehicle driving.
 
-Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de infracción en la conducción de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
+Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de conducción incorrecta de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
 
 ![Botón Vista de Manejo](img/drivingapp/botonVistaManejo.png)
 
