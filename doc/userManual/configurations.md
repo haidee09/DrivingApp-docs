@@ -39,13 +39,13 @@ http.port = 1026 // Change it form your Orion port
 http.apiversion = v2 // Change if for your Orion api version
 ```
 
-##### 3.2	Configurar DrivingAppService
+##### 3.2	Configure DrivingAppService
 
 DrivingApp uses DrivingApp Service to manipulate the public entities (based on FIWARE data models) and the private entities created for the project. DrivingAppService provides a RESTFul API for the administration of these public and private entities using the DrivingApp mobile application. In addition, DrivingApp also uses the DrivingAppService service to perform context queries and manage alert information. You can check the source code of this web service on this [link](https://github.com/cenidetiot/smartsecurity-web-service)
 
-Para configurar la URL de DrivingApp Service en el proyecto DrivingApp debe modificar el archivo `ConfigServer.java`. Este archivo está en la ruta: cenidetsdk/src/main/java/mx/edu/cenidet/cenidetsdk/utilities/ del proyecto DrivingApp. 
+To configure the DrivingApp Service URL in the DrivingApp project, you must modify the `ConfigServer.java` file. This file is on the route: cenidetsdk/src/main/java/mx/edu/cenidet/cenidetsdk/utilities/ from the DrivingApp project.
 
-Un ejemplo de la configuración de este archivo es el siguiente:
+An example of the configuration of this file is the following:
 
 ```java
 http_host("https://smartsecurity-webservice.herokuapp.com")
