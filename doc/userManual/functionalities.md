@@ -59,7 +59,7 @@ La vista de manejo muestra la velocidad del vehículo en km/hr, y el límite má
 - Estás detenido.
 - Estás acelerando.
 
-El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de infracción. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
+El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de conducción incorrecta. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
 
 ![Botones de la Vista de Manejo](img/drivingapp/botonesEventosAutomaticos.png)
 
