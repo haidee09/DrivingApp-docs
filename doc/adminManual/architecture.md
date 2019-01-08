@@ -15,7 +15,7 @@ La capa Backend está compuesta por los servicios y SGBD que utiliza la aplicaci
 
 #### Servicios del Entorno QuantumLeap
 
-El entorno QuantumLeap es un conjunto de servicios que permiten el almacenamiento de datos FIWARE-NGSIv2 en series de tiempo, además brinda la posibilidad de representar estos datos gráficamente para facilitar su monitoreo. A continuación se describen los servicios que componen el entorno QuantumLeap.
+El entorno QuantumLeap es un conjunto de servicios que permiten almacenar datos FIWARE-NGSIv2 en series de tiempo, y representarlos de manera gráfica para facilitar su monitoreo. A continuación se describen los servicios que componen el entorno QuantumLeap.
 
 ##### Orion ContextBroker
 
