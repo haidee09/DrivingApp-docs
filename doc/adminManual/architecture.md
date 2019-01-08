@@ -1,4 +1,4 @@
-## Arquitectura del sistema de DrivingApp
+## DrivingApp System Architecture
 
 The architecture of the DrivingApp system is composed of two layers: the fronted and the backend. The following image shows the components of the architecture in each of its layers.
 
@@ -14,7 +14,7 @@ The mobile application DrivingApp constantly sends **(1)** to the Orion ContextB
 
 The Backend layer is composed by the services and DBMS that the DrivingApp application uses. The services can be broadly classified into three types: the QuantumLeap environment services, the specific use services for the DrivingApp application and the IDM-Keyrock authentication service.
 
-#### Servicios del Entorno QuantumLeap
+#### Services QuantumLeap Environment
 
 The QuantumLeap environment is a set of services that allow you to store FIWARE-NGSIv2 data in time series, and represent them graphically to facilitate their monitoring. The services that make up the QuantumLeap environment are described below.
 
@@ -31,30 +31,31 @@ The Orion ContextBroker notifies **(5)** to Notifications Service when a new ale
 
 ##### QuantumLeap API
 
-QuantumLeap API es la primera implementación de una API escrita en Python que soporta el almacenamiento de datos FIWARE-NGSIv2 en una base de datos de series de tiempo. Si se desea aprender más acerca de  QuantumLeap puede consultar su documentación oficial en el este [enlace](https://quantumleap.readthedocs.io/en/latest/).
+QuantumLeap API is the first implementation of an API written in Python that supports the storage of FIWARE-NGSIv2 data in a time series database. If you want to learn more about QuantumLeap you can check their official documentation on this [link] (https://quantumleap.readthedocs.io/en/latest/).
 
-La API de QuantumLeap recibe los datos notificados por el Orion ContextBroker y los convierte a los tipos de datos soportados por CrateDB, para su almacenamiento en la base de datos.
+The QuantumLeap API receives the data notified by the Orion ContextBroker and converts it to the data types supported by CrateDB, for its torage in the database.
 
 ##### CrateDB
 
-CrateDB es un sistema de administración de bases de datos SQL distribuidas, e integra un almacén de datos orientado a documentos con capacidad de búsqueda. Es de código abierto y escrito en Java. Para conocer más acerca de CrateDB puede consultar su documentación en el siguiente [enlace](https://crate.io/docs/).
+CrateDB is a distributed SQL database management system, and integrates a data store oriented to searchable documents. It is open source and written in Java. To know more about CrateDB you can consult its documentation in the following [link] (https://crate.io/docs/).
 
 ##### Grafana
 
-Grafana es una aplicación web que sirve para monitorear grandes conjuntos de datos, a través de la creación de gráficos que interpretan en tiempo real  los datos obtenidos de diversas fuentes de datos. Para conocer más acerca de Grafana, consulte su documentación oficial en el siguiente [enlace](http://docs.grafana.org/).
+Grafana is a web application that serves to monitor large data sets, through the creation of graphics that interpret in real time the data obtained from various data sources. To learn more about Grafana, consult its official documentation at the following [link](http://docs.grafana.org/).
 
-#### Servicios de uso específico para DrivingApp
+#### DrivingApp Specific services
 
-Los servicios diseñados para uso la aplicación DrivingApp son dos servicios web descritos brevemente a continuación. 
+The services designed to use the DrivingApp are two web services described briefly below.
 
 ##### DrivingApp Service
 
-DrivingApp Service es un servicio web que manipula los modelos de datos públicos y privados de la aplicación móvil, además de proporcionar servicios de consulta. Para mayor información consulte la sección [Servicios Web](./webServices.md#servicios-web).
+DrivingApp Service is a web service that manipulates the public and private data models of the mobile application, in addition to providing query services. For more information, visit the section [Web Services](./webServices.md#web-services).
 
 ##### Notifications Service
 
-Notifications Service es un servicio web que manipula la información de las entidades de Alerta enviadas por el Orion ContextBroker a través de la notificación de una suscripción. Para más información consulte la sección [Servicios Web](./webServices.md#servicios-web).
+Notifications Service is a web service that manipulates the information of the Alert entities sent by the Orion ContextBroker through the notification of a subscription. For more information visit the section [Web Services](./webServices.md#web-services).
 
-#### Servicio de Autenticación de FIWARE
+#### FIWARE Authentication Service
 
-El IDM- Keyrock es un habilitador genérico de FIWARE que ofrece herramientas de administración para soportar las funciones del ciclo de vida del usuario como: acceso a redes, servicios y aplicaciones, incluida la autenticación segura y privada de usuarios a dispositivos, redes y servicios. Además, Identity Management se utiliza para autorizar a servicios extranjeros a acceder a datos personales almacenados en un entorno seguro. Por lo general, el propietario de los datos debe dar su consentimiento para acceder a los datos; esto implica también la autenticación del usuario. Para más información de este componente consulte su documentación en este [enlace](https://github.com/ging/fiware-idm-deprecated).
+The IDM-Keyrock is a generic FIWARE enabler that offers management tools to support the user's lifecycle functions such as: access to networks, services and applications, including secure and private user authentication to devices, networks and services. In addition, Identity Management is used to authorize foreign services to access personal data stored in a secure environment. In general, the owner of the data must give his consent to access the data; this also implies the authentication of the user. For more information on this component, consult the documentation on this [link](https://github.com/ging/fiware-idm-deprecated).
+
