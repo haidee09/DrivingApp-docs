@@ -9,12 +9,12 @@
 - **Gestor de paquetes npm o yarn**, puede consultar la documentación npm [aquí]( https://docs.npmjs.com/) y la documentación de yarn [aquí](https://yarnpkg.com/en/docs)
 - **Sistema gestor de base de datos MariaDB** versión 10.4, consulte el siguiente [enlace](https://mariadb.org/download/) para instalar MariaDB
 - **Orion ContextBroker de FIWARE** en una versión superior a la 1.15.1, puede consultar la documentación oficial en el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/) 
-- **IDM - KeyRock de FIWARE** en una versión menor o igual a 6, o **Keystone de Openstack**. Puede consultar el repositorio oficial de IDM - Keyrock en el siguiente [enlace](https://github.com/ging/fiware-idm-deprecated) y la documentación de Keystone - Openstack versión 3 este [enlace] (https://docs.openstack.org/keystone/latest/)
+- **IDM - KeyRock de FIWARE** en una versión menor o igual a 6, o **Keystone de Openstack**. Puede consultar el repositorio oficial de IDM - Keyrock en el siguiente [enlace](https://github.com/ging/fiware-idm-deprecated) y la documentación de Keystone - Openstack versión 3 en este [enlace] (https://docs.openstack.org/keystone/latest/)
 
 #### Requerimientos opcionales
 
 - Persistencia de datos por series de tiempo: 
-*DrivingApp Service* brinda la funcionalidad de obtener los datos de localización de un usuario en una zona específica. Para implementar esta funcionalidad, es necesario desplegar la *API QuantumLeap de FIWARE* y configurar *DrivingApp Service* para establecer una conexión el SGBD *CrateDB*. Puede obtener más información acerca del despliegue y utilización de la *API de QuantumLeap* en el siguiente [enlace](https://quantumleap.readthedocs.io/en/latest/)
+*DrivingApp Service* brinda la funcionalidad de obtener los datos de localización de un usuario en una zona específica. Para implementar esta funcionalidad, es necesario desplegar la *API QuantumLeap de FIWARE* y configurar *DrivingApp Service* para establecer una conexión con el SGBD *CrateDB*. Puede obtener más información acerca del despliegue y utilización de la *API de QuantumLeap* en el siguiente [enlace](https://quantumleap.readthedocs.io/en/latest/)
 
 #### Instalación
 
