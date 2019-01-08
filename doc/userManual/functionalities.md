@@ -59,13 +59,11 @@ The driving view shows the speed of the vehicle in km / hr, and the maximum and 
 - You're stopped.
 - You are accelerating.
 
-El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de infracción. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
-
 The user driving a car can automatically identify an incorrect driving event through the driving view. The buttons in the driving view light up according to the speed of the vehicle. The following image shows the buttons of each event in the driving view of DrivingApp.
 
 ![Botones de la Vista de Manejo](img/drivingapp/botonesEventosAutomaticos.png)
 
-Las alertas en la conducción de un vehículo se representan mediante los siguientes colores:
+Automatic alerts in vehicle driving are represented by the following colors:
 
 1.- Botón de evento de velocidad: 
 
