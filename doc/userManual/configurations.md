@@ -1,6 +1,6 @@
 ## General DrivingApp Configurations
 
-DrivingApp uses external services to consume the information that shows the user in the application. The Orion ContextBroker of FIWARE is one of these external services, this component manages the context information produced by the application. Other services that DrivingApp uses are web services, these have the function of manipulating data entities and queries of the mobile application; In addition, these web services allow the mobile application to manage the information of the notifications received by the application.  
+DrivingApp uses external services to consume the information that shows the user in the application. The Orion ContextBroker of FIWARE is one of these external services, this component manages the context information produced by the application. Other services that DrivingApp uses are web services, these have the function of manipulating data entities and queries of the mobile application. In addition, these web services allow the mobile application to manage the information of the notifications received by the application.  
 The DrivingApp project contains configuration files to modify the URLs of the services used by the application. To modify these files, follow the steps below.
 
 #### 1.- Download the DrivingApp project
@@ -51,7 +51,7 @@ An example of the configuration of this file is the following:
 http_host("https://smartsecurity-webservice.herokuapp.com")
 ```
 
-##### [3.3 Configuración del proyecto Firebase Cloud Messaging (FCM) para la aplicación DrivingApp](#configuracion-fcm)
+##### [3.3 Configuring the Firebase Cloud Messaging (FCM) project for the DrivingApp application](#configuracion-fcm)
 
 Firebase Cloud Messaging (FCM) is a cross-platform solution in the cloud for sending messages and notifications to Android devices, iOS and web applications. This service is provided by Firebase and can currently be used at no cost.
 The DrivingApp application uses FCM services to replicate alert notifications to users' devices. The algorithms of the application for sending alerts can be used to replicate and receive alert notifications, without making additional modifications to the code. On the other hand, to implement personalized alert notifications in DrivingApp or in another application, perform the instructions presented below to configure the FCM services in the mobile application.
