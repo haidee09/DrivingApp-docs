@@ -1,9 +1,9 @@
-## Configuraciones Generales de DrivingApp
+## General DrivingApp Configurations
 
-DrivingApp utiliza servicios externos para consumir la información que muestra al usuario en la aplicación. El Orion ContextBroker de FIWARE es uno de estos servicios externos, este componente administra la información de contexto que produce la aplicación. Otros servicios que utiliza DrivingApp son los servicios web, estos tienen como función manipular las entidades de datos y las consultas de la aplicación móvil. Además estos servicios web permiten a la aplicación móvil administrar la información de las notificaciones que recibe la aplicación.  
-El proyecto DrivingApp contiene archivos de configuración para modificar las URLs de los servicios que utiliza la aplicación. Para modificar estos archivos siga los pasos siguientes:
+DrivingApp uses external services to consume the information that shows the user in the application. The Orion ContextBroker of FIWARE is one of these external services, this component manages the context information produced by the application. Other services that DrivingApp uses are web services, these have the function of manipulating data entities and queries of the mobile application; In addition, these web services allow the mobile application to manage the information of the notifications received by the application.  
+The DrivingApp project contains configuration files to modify the URLs of the services used by the application. To modify these files, follow the steps below.
 
-#### 1.- Descargar el proyecto DrivingApp
+#### 1.- Download the DrivingApp project
 
 Este [enlace](https://github.com/cenidetiot/DrivingApp.git) envía al repositorio del proyecto DrivingApp en Github. Si desea descargar el proyecto a través del software de control de versiones git, ejecute el siguiente comando en consola: 
 
