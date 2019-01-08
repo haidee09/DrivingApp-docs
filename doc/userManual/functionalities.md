@@ -9,12 +9,12 @@ Cuando el usuario inicia sesión en DrivingApp, la vista de Inicio de la aplicac
 
 ### Generación manual de alertas.
 
-DrivingApp permite a los usuarios generar alertas manuales de tráfico, seguridad y accidentes automovilísticos. Estas alertas pueden ser de 3 tipos: embotellamiento, accidente automovilístico y emergencia desconocida. Cada una de estas alertas puede ser enviada con un nivel de severidad de acuerdo con la gravedad del evento observado por el usuario. Los niveles de severidad de cada alerta pueden ser: informacional, bajo, medio, alto o crítico. Las alertas de eventos de emergencia desconocida se envían siempre con el nivel de severidad crítico, debido a que se desconoce el tipo de evento que está ocurriendo. 
+DrivingApp permite a los usuarios generar alertas manuales de tráfico, seguridad y accidentes automovilísticos. Estas alertas pueden ser de 3 tipos: embotellamiento, accidente automovilístico y emergencia desconocida. Cada una de estas alertas puede ser enviada con un nivel de severidad de acuerdo con la gravedad del evento observado por el usuario. Los niveles de severidad de cada alerta pueden ser: informacional, bajo, medio, alto o crítico. Las alertas de eventos de emergencia desconocida se envían siempre con el nivel de severidad crítico, debido a que se desconoce el tipo de evento ocurrido. 
 
 Para generar un alerta manual de tráfico, siga los pasos siguientes:
 
 1. Presionar el botón flotante de alertas en la pantalla de Inicio de la aplicación y seleccionar el tipo de alerta a generar presionando el botón flotante de embotellamiento o accidente automovilístico.
-2. Seleccionar el nivel de severidad de la alerta presionando el botón con el ícono del color correspondiente y escribir una descripción que identifique al evento de alerta. Posteriormente, presionar en el botón de Enviar Alerta.
+2. Seleccionar el nivel de severidad de la alerta presionando el botón con el ícono del color correspondiente y escriba una descripción que identifique al evento de alerta. Posteriormente, presionar en el botón de Enviar Alerta.
 3. La aplicación le informará del envío exitoso de la alerta mediante un mensaje.
 
 ![Crear Alerta de Tráfico](img/drivingapp/crearAlertaTrafico.png)

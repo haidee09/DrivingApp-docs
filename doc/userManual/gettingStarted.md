@@ -49,7 +49,7 @@ Para realizar su registro en ViVA e iniciar sesión en DrivingApp, abra la aplic
 
 ![Botón Cuenta Guardia de Seguridad](img/drivingapp/crearCuentaGuardiaSeg.png)
 
-3.- Realizar el registro de sus datos en ViVA, cuando complete su registro presione el botón de regresar.
+3.- Registrar sus datos en ViVA, cuando complete su registro presione el botón de regresar.
 
 ![Registro en VIVA](img/drivingapp/registroVIVA.png)
 
@@ -59,11 +59,11 @@ Para realizar su registro en ViVA e iniciar sesión en DrivingApp, abra la aplic
 
 ### Habilitar GPS del dispositivo móvil
 
-DrivingApp le solicitará que habilite del sensor GPS en su dispositivo móvil en caso de que el sensor no se esté habilitado al momento de iniciar sesión en la aplicación, como muestra la siguiente imagen:
+DrivingApp le solicitará que habilite del sensor GPS en su dispositivo móvil, esto en caso de que el sensor no se esté habilitado al momento de iniciar sesión en la aplicación, como muestra la siguiente imagen:
 
 ![Habilitar GPS](img/drivingapp/habilitarGPS.png)
 
-Cuando habilite los servicios de ubicación GPS, presione el botón de regresar de su teléfono móvil para regresar a la vista de Inicio de la aplicación.
+Cuando habilite los servicios de ubicación GPS, presione el botón atrás de su teléfono móvil para regresar a la vista de Inicio de la aplicación.
 
 
 
