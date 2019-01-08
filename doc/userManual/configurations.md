@@ -39,11 +39,11 @@ http.port = 1026 // Change it form your Orion port
 http.apiversion = v2 // Change if for your Orion api version
 ```
 
-##### 3.2	Configurar DrivingAppService
+##### 3.2	Configurar DrivingApp Service
 
-DrivingApp utiliza DrivingAppService para manipular las entidades públicas del proyecto,basadas en modelos de datos FIWARE; además de las entidades privadas creadas para este proyecto. DrivingAppService proporciona una API RESTFul para la administración de estas entidades públicas y privadas que utiliza la aplicación móvil DrivingApp. Además, DrivingApp también utiliza el servicio DrivingAppService para realizar consultas de contexto y gestionar la información de las alertas. Puede consultar el código fuente de este servicio web en este [enlace](https://github.com/cenidetiot/smartsecurity-web-service)
+DrivingApp utiliza DrivingAppService para manipular las entidades públicas (basadas en modelos de datos FIWARE) y las entidades privadas del proyecto. DrivingAppService proporciona una API RESTFul para la administración de estas entidades públicas y privadas que utiliza la aplicación móvil DrivingApp. Además, DrivingApp también utiliza el servicio DrivingAppService para realizar consultas de contexto y gestionar la información de las alertas. Puede consultar el código fuente de este servicio web en este [enlace](https://github.com/cenidetiot/smartsecurity-web-service)
 
-Para configurar DrivingAppService en el proyecto DrivingApp debe modificar el archivo `ConfigServer.java`, con configurar la URL de DrivingAppService. Este archivo está en la ruta: cenidetsdk/src/main/java/mx/edu/cenidet/cenidetsdk/utilities/ del proyecto DrivingApp. 
+Para configurar la URL de DrivingApp Service en el proyecto DrivingApp debe modificar el archivo `ConfigServer.java`. Este archivo está en la ruta: cenidetsdk/src/main/java/mx/edu/cenidet/cenidetsdk/utilities/ del proyecto DrivingApp. 
 
 Un ejemplo de la configuración de este archivo es el siguiente:
 
