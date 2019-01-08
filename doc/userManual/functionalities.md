@@ -52,14 +52,16 @@ For driving users, DrivingApp is useful for automatically detecting incorrect dr
 
 ![Botón Vista de Manejo](img/drivingapp/botonVistaManejo.png)
 
-La vista de manejo muestra la velocidad del vehículo en km/hr, y el límite máximo y mínimo de velocidad permitida en la calle de la zona. Además, esta vista muestra mensajes al usuario como:
+The driving view shows the speed of the vehicle in km / hr, and the maximum and minimum speed limit allowed on the street. In addition, this view shows messages to the user such as:
 
-- Estás manejando de forma correcta.
-- Te estás deteniendo.
-- Estás detenido.
-- Estás acelerando.
+- You're driving well.
+- You're stopping.
+- You're stopped.
+- You are accelerating.
 
 El usuario que conduce un automóvil, puede identificar de manera automática a través de la vista de manejo un evento de infracción. Los botones de la vista de manejo se iluminan de acuerdo al ascenso o descenso de velocidad del vehículo. La siguiente imagen muestra los botones de cada evento en la vista de manejo de DrivingApp.
+
+The user driving a car can automatically identify an incorrect driving event through the driving view. The buttons in the driving view light up according to the speed of the vehicle. The following image shows the buttons of each event in the driving view of DrivingApp.
 
 ![Botones de la Vista de Manejo](img/drivingapp/botonesEventosAutomaticos.png)
 
