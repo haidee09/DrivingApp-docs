@@ -53,35 +53,35 @@ http_host("https://smartsecurity-webservice.herokuapp.com")
 
 ##### [3.3 Configuración del proyecto Firebase Cloud Messaging (FCM) para la aplicación DrivingApp](#configuracion-fcm)
 
-Firebase Cloud Messaging (FCM) es una solución multiplataforma en la nube para envío de mensajes y notificaciones a dispositivos Android, iOS y aplicaciones web. Este servicio es proporcionado por Firebase y actualmente se puede utilizar sin costo alguno.
-La aplicación DrivingApp utiliza los servicios de FCM para replicar las notificaciones de alertas a los dispositivos de los usuarios. Los algoritmos de la aplicación para el envío de alertas pueden utilizarse para replicar y recibir notificaciones de alertas, sin realizar modificaciones adicionales al código. Por otro lado, para implementar notificaciones de alertas personalizadas en DrivingApp ó en otra aplicación, realice las instrucciones que se presentan a continuación para configurar los servicios de FCM en la aplicación móvil:
+Firebase Cloud Messaging (FCM) is a cross-platform solution in the cloud for sending messages and notifications to Android devices, iOS and web applications. This service is provided by Firebase and can currently be used at no cost.
+The DrivingApp application uses FCM services to replicate alert notifications to users' devices. The algorithms of the application for sending alerts can be used to replicate and receive alert notifications, without making additional modifications to the code. On the other hand, to implement personalized alert notifications in DrivingApp or in another application, perform the instructions presented below to configure the FCM services in the mobile application.
 
-1.- Acceda al sitio de Firebase en este [enlace](https://console.firebase.google.com/) y seleccione la opción de *Añadir Proyecto*.
+1.- Access the Firebase site on this [link] (https://console.firebase.google.com/) and select the option of *Add Project* 
 
 ![Bienvenida Firebase](img/fcm/1.png)
 
-2.- Agregue un nombre de proyecto y seleccione el país o región. El nombre de proyecto puede ser DrivingApp o el nombre de la aplicación que esté desarrollando. Firebase agrega un número de serie al nombre del proyecto que lo identifica entre otros proyectos con nombre similar. Cuando haya completado esta información, de click en el botón **Crear Proyecto**.
+2.- Add a project name and select the country or region. The project name can be DrivingApp or the name of the application you are developing. Firebase adds a serial number to the name of the project that identifies it among other projects with a similar name. When you have completed this information, click on the **Create Project** button.
 
 ![Nombre de proyecto Firebase](img/fcm/2.png)
 
-3.- Firebase crea el proyecto y abre la vista de la consola con el menú de funciones. En esta vista debe seleccionar la opción *Añade Firebase a tu aplicación móvil de Android* para comenzar con la configuración de Firebase en su aplicación Android, como muestra la siguiente imagen.
+3.- Firebase creates the project and opens the console view with the function menu. In this view, you must select the option *Add Firebase to your Android* mobile application to start configuring Firebase in your Android application, as the following image shows.
 
 ![Consola Firebase](img/fcm/3.png)
 
-4.-	Registre su aplicación agregando el nombre del paquete de la aplicación Android. Si desea configurar DrivingApp nuevamente, el nombre de paquete es `mx.edu.cenidet.drivingapp`; en cambio, si es una aplicación propia, agregue el nombre del paquete correspondiente. Cuando haya completado esta información, de click en el botón **Registrar Aplicación**.
+4.-	Register your application by adding the name of the Android application package. If you want to configure DrivingApp again, the package name is `mx.edu.cenidet.drivingapp`; on the other hand, if it is your own application, add the name of the corresponding package. When you have completed this information, click on the **Register Application** button.
 
 ![Registro de la aplicación Android](img/fcm/4.png)
 
-5.- Descargue el archivo de configuración `google-services.json` y muévalo a la carpeta principal del proyecto para añadir Firebase a su aplicación móvil Android. En el proyecto DrivingApp, este archivo de configuración está en la carpeta principal, debe reemplazarlo si desea configurar el proyecto nuevamente. Posteriormente de click en el botón **Continuar**.
+5.- Download the `google-services.json` configuration file and move it to the main project folder to add Firebase to your Android mobile application. In the DrivingApp project, this configuration file is in the main folder, you must replace it if you want to configure the project again. Then click on the **Continue** button.
 
 ![Añadir Firebase a la aplicación Android](img/fcm/5.png)
 
 ![Archivo de configuración en proyecto DrivingApp](img/fcm/6.png)
 
-6.- Modifique el archivo `build.gradle` del proyecto y el archivo `build.gradle` de la aplicación como se muestra en la imagen para utilizar el complemento de los servicios de Google para Gradle. Esta configuración ya se ha realizado en el proyecto DrivingApp, sin embargo, si está creando un nuevo proyecto a partir del código de DrivingApp debe modificar los archivos como se indica.
+6.- Modify the `build.gradle` file of the project and the` build.gradle` file of the application as shown in the image, to use the Google services plugin for Gradle. This configuration has already been made in the DrivingApp project, however, if you are creating a new project from the DrivingApp code you must modify the files as indicated.
 
 ![Archivos de los servicios de Gradle](img/fcm/7.png)
 
-7.- Finalmente, Firebase le muestra las estadísticas de los usuarios que utilizan la aplicación Android configurada.
+7.- Finally, Firebase shows you statistics of users who use the configured Android application.
 
 ![Firebase Panel de Administración](img/fcm/8.png)
