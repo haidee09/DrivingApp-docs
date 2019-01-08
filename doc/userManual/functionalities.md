@@ -48,7 +48,7 @@ The alerts sent by the users are grouped in the DrivingApp alerts list, each ale
 
 ### Driving view for vehicle driving.
 
-Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de conducción incorrecta de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
+For driving users, DrivingApp is useful for automatically detecting incorrect driving events within a defined area. The events that DrivingApp can identify are: driving at unauthorized speed, driving in the opposite direction and sudden stops of a vehicle. The user driving a vehicle within a defined area can activate the driving mode in the application. The following image shows the Home view of DrivingApp, pointing to the button to activate the vehicle driving mode.
 
 ![Botón Vista de Manejo](img/drivingapp/botonVistaManejo.png)
 
