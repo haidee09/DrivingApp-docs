@@ -27,13 +27,11 @@ Open the DrivingApp project in Android Studio and configure the following:
 
 The `config.properties` file of the DrivingApp project is located in the path: ngsi/src/main/assets/, and contains the configuration properties for the connection to an Orion ContetxBroker instance. This file defines the properties: `host`,` port` and `apiversion`, which specify the following:
 
-El archivo `config.properties` del proyecto DrivingApp está ubicado en la ruta: ngsi/src/main/assets/, y contiene las propiedades de configuración para la conexión con una instancia Orion ContetxBroker. Este archivo define las propiedades: `host`, `port` y `apiversion`, las cuales especifican lo siguiente:
+- The `host` property defines the url or IP of the Orion ContextBroker instance.
+- The `port` property specifies the port of the Orion ContextBroker instance defined.
+- The `apiversion` property defines the version of the Orion ContextBroker API.
 
-- La propiedad `host` define la url ó IP de la instancia del Orion ContextBroker.
-- La propiedad `port` especifica el puerto de la instancia Orion ContextBroker definida.
-- La propiedad `apiversion` define la versión de la API con la que son definidas las solicitudes al Orion ContextBroker.
-
-Un ejemplo de la configuración del archivo `config.properties` es la siguiente:
+A configuration example of the `config.properties` file is the following:
 
 ```java
 http.host = http://130.206.113.226 // Change it for your Orion host 
