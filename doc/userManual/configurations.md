@@ -5,7 +5,7 @@ El proyecto DrivingApp contiene archivos de configuración para modificar las UR
 
 #### 1.- Descargar el proyecto DrivingApp
 
-Este [enlace](https://github.com/cenidetiot/DrivingApp.git) envía al repositorio del proyecto DrivingApp en Github. Si desea descargar el proyecto a través del software de control de versiones git, ejecute el siguiente comando en consola: 
+Puede consultar el proyecto de DrivingApp en este [repositorio](https://github.com/cenidetiot/DrivingApp.git) de Github. Si desea descargar el proyecto a través del software de control de versiones git, ejecute el siguiente comando en consola: 
 
 ```sh
 git clone https://github.com/cenidetiot/DrivingApp.git.  
