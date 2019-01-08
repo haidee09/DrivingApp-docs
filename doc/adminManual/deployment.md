@@ -59,70 +59,59 @@ Next, each of the parameters of the `config.js` file is described in detail:
   * **user**: User name that has the privileges to READ, EDIT, CREATE and DELETE data in the specified database.
   * **password**: Access password for the specified username.
 
-Objeto JSON que contiene los parámetros para la conexión con la base de datos de *MariaDB*. Esta conexión se realiza utilizando el módulo npm llamado *Sequelize*. Los datos que utiliza *Sequelize* para realizar la conexión con la base de datos son los siguientes:
-  * **host**: URL en la que se encuentra MariaDB.
-  * **db**: Nombre de la base de datos con la que se establece la conexión.
-  * **user**: Nombre de usuario que tiene los privilegios para LEER, EDITAR, CREAR y ELIMINAR datos en la base de datos especificada.
-  * **password**: Contraseña de acceso para el nombre de usuario especificado.
-
 The connection between *DrivingApp Service* and *MariaDB* is done by default through port 3306, if you want to modify the configuration of *Sequelize*  edit the file `DataModelsAPI/db/ sequelize.js`. For more information consult the *Sequelize* documentation on this [link] (http://docs.sequelizejs.com/).
 
 - **exports.context**: The variable **context** must contain the URL of the Orion ContextBroker instance used. This URL must include the HTTP or HTTPS protocol so that *DrivingApp Service* can connect to the Orion ContextBroker, as well as the version of the NGSI API used. An URL example of an Orion ContextBroker instance is: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
 
-La variable **context** debe contener la URL de la instancia Orion ContextBroker utilizada. Esta URL debe incluir el protocolo HTTP o HTTPS para que *DrivingApp Service* pueda conectarse al Orion ContextBroker, además de la versión de la API NGSI utilizada. Un ejemplo de una URL de instancia Orion ContextBroker es: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
+The connection between DrivingApp Service and the Orion ContextBroker is established through the JavaScript NGSI library, you can check the official documentation of this library on this [link](https://ngsi-js-library.readthedocs.io/en/latest/).
 
-La conexión entre DrivingApp Service y el Orion ContextBroker se establece a través de la librería NGSI de JavaScript, puede consultar la documentación oficial de esta librería en este [enlace](https://ngsi-js-library.readthedocs.io/en/latest/).
+- **exports.keyrock**: The variable **keyrock** refers to the URL of the authentication service used: this can be *IDM-Keyrock of FIWARE* or *Keystone of Openstack*. *DrivingApp Service* uses this authentication service to control the access of the users in the mobile application *DrivingApp*. You can check in this [link](https://developer.openstack.org/api-ref/identity/v3/index.html) the documentation of Identity API v3, implemented in the IDM-KeyRock and KeyStone.
 
-- **exports.keyrock**: La variable **keyrock** hace referencia a la URL del servicio de identificación utilizado: este puede ser *IDM-Keyrock de FIWARE* o *Keystone de Openstack*. *DrivingApp Service* utiliza este servicio de identificación para autenticar a los usuarios en la aplicación móvil *DrivingApp*. Puede consultar en este [enlace]
-(https://developer.openstack.org/api-ref/identity/v3/index.html) la documentación de la API Identity v3 implementada en el IDM-KeyRock y KeyStone.
-
-Las versiones del *IDM - KeyRock* menores a las 7 utilizan el puerto 5000 con una versión de *Keystone de Openstack*. Además, el servicio Keystone de Openstack utiliza por defecto el puerto 35357. Debe considerar estos números de puertos al configurar el servicio seleccionado en *DrivingApp Service*, y evitar así confusiones entre ambos servicios.
+*IDM - KeyRock* minor versions to 7 use port 5000 with a *Keystone version of Openstack*. In addition, the Keystone service of OpenStack uses port 35357 by default. You should consider these port numbers when configuring the selected service in *DrivingApp Service*, and thus avoid confusion between both services.
 
 #### Optional Configurations
 
-- **exports.crate**: La variable **crate** especifica la URL de la base de datos de series de tiempo *CrateDB*. Por defecto *CrateDB* utiliza el puerto 4200 para realizar la conexión con la base de datos.
+- **exports.crate**: The variable **crate** specifies the URL of the time series database *CrateDB*. By default *CrateDB* uses port 4200 to make the connection to the database.
 
-*DrivingApp Service* utiliza el módulo npm llamado **node-crate** para realizar la conexión con *CrateDB* y consultar los datos almacenados en la base de datos. Puede consultar la documentación de **node-crate** en el siguiente [enlace](https://www.npmjs.com/package/node-crate).
+*DrivingApp Service* uses the npm module called **node-crate** to make the connection with *CrateDB* and consult the data stored in the database. You can check the **node-crate** documentation in the following [link](https://www.npmjs.com/package/node-crate).
 
 #### DrivingApp Service deployment 
 
-El despliegue de DrivingApp Service puede realizarse de tres maneras: local, como demonio y con una imagen docker. A continuación se detallan cada una de estas opciones.
+The deployment of DrivingApp Service can be done in three ways: local, as a daemon and with a docker image. Below are described each of these options.
 
 ##### Local deployment
 
-DrivingApp Service puede ser ejecutado utilizando npm o yarn como se detalla a continuación:
+DrivingApp Service can be executed using npm or yarn as detailed below:
 
-- Para ejecutar DrivingApp Service utilizando npm escriba el siguiente comando en consola, dentro de la carpeta del servicio: 
+- To run the DrivingApp Service using npm, type the following command in the console, inside the service folder:
 ```sh
 $ npm run start 
 ```
-- Para ejecutar DrivingApp Service utilizando yarn escriba el siguiente comando en consola, dentro de la carpeta del servicio: 
+- To run DrivingApp Service using yarn, type the following command in the console, inside the service folder:
 ```sh
 $ yarn start
 ```
 
 ##### Deployment as a demon 
 
-DrivingApp Service puede ejecutarse además como un demonio, utilizando el módulo npm llamado **forever** como se describe a continuación:
+DrivingApp Service can also be executed as a daemon, using the npm module called **forever** as described below:
 
-1.- Instalar forever de forma global en el sistema con el comando: 
+1.- Install **forever** in the system globally, with the following comand.Thus the **forever** package can be used as a terminal command.
 ```sh
 $ sudo npm install -g forever 
 ```
 
-Así el paquete forever puede utilizarse como un comando de la terminal.
-
-2.- Ejecutar dentro de la carpeta del servicio el archivo principal del proyecto, con el comando: 
+2.- Run the main file of the project inside the service folder, with the command: 
 ```sh
 $ sudo forever start server.js
 ```
 
-Para detener *DrivingApp Service* utiliza el siguiente comando para identificar el id del proceso que le asignó forever al servicio.
+To stop *DrivingApp Service* use the following command to identify the id of the process that  **forever** assigned to the service.
 ```sh 
 $ forever list 
 ```
 
-Posteriormente utiliza el siguiente comando (seguido del id del proceso) para detener el proceso.
+Then use the following command (followed by the process id) to stop the process.
 ```sh
 $ forever stop <id> 
 ```
@@ -131,26 +120,26 @@ $ forever stop <id>
 
 ##### Requeriments
 
-- **Docker**: Para más información acerca de Docker y su instalación consulta el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
+- **Docker**: For more information about Docker and its installation consult the following [link](https://docs.docker.com/cs-engine/1.12/).
 
-La imagen oficial de Docker de *DrivingApp Service* se llama **cenidetiot/drivingapp-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace](https://hub.docker.com/r/cenidetiot/drivingapp-service/).
+The official Docker image of *DrivingApp Service* is **cenidetiot/drivingapp-service** and the official repository **cenidetiot** is in **DockerHub**, in this [link](https://hub.docker.com/r/cenidetiot/drivingapp-service/).
 
 ##### Environment variables
 
-Las variables de entorno de la imagen Docker de DrivingApp Service se reemplazan con los datos de los servicios y de los SGBD utilizados por DrivingApp Service.
-Las variables que inician con **MYSQL_** hacen referencia a la variable mysql del archivo `config.js`.
+The environment variables of the docker image of DrivingApp Service are replaced with the data of the services and DBMS used by the DrivingApp Service.
+The variables that start with **MYSQL _** refer to the mysql variable in the `config.js` file.
 
-- **MYSQL_HOST**: URL en el que está instalado el SGBD MariaDB.
-- **MYSQL_DB**: Nombre de la base de datos.
-- **MYSQL_USER**: Nombre de usuario que tiene los privilegios de LEER, EDITAR, CREAR y ELIMINAR datos en la base de datos especificada.
-- **MYSQL_PASSWORD**: Contraseña de acceso del nombre de usuario especificado.
-- **ORION**: Hace referencia a la variable context del archivo `config.js`.
-- **KEYROCK**: Hace referencia a la variable keyrock del archivo `config.js`.
-- **CRATEDB**: Hace referencia a la variable crate del archivo `config.js`.
+- **MYSQL_HOST**: URL where the DBMS MariaDB is installed.
+- **MYSQL_DB**: Name of the database.
+- **MYSQL_USER**: User name that has the privileges to READ, EDIT, CREATE and DELETE data in the specified database.
+- **MYSQL_PASSWORD**: Password to access the specified username.
+- **ORION**: Refers to the context variable of the `config.js` file.
+- **KEYROCK**: Refers to the keyrock variable in the `config.js` file.
+- **CRATEDB**: Refers to the crate variable in the `config.js` file.
 
 ##### Execution 
 
-La imagen Docker de DrivingApp Service se ejecuta por defecto el  puerto 4005, el comando para ejecutar la imagen es el siguiente: 
+The Docker image of DrivingApp Service runs by default in the port 4005, the command to execute the image is:
 ```sh
 $ docker run -p 4005:4005 --env="MYSQL_HOST=<MYSQL_HOST>" --env="MYSQL_DB=<MYSQL_DB_NAME>" \ --env="MYSQL_USER=<MYSQL_AUTORIZED_USER>" --env="MYSQL_PASSWORD=<MYSQL_PASSWORD>" \  --env="CRATEDB=<CRATEDB_HOST>" --env="ORION=<ORION_CONTEXT_BROKER_URL>"  \ cenidetiot/drivingapp-service
 ```
