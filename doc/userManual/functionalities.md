@@ -48,7 +48,7 @@ Las alertas enviadas por los usuarios son agrupadas en listado de alertas de Dri
 
 ### Vista de manejo para conducción de vehículo.
 
-Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de infracción en la conducción de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
+Para los usuarios conductores, DrivingApp es útil para detectar de manera automática eventos de conducción incorrecta de vehículos dentro de una zona delimitada. Los eventos que DrivingApp puede identificar son: conducción a una velocidad no autorizada, conducción en sentido contrario y paradas repentinas de un vehículo.  El usuario que conduce un vehículo dentro de una zona delimitada, puede activar el modo de conducción en la aplicación. La siguiente imagen muestra la vista de Inicio de DrivingApp, donde se señala el botón para activar el modo de manejo de vehículo.
 
 ![Botón Vista de Manejo](img/drivingapp/botonVistaManejo.png)
 
