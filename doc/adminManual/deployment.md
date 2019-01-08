@@ -148,53 +148,54 @@ $ docker run -p 4005:4005 --env="MYSQL_HOST=<MYSQL_HOST>" --env="MYSQL_DB=<MYSQL
 
 #### Requeriments
 
-- **Software de Control de versiones Git**, puede consultar la documentación de Git en el siguiente [enlace](https://git-scm.com/)
-- **Python** versión 2.7.X, para instalar Python en su sistema operativo consulte el siguiente [enlace](https://www.python.org/downloads/release/python-2715/)
-- Manejador de paquetes pip para Python, para instalar este paquete consulta el siguiente [enlace]( https://pip.pypa.io/en/stable/installing/)
-- Servicio web DrivingApp Service, consulta el repositorio oficial de este servicio en el siguiente [enlace](https://github.com/smartsdkCenidet/smartsecurity-web-service.)
+- **Git Version Control Software**, you can check the Git documentation in the following [link](https://git-scm.com/).
+- **Python** version 2.7.X, to install Python in your operating system see the following [link](https://www.python.org/downloads/release/python-2715/).
+- **Pip package manager for Python**, to install this package visit the following [link](https://pip.pypa.io/en/stable/installing/).
+- **DrivingApp Service - web service**, check the official repository of this service in the following [link](https://github.com/smartsdkCenidet/smartsecurity-web-service).
 
 #### Installation
 
-1. Descargar el código de Notifications Service desde el repositorio oficial con el comando: 
+1. Download the Notifications Service code from the official repository with the command:
 ```sh
 $ git clone https://github.com/smartsdkCenidet/Notifications-service.git
 ```
-2. Instalar los requerimientos del servicio con el comando: 
+2. Install the service requirements with the command: 
 ```sh
 $ pip install -r requirements.txt
 ```
 
 #### Configuration
 
-El archivo de configuración de Notifications Service es config.py. Este archivo está en la carpeta raíz del proyecto y contiene los parámetros de configuración necesarios para que el proyecto funcione. El archivo config.py especifica los siguientes parámetros: 
+The Notifications Service configuration file is config.py. This file is in the root folder of the project and contains the configuration parameters necessary for the project to work. The config.py file specifies the following parameters:
 
 > smart = "https://smartsecurity-webservice.herokuapp.com"  
 fcm = "*******"  
 username = 'daniel'  
 password = "sm2"
 
-- **smart**: El atributo smart contiene la URL de DrivingApp Service. El servicio Notifications Service utiliza DrvingApp Service para consumir los datos de zonas y dispositivos registrados. Recuerde que DrivingApp Service utiliza por defecto el puerto 4005.
-- **fcm**: El atributo fcm contiene el código de la aplicación configurada en Firebase en esta [sección](../userManual/configurations#configuracion-fcm). Para  obtener el código de un proyecto Firebase siga los pasos siguientes.
+- **smart**: The smart attribute contains the DrivingApp Service URL. Notifications Service uses DrvingApp Service to consume data from registered zones and devices. Remember that the DrivingApp Service uses port 4005 by default.
+- **fcm**: The fcm attribute contains the application code configured in Firebase in this [section](../userManual/configurations#configuration-fcm). To obtain the code of a Firebase project, follow the steps below.
 
-1.- Dentro de la consola del proyecto en Firebase, seleccione el símbolo del engrane en la sección **Project Overview** y  en el menú emergente de click en **Configuración del Proyecto**.
+1.- In the project console on Firebase, select the gear symbol in the **Project Overview** section and in the pop-up menu click on **Project Configuration**.
 ![FCM key Server 1](./img/FCMkeyServer1.png)
 
-2.- Ingrese a la sección de **Mensajería en la nube**.
+2.- Enter to the **Cloud Messaging** section. 
 ![FCM key Server 2](./img/FCMkeyServer2.png)
 
-3.- Copie la clave del servidor y agregue esta clave a la variable fcm del archivo config.py 
+3.- Copy the server key and add this key to the fcm variable in the config.py file.
 ![FCM key Server 3](./img/FCMkeyServer3.png)
 
 #### Optional Configuration
 
-Atributos **username** y **password**: Estos atributos son utilizados para suscribir una aplicación web a las notificaciones del servicio Notifications Service. Para recibir las notificaciones de alertas en una aplicación web, configure estos parámetros por medio de web sockets.
+Attributes **username** and **password** in config.py file: These attributes are used to subscribe a web application to the notifications of the service Notifications Service. To receive alert notifications in a web application, configure these parameters through web sockets.
 
 #### Creating Alert Subscription in the Orion ContextBroker
 
-El *Orion ContextBroker* utiliza suscripciones para notificar a aplicaciones o servicios de terceros cambios en las entidades de contexto. Notifications Service se suscribe al Orion ContextBroker para recibir notificaciones sobre cambios en las entidades de alerta, o la creación de nuevas entidades de alerta. Para conocer más acerca de la creación y administración de Suscripciones NGSIv2 en el Orion ContextBroker, consulte el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/user/walkthrough_apiv2/index.html#subscriptions) 
-La suscripción de *Notifications Service* al Orion ContextBroker tiene como objetivo obtener los datos de las entidades de tipo **Alert** que sean actualizadas o creadas. *Notifications Service* recibe los datos de la entidad de alerta en formato `KeyValues`, para más información acerca de este formato consulte este [enlace]( http://fiware.github.io/specifications/ngsiv2/stable/), en la sección **Subscriptions** atributo **attrsFormat**
+The *Orion ContextBroker* uses subscriptions to notify third-party applications or services of changes in context entities. Notifications Service subscribes to the Orion ContextBroker to receive notifications about changes in alert entities, or the creation of new alert entities. To learn more about the creation and administration of NGSIv2 Subscriptions in the Orion ContextBroker, visit the following [link](https://fiware-orion.readthedocs.io/en/master/user/walkthrough_apiv2/index.html#subscriptions).
 
-Ejemplo de la suscripción de Alerta para Notifications Service.
+The subscription of *Notifications Service* to the Orion ContextBroker aims to obtain the data of the entities of type **Alert** that are updated or created. *Notifications Service* receives the data from the alert entity in `KeyValues` format, for more information about this format consult this [link](http://fiware.github.io/specifications/ngsiv2/stable/), in the section **Subscriptions** attribute **attrsFormat**.
+
+Example of the Alert subscription for Notifications Service.
 
 ```json
 {
@@ -244,74 +245,70 @@ Ejemplo de la suscripción de Alerta para Notifications Service.
 }
 ```
 
-Entre los atributos destacables de esta subscripción se encuentran: 
+Among the attributes of this subscription are:
 
-- **entities**: Este atributo tiene como valor un array que especifica mediante los atributos id y type, las entidades que estarán suscritas a la aplicación o servicio. Se puede utilizar una suscripción para más de un tipo de entidad. En la suscripción de ejemplo se especifica que las entidades suscritas a Notifications Service son todas las entidades con **type: Alert**. Los atributos de las entidades de alerta deben cumplir con el modelo de datos **Alert** de FIWARE. Para conocer la especificación oficial de este modelo, consulta este [enlace](https://github.com/Fiware/dataModels/tree/master/specs/Alert)
+- **entities**: This attribute is an array that specifies through the id and type attributes, the entities that will be subscribed to the application or service. A subscription can be used for more than one type of entity. The example subscription specifies that the entities subscribed to the Notifications Service are all entities with **type: Alert**. The attributes of the alert entities must comply with the data model **Alert** of FIWARE. To know more about the official specification of this model, visit this [link](https://github.com/Fiware/dataModels/tree/master/specs/Alert).
 
-Para suscribir Notifications Service a las alertas de la aplicación móvil DrivingApp, el atributo entities debe contener el atributo idPattern con la siguiente expresión regular: **"Alert:Device_Smartphone_.*"**.Así, el Orion ContextBroker enviará las Alertas que inicien con el texto **"Alert:Device_Smartphone_"** en el atributo **id**
+To subscribe Notifications Service to the alerts of DrivingApp, the entities attribute must contain the idPattern attribute with the following regular expression: **"Alert: Device_Smartphone _.*"**. Thus, the Orion ContextBroker will send Alerts that begin with the text **"Alert: Device_Smartphone _"** in the attribute **id**.
 
-- **notification**: Este atributo tiene como valor la URL a la que se enviarán los datos de las alertas que sean creadas o actualizadas. Notifications Service utiliza la ruta **/notify** para recibir las notificaciones de alertas enviadas por el Orion ContextBroker.
+- **notification**: This attribute contains the URL of the service to which will be sent the data of the alerts created or updated. Notifications Service uses the **/notify** path to receive notifications of alerts sent by the Orion ContextBroker.
 
-- **attrsFormat**: En la suscripción de alertas, este atributo debe tener el valor `keyValues`, para que Notifications Service pueda interpretar los datos de alerta enviados por el Orion ContextBroker.
+- **attrsFormat**: In the subscription of alerts, this attribute must have the value `keyValues`, so that Notifications Service can interpret the alert data sent by the Orion ContextBroker.
 
 #### Deployment
 
-El despliegue de Notifications Service puede realizarse de dos maneras: local y con una imagen 
-docker. A continuación se detallan cada una de estas opciones.
+The deployment of Notifications Service can be done in two ways: local and with an docker image. Below are described each of these options.
 
 ##### Local deployment
 
-- Utilizando Python
+- Using Python
 
-Para ejecutar NotificationsService con Python utilice el siguiente comando que  ejecuta el archivo principal del proyecto:  
+To run Notifications Service with Python, use the following command that executes the main file of the project:
 ```sh
 $ python run.py
 ```
 
-- Utilizando Flask
+- Using Flask
 
-Para ejecutar NotificationsService con Flask realice los pasos siguientes:
+To run NotificationsService with Flask, perform the following steps. You can check the official Flask documentation in the following [link](http://flask.pocoo.org/)
 
-1.- Exporte como variable de entorno el nombre del archivo principal del proyecto,  con el comando: 
+1.- Export the name of the project's main file as an environment variable, with the command:
 ```sh
 $ export FLASK_APP=run.py 
 ```
-Puede consultar la documentación oficial de Flask en el siguiente [enlace](http://flask.pocoo.org/) 
 
-2.- Ejecutar el servicio utilizando el siguiente comando: 
+2.- Execute the service using the following command:
 ```sh
 $ flask run
 ```
 
-- Utilizando Gunicorn
+- Using Gunicorn
 
-Ejecuta el siguiente comando: 
+Execute the following command.You can check the official documentation of gunicorn in the following [link](https://gunicorn.org/#docs).
 ```sh
 $ gunicorn app:app 
 ```
-Puede consultar la documentación oficial de gunicorn en el siguiente [enlace](https://gunicorn.org/#docs)
 
 ##### Docker deployment
 
 ##### Requeriments
 
-- **Docker**: Para más información acerca de Docker y su instalación consulta el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
+- **Docker**: For more information about Docker and its installation consult the following [link](https://docs.docker.com/cs-engine/1.12/).
 
-La imagen oficial Notifications Service se llama **cenidetiot/notifications-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace]( https://hub.docker.com/r/cenidetiot/notifications-service/)
+The docker image official of Notifications Service image is **cenidetiot/notifications-service** and the official repository **cenidetiot** is in **DockerHub**, in this [link](https://hub.docker.com/r/cenidetiot/notifications-service/).
 
 ##### Environment variables 
 
-Las variables de entorno de la imagen Docker de NotificationsService  se reemplazan con los datos de la configuración del servicio. 
+The environment variables in the Docker image of NotificationsService are replaced with the data of the service configuration.
 
-- **SMART_SERVICE**: Hace referencia a la variable smart del archivo `config.py`.
-- **FCM_SERVER_TOKEN**: Hace referencia a la variable fcm del archivo `config.py`.
-- **PASSWORD**: Hace referencia a la variable password del archivo `config.py`.
-- **USER_NAME**: Hace referencia a la variable username del archivo `config.py`.
+- **SMART_SERVICE**: Refers to the smart variable in the `config.py` file.
+- **FCM_SERVER_TOKEN**: Refers to the fcm variable in the `config.py` file.
+- **PASSWORD**: Refers to the password variable in the `config.py` file.
+- **USER_NAME**: Refers to the username variable in the `config.py` file.
 
 ##### Execution
 
-La imagen Docker de NotificationsService utiliza por defecto el puerto 3001, el comando  para ejecutar la imagen es el siguiente: 
-
+The Docker image of NotificationsService uses port 3001 by default, the command to execute the image is:
 ```sh
 $ docker run -ti --env="SMART_SERVICE=<DRIVINGAPP_SERVICE>" \ --env="FCM_SERVER_TOKEN=<FCM_SERVER_TOKEN>" --env="PASSWORD=<USER_PASSWORD>" \ --env="USER_NAME=<USER_NAME>" -p 3001:3001 cenidetiot/notifications-service
 ```
