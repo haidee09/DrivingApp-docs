@@ -1,68 +1,68 @@
-## [Servicios Web](#servicios-web)
+## [Web Services](#web-services)
 
-Los servicios web que utiliza la aplicación DrivingApp son: *DrivingApp Service* y *Notifications Service*, los cuales se describen a continuación.
+The web services used by the DrivingApp are: *DrivingApp Service* and *Notifications Service*, which are described below.
 
 ### DrivingApp Service
 
-*DrivingApp Service* es un servicio web que manipula los modelos de datos públicos y privados de la aplicación móvil y los servicios de consulta. Este servicio es una implementación de API REST creada con el entorno NodeJS, y permite administrar la información proporcionada por tres fuentes de datos: el Orion ContextBroker de FIWARE, que se utiliza para administrar la información de contexto; el SGBD MariaDB, que se utiliza para almacenar la información de modelos de datos; y por último CrateDB que es utilizado por la API QuantumLeap de FIWARE para almacenar información de series de tiempo. El repositorio de *DrivingApp Service* lo puedes consultar en este [enlace]( https://github.com/smartsdkCenidet/DrivingApp-service).
+*DrivingApp Service* is a web service that manipulates the public and private data models of the mobile application and the query services. This service is a REST API implementation created with the NodeJS environment, and allows managing the information provided by three data sources: the FIWARE Orion ContextBroker, which is used to manage the context information; the DBMS MariaDB, which is used to store the information of data models; and finally CrateDB which is used by the FIWARE QuantumLeap API to store time series information. The repository of *DrivingApp Service* is on this [link](https://github.com/smartsdkCenidet/DrivingApp-service).
 
-*DrivingApp Service* está compuesto por 1 ruta raíz y 3 APIs con rutas específicas. Estas rutas definen lo siguiente.
+*DrivingApp Service* is composed of 1 root endpoint and 3 APIs with specific routes. These routes define the following.
 
-##### Ruta raíz 
+##### Root endpoint 
 
-- **/**: Este es la ruta principal del servicio web DrivingApp Service. La solicitud a esta ruta raíz comprueba que el despliegue del servicio se ha realizado de manera exitosa. El servicio web responde a esta solicitud con el siguiente mensaje JSON:
+- **/**: This is the main route of the DrivingApp Service. The request to this root route verifies that the service has been successfully deployed. The web service responds to this request with the following JSON message:
 ```json
 { message: 'Welcome to Smart Security Web Service' }
 ```
 
 ##### APIs
 
-- **/api**: Esta es la API RESTFul que administra las entidades de datos públicas y privadas que utiliza la aplicación DrivingApp. La API REST administra las operaciones CRUD de las entidades de datos: zone, parking, road, road segment deviceTokens y user; y esta información se almacena en la base de datos smartsecurity a través el gestor MariaDB. *DrivingApp Service* responde a esta solicitud con el siguiente  mensaje JSON:
+- **/api**: This is the RESTFul API that manages the public and private data entities used by the DrivingApp application. The REST API manages the CRUD operations of the data entities: zone, parking, road, road segment deviceTokens and user; and this information is stored in the smartsecurity database through the MariaDB manager. *DrivingApp Service* responds to this request with the following JSON message:
 ```json
 { message: 'Welcome to DataModels API REST' }
 ```
 
-- **/service**: Este API administra los servicios de consultas especiales para los modelos de datos Alerta y Device, implementando los servicios del Orion ContextBroker de FIWARE. El servicio web responde a esta solicitud con el siguiente mensaje JSON:
+- **/service**: This API manages the services of special queries for the Alert and Device data models, implementing the services of FIWARE Orion ContextBroker. The web service responds to this request with the following JSON message:
 ```json
 { message: 'Welcome to Special Services API' }
 ```
 
-- **/crate**: Este API administra la ruta para consultar la localización de los dispositivos de usuarios en una fecha y hora específicos, utilizando los datos almacenados en CrateDB por medio de la API QuantumLeap de FIWARE. La respuesta a esta solicitud es el siguiente mensaje JSON:
+- **/crate**: This API manages the route to consult the location of user devices at specific date and time, using the data stored in CrateDB through the FIWARE QuantumLeap API. The response to this request is the following JSON message:
 ```json
 { message: 'Welcome to CrateDB-QuantumLeap API' }
 ```
 
-En este [enlace](https://drivingappservice.docs.apiary.io/) puedes consultar la especificación de los modelos de datos utilizados en *DrivingApp Service*.
+In this [link] (https://drivingappservice.docs.apiary.io/) you can check the specification of the data models used in * DrivingApp Service*.
 
 ### Notifications Service
 
-*Notifications Service* es un servicio web que manipula la información de las entidades de Alerta, obtenidas por medio de la notificación de una suscripción creada en el Orion ContextBroker. Cuando este servicio recibe una entidad alerta enviada por el Orion, la replica a los dispositivos móviles que utilizan DrivingApp, utilizando los servicios de Firebase Cloud Messaging. El repositorio de Notifications Service lo puedes encontrar en este [enlace](https://github.com/smartsdkCenidet/Notifications-service) 
+*Notifications Service* is a web service that manipulates the information of the Alert entities, obtained through the notification of a subscription created in the Orion ContextBroker. When Notifications Service receives an alert entity sent by the Orion, replicates the alert to the DrivingApp users, using the services of Firebase Cloud Messaging. The Notifications Service repository is on this [link] (https://github.com/smartsdkCenidet/Notifications-service)
 
-Notifications Service está compuesto por dos rutas descritas a continuación.
+Notifications Service has two routes described below.
 
-##### Ruta raíz
+##### Root endpoint
 
-**/**: Esta es la ruta por defecto de Notifications Service. La solicitud a esta ruta comprueba que el despliegue del servicio se ha realizado de manera exitosa. El servicio web responde a esta solicitud con el siguiente mensaje.
+**/**: This is the default path of Notifications Service. The request to this route verifies if the service has been successfully deployed. The web service responds to this request with the following message.
 
 > **SmartSecurity Notifications is running....**
 © Cenidet 2018
 
-##### Ruta de notificación
+##### Notification endpoint
 
-**/notify**: Esta ruta es utilizada para generar las notificaciones de alerta que se envían a los dispositivos móviles. El servicio lleva a cabo las siguientes funciones en esta ruta:
+**/notify**: This route is used to generate alert notifications that are sent to mobile devices. The service performs the following functions in this route:
 
-1. Recibe la entidad de  alerta.
-2. Obtiene la localización de la alerta
-3. Obtiene las zonas registradas en DrivingApp Service
-4. Determina la zona en la que sucedió la alerta
-5. Obtiene de DrivingApp Service los dispositivos en la zona de la alerta 
-6. Obtiene de DrivingApp Service los dispositivos cercanos a la alerta
-7. Verifica que los dispositivos cercanos y los que están en la zona no se repitan
-8. Crea la lista de dispositivos finales
-9. Obtiene de DrivingApp Service  los tokens de los dispositivos  finales
-10. Envía la notificación a cada uno de los dispositivos 
+1. Receive the alert entity
+2. Get the location of the alert
+3. Get the zones registered in DrivingApp Service
+4. Determine the area where the alert happened
+5. Obtain from DrivingApp Service the devices within the alert area
+6. Get DrivingApp Service devices near the alert
+7. Verify that nearby devices and those in the area are not repeated
+8. Create the list of end devices
+9. Obtain from DrivingApp Service the tokens of the end devices
+10. Send the notification to each of the devices
 
-La ruta **/notify** recibe los datos de las entidades de alerta enviadas por  el Orion ContextBroker a través de una petición POST. El servicio recibe la alerta y extrae la información relevante para enviar la notificación de la alerta a los dispositivos que tienen la aplicación DrivingApp instalada. La entidad de alerta que recibe el servicio debe ser un objeto JSON con el siguiente formato: 
+The **/notify** endpoint receives the data from the alert entities sent by the Orion ContextBroker through a POST request. The service receives the alert and extracts the relevant information to send the notification of the alert to the DrivingApp users devices. The alert entity that receives the service must be a JSON object with the following format: 
 
 ```json
 {
@@ -85,6 +85,4 @@ La ruta **/notify** recibe los datos de las entidades de alerta enviadas por  el
 } 
 ```
 
-*Notifications Service* utiliza los servicios de consulta de DrivingApp Service para obtener los datos de las entidades de zonas y realizar el cálculo para determinar la zona en la que se emitió una alerta. Además de obtener los dispositivos que se encuentran en la zona que ocurrió la alerta y los dispositivos que se encuentran a menos de 100 metros de la alerta.
-
-
+*Notifications Service* uses the query services of DrivingApp Service to obtain the data of the zone entities, and compute the area in which the alert was issued. Also for obtaining the devices list that are in the area in wich the alert ocurred and devices that are 100 meters around of the alert.

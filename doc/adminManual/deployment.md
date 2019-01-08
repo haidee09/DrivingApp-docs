@@ -1,22 +1,23 @@
-## Despliegue de Servicios Web de DrivingApp
+## DrivingApp Web Services deployment
 
 ### DrivingApp Service
 
-#### Requerimientos generales
+#### General Requirements
 
-- **Software de Control de versiones Git**, puede consultar la documentación de Git en el siguiente [enlace]( https://git-scm.com/)
-- **Entorno de ejecución Node.js**, puede consultar la documentación de instalación en el siguiente [enlace](https://nodejs.org/en/download/)
-- **Gestor de paquetes npm o yarn**, puede consultar la documentación npm [aquí]( https://docs.npmjs.com/) y la documentación de yarn [aquí](https://yarnpkg.com/en/docs)
-- **Sistema gestor de base de datos MariaDB** versión 10.4, consulte el siguiente [enlace](https://mariadb.org/download/) para instalar MariaDB
+- **Git Version Control Software**, you can check the Git documentation in the following [link](https://git-scm.com/)
+- **Execution environment Node.js**, you can check the installation documentation in the following [link](https://nodejs.org/en/download/)
+- **Package manager npm or yarn**, you can check the npm documentation [here](https://docs.npmjs.com/) and the documentation of yarn [here](https://yarnpkg.com/en/docs)
+- **MariaDB database manager system** version 10.4, visit the following [link](https://mariadb.org/download/) to install MariaDB.
+- **FIWARE Orion ContextBroker** in a version higher than 1.15.1, you can check the official documentation in the following [link](https://fiware-orion.readthedocs.io/en/master/)
 - **Orion ContextBroker de FIWARE** en una versión superior a la 1.15.1, puede consultar la documentación oficial en el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/) 
-- **IDM - KeyRock de FIWARE** en una versión menor o igual a 6, o **Keystone de Openstack**. Puede consultar el repositorio oficial de IDM - Keyrock en el siguiente [enlace](https://github.com/ging/fiware-idm-deprecated) y la documentación de Keystone - Openstack versión 3 este [enlace] (https://docs.openstack.org/keystone/latest/)
+- **IDM - FIWARE KeyRock** in a version less than or equal to 6, or **Keystone from Openstack**. You can check the official repository of IDM - Keyrock in the following [link] (https://github.com/ging/fiware-idm-deprecated) and the docs of Keystone - Openstack version 3 in this [link](https://docs.openstack.org/keystone/latest/)
 
-#### Requerimientos opcionales
+#### Optional requirements
 
-- Persistencia de datos por series de tiempo: 
-*DrivingApp Service* brinda la funcionalidad de obtener los datos de localización de un usuario en una zona específica. Para implementar esta funcionalidad, es necesario desplegar la *API QuantumLeap de FIWARE* y configurar *DrivingApp Service* para establecer una conexión el SGBD *CrateDB*. Puede obtener más información acerca del despliegue y utilización de la *API de QuantumLeap* en el siguiente [enlace](https://quantumleap.readthedocs.io/en/latest/)
+- Persistence of data by time series:  
+*DrivingApp Service* provides the functionality to obtain the location data of a user in a specific area. To implement this functionality, it is necessary to deploy the *FIWARE QuantumLeap API* and configure *DrivingApp Service* to establish a connection with the SGBD *CrateDB*. You can get more information about the deployment and use of the *QuantumLeap API* in the following [link](https://quantumleap.readthedocs.io/en/latest/)
 
-#### Instalación
+#### Installation
 
 1.- Descargar el código fuente del servicio web desde su repositorio oficial en GitHub utilizando el comando: 
 ```sh
@@ -33,7 +34,7 @@ Opcionalmente, puede utilizar yarn para instalar estos mismos módulos de manera
 $ yarn install 
 ```
 
-#### Configuración
+#### Configuration
 
 El archivo de configuración de *DrivingApp Service* es `config.js` y se encuentra dentro de la carpeta `config/` del proyecto. Debe configurar este archivo con las *URLs* de los servicios que interactúan con *DrivingApp Service*, además del usuario y contraseña utilizados en la base de datos del proyecto.
 
@@ -68,17 +69,17 @@ La conexión entre DrivingApp Service y el Orion ContextBroker se establece a tr
 
 Las versiones del *IDM - KeyRock* menores a las 7 utilizan el puerto 5000 con una versión de *Keystone de Openstack*. Además, el servicio Keystone de Openstack utiliza por defecto el puerto 35357. Debe considerar estos números de puertos al configurar el servicio seleccionado en *DrivingApp Service*, y evitar así confusiones entre ambos servicios.
 
-#### Configuraciones Opcionales
+#### Optional Configurations
 
 - **exports.crate**: La variable **crate** especifica la URL de la base de datos de series de tiempo *CrateDB*. Por defecto *CrateDB* utiliza el puerto 4200 para realizar la conexión con la base de datos.
 
 *DrivingApp Service* utiliza el módulo npm llamado **node-crate** para realizar la conexión con *CrateDB* y consultar los datos almacenados en la base de datos. Puede consultar la documentación de **node-crate** en el siguiente [enlace](https://www.npmjs.com/package/node-crate).
 
-#### Despliegue de DrivingApp Service
+#### DrivingApp Service deployment 
 
 El despliegue de DrivingApp Service puede realizarse de tres maneras: local, como demonio y con una imagen docker. A continuación se detallan cada una de estas opciones.
 
-##### Despliegue Local
+##### Local deployment
 
 DrivingApp Service puede ser ejecutado utilizando npm o yarn como se detalla a continuación:
 
@@ -91,7 +92,7 @@ $ npm run start
 $ yarn start
 ```
 
-##### Despliegue como Demonio
+##### Deployment as a demon 
 
 DrivingApp Service puede ejecutarse además como un demonio, utilizando el módulo npm llamado **forever** como se describe a continuación:
 
@@ -117,15 +118,15 @@ Posteriormente utiliza el siguiente comando (seguido del id del proceso) para de
 $ forever stop <id> 
 ```
 
-##### Despliegue con Docker
+##### Docker deployment
 
-##### Requerimientos
+##### Requeriments
 
 - **Docker**: Para más información acerca de Docker y su instalación consulta el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
 
 La imagen oficial de Docker de *DrivingApp Service* se llama **cenidetiot/drivingapp-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace](https://hub.docker.com/r/cenidetiot/drivingapp-service/).
 
-##### Variables de entorno
+##### Environment variables
 
 Las variables de entorno de la imagen Docker de DrivingApp Service se reemplazan con los datos de los servicios y de los SGBD utilizados por DrivingApp Service.
 Las variables que inician con **MYSQL_** hacen referencia a la variable mysql del archivo `config.js`.
@@ -138,7 +139,7 @@ Las variables que inician con **MYSQL_** hacen referencia a la variable mysql de
 - **KEYROCK**: Hace referencia a la variable keyrock del archivo `config.js`.
 - **CRATEDB**: Hace referencia a la variable crate del archivo `config.js`.
 
-##### Ejecución
+##### Execution 
 
 La imagen Docker de DrivingApp Service se ejecuta por defecto el  puerto 4005, el comando para ejecutar la imagen es el siguiente: 
 ```sh
@@ -147,14 +148,14 @@ $ docker run -p 4005:4005 --env="MYSQL_HOST=<MYSQL_HOST>" --env="MYSQL_DB=<MYSQL
 
 ### Notifications Service
 
-#### Requerimientos
+#### Requeriments
 
 - **Software de Control de versiones Git**, puede consultar la documentación de Git en el siguiente [enlace](https://git-scm.com/)
 - **Python** versión 2.7.X, para instalar Python en su sistema operativo consulte el siguiente [enlace](https://www.python.org/downloads/release/python-2715/)
 - Manejador de paquetes pip para Python, para instalar este paquete consulta el siguiente [enlace]( https://pip.pypa.io/en/stable/installing/)
 - Servicio web DrivingApp Service, consulta el repositorio oficial de este servicio en el siguiente [enlace](https://github.com/smartsdkCenidet/smartsecurity-web-service.)
 
-#### Instalación 
+#### Installation
 
 1. Descargar el código de Notifications Service desde el repositorio oficial con el comando: 
 ```sh
@@ -165,7 +166,7 @@ $ git clone https://github.com/smartsdkCenidet/Notifications-service.git
 $ pip install -r requirements.txt
 ```
 
-#### Configuración 
+#### Configuration
 
 El archivo de configuración de Notifications Service es config.py. Este archivo está en la carpeta raíz del proyecto y contiene los parámetros de configuración necesarios para que el proyecto funcione. El archivo config.py especifica los siguientes parámetros: 
 
@@ -186,11 +187,11 @@ password = "sm2"
 3.- Copie la clave del servidor y agregue esta clave a la variable fcm del archivo config.py 
 ![FCM key Server 3](./img/FCMkeyServer3.png)
 
-#### Configuración Opcional
+#### Optional Configuration
 
 Atributos **username** y **password**: Estos atributos son utilizados para suscribir una aplicación web a las notificaciones del servicio Notifications Service. Para recibir las notificaciones de alertas en una aplicación web, configure estos parámetros por medio de web sockets.
 
-#### Creación de Suscripción de Alertas en el Orion ContextBroker
+#### Creating Alert Subscription in the Orion ContextBroker
 
 El *Orion ContextBroker* utiliza suscripciones para notificar a aplicaciones o servicios de terceros cambios en las entidades de contexto. Notifications Service se suscribe al Orion ContextBroker para recibir notificaciones sobre cambios en las entidades de alerta, o la creación de nuevas entidades de alerta. Para conocer más acerca de la creación y administración de Suscripciones NGSIv2 en el Orion ContextBroker, consulte el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/user/walkthrough_apiv2/index.html#subscriptions) 
 La suscripción de *Notifications Service* al Orion ContextBroker tiene como objetivo obtener los datos de las entidades de tipo **Alert** que sean actualizadas o creadas. *Notifications Service* recibe los datos de la entidad de alerta en formato `KeyValues`, para más información acerca de este formato consulte este [enlace]( http://fiware.github.io/specifications/ngsiv2/stable/), en la sección **Subscriptions** atributo **attrsFormat**
@@ -255,12 +256,12 @@ Para suscribir Notifications Service a las alertas de la aplicación móvil Driv
 
 - **attrsFormat**: En la suscripción de alertas, este atributo debe tener el valor `keyValues`, para que Notifications Service pueda interpretar los datos de alerta enviados por el Orion ContextBroker.
 
-#### Despliegue
+#### Deployment
 
 El despliegue de Notifications Service puede realizarse de dos maneras: local y con una imagen 
 docker. A continuación se detallan cada una de estas opciones.
 
-##### Despliegue Local
+##### Local deployment
 
 - Utilizando Python
 
@@ -292,15 +293,15 @@ $ gunicorn app:app
 ```
 Puede consultar la documentación oficial de gunicorn en el siguiente [enlace](https://gunicorn.org/#docs)
 
-##### Despliegue con Docker
+##### Docker deployment
 
-##### Requerimientos 
+##### Requeriments
 
 - **Docker**: Para más información acerca de Docker y su instalación consulta el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
 
 La imagen oficial Notifications Service se llama **cenidetiot/notifications-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace]( https://hub.docker.com/r/cenidetiot/notifications-service/)
 
-##### Variables de entorno
+##### Environment variables 
 
 Las variables de entorno de la imagen Docker de NotificationsService  se reemplazan con los datos de la configuración del servicio. 
 
@@ -309,7 +310,7 @@ Las variables de entorno de la imagen Docker de NotificationsService  se reempla
 - **PASSWORD**: Hace referencia a la variable password del archivo `config.py`.
 - **USER_NAME**: Hace referencia a la variable username del archivo `config.py`.
 
-##### Ejecución
+##### Execution
 
 La imagen Docker de NotificationsService utiliza por defecto el puerto 3001, el comando  para ejecutar la imagen es el siguiente: 
 
