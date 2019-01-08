@@ -65,25 +65,25 @@ The user driving a car can automatically identify an incorrect driving event thr
 
 Automatic alerts in vehicle driving are represented by the following colors:
 
-1.- Botón de evento de velocidad: 
+1.- Speed event button:
 
-- Color Naranja: indica que la velocidad del vehículo está por debajo del límite mínimo permitido.
-- Color Rojo: indica que el vehículo ha excedido el límite de velocidad máximo permitido.
-- Color Verde: indica que está conduciendo dentro del rango de límite de velocidad permitida. 
+- Orange color: indicates that the speed of the vehicle is below the minimum limit allowed.
+- Red color: indicates that the vehicle has exceeded the maximum speed limit allowed.
+- Green color: indicates that you are driving within the allowed speed limit range.
 
-2.- Botón de evento de paradas:
+2.- Sudden stops event button:
 
-- Color azul: indica que el vehículo se encuentra acelerando.
-- Color Naranja: significa que el vehículo disminuye su velocidad.
-- Color Rojo: indica que el vehículo se ha detenido.
-- Color verde: significa que está conduciendo de forma correcta.
+- Blue color: indicates that the vehicle is accelerating.
+- Orange Color: means that the vehicle slows down.
+- Red color: indicates that the vehicle has stopped.
+- Green color: means you are driving correctly.
 
-3.- Botón de evento de contrasentido:
+3.- Wrong way event button:
 
-- Color verde: indica que el usuario está conduciendo el vehículo en el sentido correcto de la calle.
-- Color rojo: indica que el usuario está conduciendo el vehículo en el sentido incorrecto de la calle.
+- Green color: indicates that the user is driving the vehicle in the correct direction of the street.
+- Red color: indicates that the user is driving the vehicle in the wrong direction of the street.
 
-Las siguientes imágenes muestran ejemplos de la vista de manejo, donde se detectan diferentes eventos mediante la iluminación de cada uno de los botones.
+The following images show examples of the driving view, where different events are detected by lighting each of the buttons.
 
 ![Vistas de Manejo](img/drivingapp/vistasManejo1.png)
 
