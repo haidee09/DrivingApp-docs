@@ -5,7 +5,7 @@ The DrivingApp project contains configuration files to modify the URLs of the se
 
 #### 1.- Download the DrivingApp project
 
-You can consult the DrivingApp project in this [repository] (https://github.com/cenidetiot/DrivingApp.git) of Github. If you want to download the project through the git version control software, run the following console command:
+You can consult the DrivingApp project in this [repository](https://github.com/cenidetiot/DrivingApp.git) of Github. If you want to download the project through the git version control software, run the following console command:
 
 ```sh
 git clone https://github.com/cenidetiot/DrivingApp.git.  
@@ -15,7 +15,7 @@ In addition, Github also provides the option to download a project in a .zip fil
 
 #### 2.- Open the DrivingApp project in Android Studio
 
-Once you have downloaded the DrivingApp project, open it with the Android Studio development environment. For more information about downloading and configuring Android Studio visit the following [link](https://developer.android.com/studio/)
+Once you have downloaded the DrivingApp project, open it with the Android Studio development environment. For more information about downloading and configuring Android Studio visit the following [link](https://developer.android.com/studio/).
 
 **NOTE**: The Android SDK number 23 is configured as the minimum version of the DrivingApp project.
 
@@ -25,7 +25,7 @@ Open the DrivingApp project in Android Studio and configure the following:
 
 ##### 3.1 Configure the connection with an Orion ContextBroker instance
 
-The `config.properties` file of the DrivingApp project is located in the path: ngsi/src/main/assets/, and contains the configuration properties for the connection to an Orion ContetxBroker instance. This file defines the properties: `host`,` port` and `apiversion`, which specify the following:
+The `config.properties` file of the DrivingApp project is located in the path: ngsi/src/main/assets/, and contains the configuration properties for the connection to an Orion ContetxBroker instance. This file defines the properties: `host`, `port` and `apiversion`, which specify the following:
 
 - The `host` property defines the url or IP of the Orion ContextBroker instance.
 - The `port` property specifies the port of the Orion ContextBroker instance defined.
@@ -41,7 +41,7 @@ http.apiversion = v2 // Change if for your Orion api version
 
 ##### 3.2	Configure DrivingAppService
 
-DrivingApp uses DrivingApp Service to manipulate the public entities (based on FIWARE data models) and the private entities created for the project. DrivingAppService provides a RESTFul API for the administration of these public and private entities using the DrivingApp mobile application. In addition, DrivingApp also uses the DrivingAppService service to perform context queries and manage alert information. You can check the source code of this web service on this [link](https://github.com/cenidetiot/smartsecurity-web-service)
+DrivingApp uses DrivingApp Service to manipulate the public entities (based on FIWARE data models) and the private entities created for the project. DrivingAppService provides a RESTFul API for the administration of these public and private entities using the DrivingApp mobile application. In addition, DrivingApp also uses the DrivingAppService service to perform context queries and manage alert information. You can check the source code of this web service on this [link](https://github.com/cenidetiot/smartsecurity-web-service).
 
 To configure the DrivingApp Service URL in the DrivingApp project, you must modify the `ConfigServer.java` file. This file is on the route: cenidetsdk/src/main/java/mx/edu/cenidet/cenidetsdk/utilities/ from the DrivingApp project.
 
@@ -51,12 +51,12 @@ An example of the configuration of this file is the following:
 http_host("https://smartsecurity-webservice.herokuapp.com")
 ```
 
-##### [3.3 Configuring the Firebase Cloud Messaging (FCM) project for the DrivingApp application](#configuracion-fcm)
+##### [3.3 Configuring the Firebase Cloud Messaging (FCM) project for the DrivingApp application](#configuration-fcm)
 
 Firebase Cloud Messaging (FCM) is a cross-platform solution in the cloud for sending messages and notifications to Android devices, iOS and web applications. This service is provided by Firebase and can currently be used at no cost.
 The DrivingApp application uses FCM services to replicate alert notifications to users' devices. The algorithms of the application for sending alerts can be used to replicate and receive alert notifications, without making additional modifications to the code. On the other hand, to implement personalized alert notifications in DrivingApp or in another application, perform the instructions presented below to configure the FCM services in the mobile application.
 
-1.- Access the Firebase site on this [link] (https://console.firebase.google.com/) and select the option of *Add Project* 
+1.- Access the Firebase site on this [link](https://console.firebase.google.com/) and select the option of *Add Project* 
 
 ![Bienvenida Firebase](img/fcm/1.png)
 
@@ -78,7 +78,7 @@ The DrivingApp application uses FCM services to replicate alert notifications to
 
 ![Archivo de configuración en proyecto DrivingApp](img/fcm/6.png)
 
-6.- Modify the `build.gradle` file of the project and the` build.gradle` file of the application as shown in the image, to use the Google services plugin for Gradle. This configuration has already been made in the DrivingApp project, however, if you are creating a new project from the DrivingApp code you must modify the files as indicated.
+6.- Modify the `build.gradle` file of the project and the `build.gradle` file of the application as shown in the image, to use the Google services plugin for Gradle. This configuration has already been made in the DrivingApp project, however, if you are creating a new project from the DrivingApp code you must modify the files as indicated.
 
 ![Archivos de los servicios de Gradle](img/fcm/7.png)
 

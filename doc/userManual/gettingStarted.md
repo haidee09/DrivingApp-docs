@@ -1,6 +1,6 @@
 ## Installation and execution of DrivingApp
 
-The mobile application is available in the Google Play Store with the name DrivingApp, developed by Alicia Martínez - CENIDET. [Here] (https://play.google.com/store/apps/details?id=mx.edu.cenidet.app) you can find the download link for the application, or you can search it in the Google Play Store as shown next image:
+The mobile application is available in the Google Play Store with the name DrivingApp, developed by Alicia Martínez - CENIDET. [Here](https://play.google.com/store/apps/details?id=mx.edu.cenidet.app) you can find the download link for the application, or you can search it in the Google Play Store as shown next image:
 
 ![Buscar DrivingApp en Google Play Store](img/drivingapp/descargaApp1.png)
 

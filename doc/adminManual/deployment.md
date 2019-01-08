@@ -4,39 +4,40 @@
 
 #### General Requirements
 
-- **Git Version Control Software**, you can check the Git documentation in the following [link](https://git-scm.com/)
-- **Execution environment Node.js**, you can check the installation documentation in the following [link](https://nodejs.org/en/download/)
-- **Package manager npm or yarn**, you can check the npm documentation [here](https://docs.npmjs.com/) and the documentation of yarn [here](https://yarnpkg.com/en/docs)
+- **Git Version Control Software**, you can check the Git documentation in the following [link](https://git-scm.com/).
+- **Execution environment Node.js**, you can check the installation documentation in the following [link](https://nodejs.org/en/download/).
+- **Package manager npm or yarn**, you can check the npm documentation [here](https://docs.npmjs.com/) and the documentation of yarn [here](https://yarnpkg.com/en/docs).
 - **MariaDB database manager system** version 10.4, visit the following [link](https://mariadb.org/download/) to install MariaDB.
-- **FIWARE Orion ContextBroker** in a version higher than 1.15.1, you can check the official documentation in the following [link](https://fiware-orion.readthedocs.io/en/master/)
-- **Orion ContextBroker de FIWARE** en una versión superior a la 1.15.1, puede consultar la documentación oficial en el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/) 
-- **IDM - FIWARE KeyRock** in a version less than or equal to 6, or **Keystone from Openstack**. You can check the official repository of IDM - Keyrock in the following [link] (https://github.com/ging/fiware-idm-deprecated) and the docs of Keystone - Openstack version 3 in this [link](https://docs.openstack.org/keystone/latest/)
+- **FIWARE Orion ContextBroker** in a version higher than 1.15.1, you can check the official documentation in the following [link](https://fiware-orion.readthedocs.io/en/master/).
+- **Orion ContextBroker de FIWARE** en una versión superior a la 1.15.1, puede consultar la documentación oficial en el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/). 
+- **IDM - FIWARE KeyRock** in a version less than or equal to 6, or **Keystone from Openstack**. You can check the official repository of IDM - Keyrock in the following [link](https://github.com/ging/fiware-idm-deprecated) and the docs of Keystone - Openstack version 3 in this [link](https://docs.openstack.org/keystone/latest/).
 
 #### Optional requirements
 
 - Persistence of data by time series:  
-*DrivingApp Service* provides the functionality to obtain the location data of a user in a specific area. To implement this functionality, it is necessary to deploy the *FIWARE QuantumLeap API* and configure *DrivingApp Service* to establish a connection with the SGBD *CrateDB*. You can get more information about the deployment and use of the *QuantumLeap API* in the following [link](https://quantumleap.readthedocs.io/en/latest/)
+
+*DrivingApp Service* provides the functionality to obtain the location data of a user in a specific area. To implement this functionality, it is necessary to deploy the *FIWARE QuantumLeap API* and configure *DrivingApp Service* to establish a connection with the SGBD *CrateDB*. You can get more information about the deployment and use of the *QuantumLeap API* in the following [link](https://quantumleap.readthedocs.io/en/latest/).
 
 #### Installation
 
-1.- Descargar el código fuente del servicio web desde su repositorio oficial en GitHub utilizando el comando: 
+1.- Download the source code of the web service from its official repository on GitHub using the command:
 ```sh
 $ git clone https://github.com/smartsdkCenidet/DrivingApp-service.git
 ```
 
-2.- Instalar los módulos npm requeridos por el servicios web, utilizando el siguiente comando dentro de la carpeta del proyecto: 
+2.- Install the npm modules required by the web services, using the following command within the project folder:
 ```sh
 $ npm install
 ```
 
-Opcionalmente, puede utilizar yarn para instalar estos mismos módulos de manera más rápida, utilizando el comando: 
+Optionally, you can use yarn to install these same modules quickly, using the command: 
 ```sh
 $ yarn install 
 ```
 
 #### Configuration
 
-El archivo de configuración de *DrivingApp Service* es `config.js` y se encuentra dentro de la carpeta `config/` del proyecto. Debe configurar este archivo con las *URLs* de los servicios que interactúan con *DrivingApp Service*, además del usuario y contraseña utilizados en la base de datos del proyecto.
+The configuration file for *DrivingApp Service* is `config.js`, this file is located inside the `config/` folder of the project. You must configure this file with the *URLs* of the services that interact with *DrivingApp Service*, as well as the user and password used in the project database. This is an example of the `config.js` file.
 
 ```json
 exports.mysql = {
@@ -50,17 +51,25 @@ exports.keyrock = "URL" //KeyRock URL
 exports.crate = "URL"; // CrateDB Host
 ```
 
-A continuación se describen a detalle cada uno de los parámetros del archivo `config.js`:
+Next, each of the parameters of the `config.js` file is described in detail: 
 
-- **exports.mysql**: Objeto JSON que contiene los parámetros para la conexión con la base de datos de *MariaDB*. Esta conexión se realiza utilizando el módulo npm llamado *Sequelize*. Los datos que utiliza *Sequelize* para realizar la conexión con la base de datos son los siguientes:
-    * **host**: URL en la que se encuentra MariaDB.
-    * **db**: Nombre de la base de datos con la que se establece la conexión.
-    * **user**: Nombre de usuario que tiene los privilegios para LEER, EDITAR, CREAR y ELIMINAR datos en la base de datos especificada.
-    * **password**: Contraseña de acceso para el nombre de usuario especificado.
+- **exports.mysql**: JSON object that contains the parameters for the connection to the *MariaDB* database. The connection is performed using the npm module *Sequelize*. The data used by *Sequelize* to establish the connection with the database are the following:
+  * **host**: URL where MariaDB is located.
+  * **db**: Name of the database.
+  * **user**: User name that has the privileges to READ, EDIT, CREATE and DELETE data in the specified database.
+  * **password**: Access password for the specified username.
 
-La conexión entre *DrivingApp Service* y *MariaDB* se realiza por defecto a través del puerto 3306, si desea modificar la configuración de *Sequelize* edite el archivo `DataModelsAPI/db/sequelize.js`. Para más información consulte la documentación de *Sequelize* en este [enlace](http://docs.sequelizejs.com/).
+Objeto JSON que contiene los parámetros para la conexión con la base de datos de *MariaDB*. Esta conexión se realiza utilizando el módulo npm llamado *Sequelize*. Los datos que utiliza *Sequelize* para realizar la conexión con la base de datos son los siguientes:
+  * **host**: URL en la que se encuentra MariaDB.
+  * **db**: Nombre de la base de datos con la que se establece la conexión.
+  * **user**: Nombre de usuario que tiene los privilegios para LEER, EDITAR, CREAR y ELIMINAR datos en la base de datos especificada.
+  * **password**: Contraseña de acceso para el nombre de usuario especificado.
 
-- **exports.context**: La variable **context** debe contener la URL de la instancia Orion ContextBroker utilizada. Esta URL debe incluir el protocolo HTTP o HTTPS para que *DrivingApp Service* pueda conectarse al Orion ContextBroker,además de la versión de la API NGSI utilizada. Un ejemplo de una URL de instancia Orion ContextBroker es: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
+The connection between *DrivingApp Service* and *MariaDB* is done by default through port 3306, if you want to modify the configuration of *Sequelize*  edit the file `DataModelsAPI/db/ sequelize.js`. For more information consult the *Sequelize* documentation on this [link] (http://docs.sequelizejs.com/).
+
+- **exports.context**: The variable **context** must contain the URL of the Orion ContextBroker instance used. This URL must include the HTTP or HTTPS protocol so that *DrivingApp Service* can connect to the Orion ContextBroker, as well as the version of the NGSI API used. An URL example of an Orion ContextBroker instance is: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
+
+La variable **context** debe contener la URL de la instancia Orion ContextBroker utilizada. Esta URL debe incluir el protocolo HTTP o HTTPS para que *DrivingApp Service* pueda conectarse al Orion ContextBroker, además de la versión de la API NGSI utilizada. Un ejemplo de una URL de instancia Orion ContextBroker es: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
 
 La conexión entre DrivingApp Service y el Orion ContextBroker se establece a través de la librería NGSI de JavaScript, puede consultar la documentación oficial de esta librería en este [enlace](https://ngsi-js-library.readthedocs.io/en/latest/).
 
