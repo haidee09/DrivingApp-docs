@@ -1,8 +1,8 @@
-## Despliegue del sistema con Docker Compose
+## DrivingApp deployment with Docker Compose
 
-Docker Compose es una herramienta para definir y ejecutar aplicaciones Docker de múltiples contenedores. El sistema de DrivingApp puede desplegarse a través de esta herramienta. La siguiente tabla muestra la estructura del sistema utilizando contenedores Docker.
+Docker Compose is a tool for creating and running multi-container Docker applications. The DrivingApp system can be deployed through this tool. The following table shows the structure of DrivingApp system using Docker containers.
 
-|Docker Image|Version|Container name|Ports|Depends on|
+|Imagen Docker|Versión|Nombre del contenedor|Puertos|Depende de|
 |---------|-----------|----------|----------|-----------|
 |fiware/orion|1.15.1|orion|1026|mongo|
 |mongo|3.2|mongo|27017|
@@ -15,30 +15,30 @@ Docker Compose es una herramienta para definir y ejecutar aplicaciones Docker de
 |cenidetiot/notifications-service|latest|notifications|3001|smartservice|
 |ging/fiware-idm|latest|idm|5000|
 
-### Requerimientos
+### Requeriments
 
-- **Software de control de versiones Git**, puedes consultar la documentación de Git en este [enlace]( https://git-scm.com/).
-- **Docker**: Puede consultar la instalación de Docker en el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
-- **Docker Compose**: Puede consultar la instalación de docker-compose en  el siguiente [enlace](https://docs.docker.com/compose/install/).
+- **Git version control software**, you can check the Git documentation on this [link](https://git-scm.com/).
+- **Docker**, you can check the installation of Docker in the following [link](https://docs.docker.com/cs-engine/1.12/).
+- **Docker Compose**, you can check the installation of docker-compose in the following [link](https://docs.docker.com/compose/install/).
 
-### Ejecución 
+### Execution 
 
-1.- Descargar los archivos del repositorio oficial de DrivingApp-docker:
+1.- Download the files from the official repository of DrivingApp-docker:
 
     $ git clone https://github.com/smartsdkCenidet/DrivingApp-docker.git
 
 
-2.- Ejecutar el archivo docker-compose.yml utilizando el comando: 
+2.- Run the file docker-compose.yml using the command:
 
     $ docker-compose up -d 
 
 
-**docker-compose** descarga y ejecuta automáticamente las imágenes docker y los contenedores de cada imagen, este proceso puede tardar algunos minutos. La siguiente imagen muestra este proceso en consola:
+**docker-compose** automatically downloads and executes docker images and containers for each image, this process may take a few minutes. The following image shows this process in console:
 
 ![docker-compose up -d](./img/dockerDeploy1.png)
 
 
-3.- Verificar que todos los contenedores están ejecutándose con el comando:
+3.- Verify that all containers are running with the command:
 
     $ docker ps 
 

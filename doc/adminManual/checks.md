@@ -1,65 +1,69 @@
-## [Chequeo manual de ejecución de servicios en contenedores Docker](#chequeo-manual-de-ejecucion-de-servicios-en-contenedores-docker)
+## [Manual health check](#manual-health-check)
 
-Para verificar que los servicios se comunican correctamente, es necesario revisar los logs de los contenedores docker de QuantumLeap y Notifications Service. Para revisar estos contenedores sigua las siguientes instrucciones:
+To verify that the services communicate correctly, it is necessary to check the logs of docker containers QuantumLeap and Notifications Service. To review these containers follow the following instructions:
 
-1.- Ejecutar el siguiente comando en consola para revisar los logs del contenedor QuantumLeap:
+1.- Execute the following command in console to check the logs of QuantumLeap container:
 
 ```sh
 $ docker logs drivingapp-docker_quantumleap_1
 ```
 
-La siguiente imagen muestra la petición HTTP de tipo POST a la ruta /v2/notify de QuantumLeap, señalada con flechas rojas. La respuesta que retorna QuantumLeap  a esta petición es de `status: 200`, lo que significa que la conexión entre el Orion ContextBroker y QuantumLeap se realizó de manera correcta.
+The following image shows the request POST to the endpoint /v2/notify of QuantumLeap, indicated with red arrows. The response that QuantumLeap returns to this request is `status: 200`, which means that the connection between the Orion ContextBroker and QuantumLeap was done correctly.
 
 ![Docker Logs QuantumLeap](./img/manualReview1.png)
 
-2.- Ejecutar el siguiente comando en consola para revisar los logs de Notifications Service:
+2.- Execute the following command in the console to check the logs of Notifications Service container:
 
-La siguiente imagen muestra la petición HTTP de tipo POST a la ruta /notify de Notifications Service, señalada con flechas rojas. La respuesta que retorna Notifications Service a esta petición es de status 201, lo que significa que la conexión entre el Orion Context Broker y Notifications Service se realizó de manera correcta.
+```sh
+$ docker logs drivingapp-docker_notifications_1
+```
+
+The following image shows the POST request to the endpoint /notify, indicated by red arrows. The response returned by Notifications Service to this request is `status: 201`, which means that the connection between the Orion Context Broker and Notifications Service was done correctly.
 
 ![Docker Logs Notificatiosn Service](./img/manualReview2.png)
 
-***NOTA***: El nombre de los contenedores de QuantumLeap y de Notifications Service pueden cambiar, esto depende de diversos factores como: el nombre de la carpeta o el número de veces que se ejecutan los contenedores con docker compose. 
+***NOTA***: The name of the QuantumLeap and Notifications Service containers can change, this depends on several factors such as: the name of the folder or the number of times the containers are run with docker compose. 
 
-Para  verificar el nombre de los contenedores docker utiliza el comando:
+To verify the name of the docker containers use the command:
 
 ```sh
 $ docker ps 
 ```
 
-## Chequeo Automático de Ejecución de Servicios
+## Automated health check 
 
-El chequeo automático de ejecucion de servicios se realiza a través del script en Python **test.py**. Este script realiza automáticamente la creación de las suscripciones necesarias y la ejecución de las pruebas unitarias de servicios. Para ejecutar este el script **test.py** siga las siguientes indicaciones: 
+The automatic check of running services is through the Python script **test.py**. This script automatically performs the creation of  necessary subscriptions and the unit tests of services. To execute this script follow the indications: 
 
-### Requerimientos
+### Requeriments
 
-- Python 2.7.X, consulte este [enlace](https://www.python.org/downloads/release/python-2715/) para más información acerca de cómo instalar Python en su sistema operativo.
+- **Python 2.7.X**, visit this [link](https://www.python.org/downloads/release/python-2715/) for more information about how to install Python on your operating system.
 
-### Ejecutar Script
+### Run script
 
-Escriba el siguiente comando en consola para ejecutar el script test.py, dentro de la carpeta de DrivingApp-docker:
+Type the following command in the console to run test.py script, inside the DrivingApp-docker folder:
 
 ```sh
 $ python test.py
 ```
 
-Si el script no encontró ningún fallo en el despliegue de servicios, el resultado en consola mostrará lo siguiente: 
+If the script did not find any failure in the service deployment, the result in the console will show the following:
 
 ![Ejecución script test.py](./img/automatedReview1.png)
 
-El script muestra en consola los siguientes mensajes:
+The script shows the following messages in console:
 
-- El mensaje "OK" en color verde que indica que las acciones se efectuaron correctamente.
-- El mensaje "CREATED" de color verde que indica la creación correcta de las entidades en cada servicio. Junto a este mensaje se muestra la dirección del servicio para consultar la entidad creada.
+- The message "OK" in green indicates the actions were carried out correctly.
+- The message "CREATED" in green indicates the correct creation of the entities in each service, and next to this message is shown the address of the service to consult the created entity.
 
-***NOTA***: El script **test.py** no verifica la comunicación entre servicios, para esto es necesario revisar de forma manual los logs de los contenedores docker de QuantumLeap y Notifications Service, tal como se describe en  esta [sección](./checks.md#chequeo-manual-de-ejecucion-de-servicios-en-contenedores-docker).
+***NOTA***: The script **test.py** does not verify communication between services, for this it is necessary to manually review the logs of the docker containers of QuantumLeap and Notifications Service, as described in this [section](./checks.md#manual-health-check).
 
-La siguiente imagen muestra un ejemplo de algunos errores que puede retornar el script **test.py**, marcados en color rojo.
+The following image shows an example of errors that the script may return, marked in color red.
 
 ![Posibles errores que retorna el script test.py](./img/automatedReview2.png)
 
-El script **test.py** le permite ejecutar la revisión de cada servicio de manera separada. A través de comandos se puede verificar que los servicios se ejecutan correctamente y crear de suscripciones de cada servicio; además de ejecutar las pruebas de funcionalidad de cada servicio. A continuación se indican los comandos utilizados en el script para realizar cada una de estas acciones.
+The **test.py** script allows you to run the check of each service separately. Through commands you can verify the services that are running correctly and create subscriptions for each service; ans also you can running the functionality test of each service. Below are the commands used in the script to perform each of these actions.
 
-1.- Para revisar la ejecución correcta de cada servicio utilice en siguiente comando en consola:
+1.- To check the correct running of each service, use the following console command:
 
 ```sh
 $ python test.py check
@@ -67,7 +71,7 @@ $ python test.py check
 
 ![Revisar la ejecución de cada servicio](./img/automatedReview3.png)
 
-2.- Para crear las suscripciones en el Orion ContextBroker utilice el siguiente comando en consola:
+2.- To create the subscriptions in the Orion ContextBroker use the following console command: 
 
 ```sh
 $ python test.py create_subs
@@ -75,9 +79,9 @@ $ python test.py create_subs
 
 ![Creación e suscripciones en el Orion](./img/automatedReview4.png)
 
-3.- Para ejecutar las pruebas de funcionalidad de cada servicio se realiza lo siguiente:  
+3.- To run the functionality tests of each service, do the following:
 
-- Preparar los servicios creando entidades de prueba utilizadas por cada servicio del sistema. El comando para preparar los servicios es: 
+- Prepare services by creating test entities used by each system service. The command to prepare the services is: 
 
 ```sh
 $ python test.py prepare
@@ -85,7 +89,7 @@ $ python test.py prepare
 
 ![Preparar los servicios creando entidades](./img/automatedReview5.png)  
 
-- Crear una entidad de alerta para verificar la comunicación entre los servicios desplegados, utilizando el siguiente comando:
+- Create an alert entity to verify the communication between the deployed services, using the following command: 
 
 ```sh
 $ python test.py create_alert
@@ -93,4 +97,4 @@ $ python test.py create_alert
 
 ![Crear una entidad de alerta](./img/automatedReview6.png)
 
-***NOTA***: Cada vez que es utilizado este comando se crea una alerta con id diferente. Observe que en la sección de [integración de servicios](./tests.md#creacion-de-entidades-para-la-integracion-de-servicios) se crea también una alerta en el paso 5 pero con un id determinado. 
+***NOTA***: Each time the above command is used, an alert with a different `id` is created. Note that in the section of [services integration](./tests.md#services-integration-creating-entities) an alert is also created in step 5, but this alert is created with a specific id.

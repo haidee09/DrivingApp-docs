@@ -1,20 +1,20 @@
-## Pruebas Unitarias de Ejecución de Servicios
+## Tests services execution 
 
-Para revisar la correcta ejecución del sistema de DrivingApp ejecute los siguientes comandos por servicio:
+To review the correct execution of the DrivingApp system, execute the following commands per service:
 
 ### Orion ContextBroker
 
-Para revisar la ejecución del Orion ContextBroker utilice el siguiente comando en consola:
+To review the execution of the Orion ContextBroker use the following console command:
 
 ```sh
 $ curl -X GET http://0.0.0.0:1026/version -H 'Accept: application/json'
 ```
 
-La respuesta del Orion debe retornar **status: 200 OK**
+The Orion ContextBroker must return **status: 200 OK**
 
 ### API QuantumLeap
 
-Para revisar la ejecución de la API de QuantumLeap utilice el siguiente comando en consola:
+To review the execution of the QuantumLeap API use the following console command:
 ```sh
 $ curl -X GET http://0.0.0.0:8668/v2/version -H 'Accept: application/json'
 ```
@@ -23,65 +23,67 @@ La respuesta de la API QuantumLeap debe retornar **status: 200 OK**
 
 ### DrivingApp Service
 
-Verifica la ejecución de cada una de las rutas API de DrivingApp Service, utilizando los siguientes comandos en consola:
+Verify the execution of every endpoint of DrivingApp Service API, using the following console commands:
 
-- Para revisar la ruta  /api utilice el siguiente comando:
+- To check the endpoint /api use the following command: 
 
 ```sh
 $ curl -X GET http://0.0.0.0:4005/api -H 'Accept: application/json'
 ```
 
-La ruta /api debe retornar como respuesta el siguiente mensaje:
+The endpoint /api must return the following message as response: 
+
 ```json
 { message: 'Welcome to DataModels API REST' }
 ```
 
-- Para revisar la ruta /service utilice el siguiente comando:
+- To check the endpoint /service use the following command:
 
 ```sh
 $ curl -X GET http://0.0.0.0:4005/service -H 'Accept: application/json'
 ```
 
-La ruta /service debe retornar como respuesta el siguiente mensaje:
+The endpoint /service must return the following message as response: 
+
 ```json
 { message: 'Welcome to Special Services API' }
 ```
 
-- Para revisar la ruta /create utilice el siguiente comando:
+- To check the endpoint /create use the following command: 
 
 ```sh
 $ curl -X GET http://0.0.0.0:4005/crate -H 'Accept: application/json'
 ```
 
-La ruta /crate debe retornar como respuesta el siguien mensaje:
+The endpoint /crate must return the following message as response: 
+
 ```json
 { message: 'Welcome to CrateDB-QuantumLeap API' }
 ```
 
 ### Notifications Service
 
-- Para revisar la ejecución de Notifications Service utilice el siguiente comando en consola: 
+- To review the running of Notifications Service use the following console command:
 
 ```sh
 $ curl -X GET http://0.0.0.0:3001/
 ```
 
-Notifications Service debe retornar como respuesta el mensaje siguiente en el navegador:
+Notifications Service must return the following message in the browser as a response:
     
 > SmartSecurity Notifications is running....  
 > © Cenidet 2018
 
-***NOTA***: Observe que la respuesta de Notifications Service retorna la cabecera `Content-Type`: `text/html`, a diferencia de las APIs de DrivingApp Service que retornan como respuesta la cabecera `Content-Type`: `application/json`
+***NOTA***: Note that the response of Notifications Service returns the header `Content-Type` :`text/html`, unlike the APIs of DrivingApp Service that return the header `Content-Type`: `application/json`
 
 ### IDM- KEYROCK /KEYSTONE
 
-- Para revisar la ejecución del IDM-KeyRock o KeyStone utilice el siguiente comando en consola:
-
+- To review the running of IDM-KeyRock or KeyStone, use the following console command: 
 ```sh
 $ curl -X GET http://0.0.0.0:5000/ -H 'Accept: application/json' -H 'X-Auth-token: ADMIN'
 ```
 
-El IDM- KeyRock o KeyStone debe retornar como respuesta:
+The response of IDM- KeyRock o KeyStone must be the following json:
 
 ```json
 {
@@ -109,59 +111,59 @@ El IDM- KeyRock o KeyStone debe retornar como respuesta:
 }
 ```
 
-## Creación de Suscripciones 
+## Subscriptions Creation  
 
-Para que el sistema de DrivingApp funcione correctamente, es necesario crear algunas suscripciones en el Orion ContextBroker. Con estas suscripciones los componentes Orion ContextBroker, QuantumLeap y Notifications Service pueden comunicarse entre sí. Las suscripciones que deben crearse en el Orion ContextBroker se encuentran en la carpeta Subscriptions del proyecto DrivingApp-docker. Para registrar estas suscripciones en el Orion ContextBroker utilice los siguientes comandos:
+It is necessary to create some subscriptions in the Orion ContextBroke, so that the DrivingApp system works correctly. With these subscriptions the Orion ContextBroker, QuantumLeap and Notifications Service components can communicate with each other. The subscriptions that must be created in the Orion ContextBroker are in the Subscriptions folder of the DrivingApp-docker project. To register these subscriptions in the Orion ContextBroker use the following commands:
 
-1.- Para crear la suscripción de la entidad Device a QuantumLeap utilice el siguiente comando en consola:
+1.- To create the subscription of the Device entity to QuantumLeap, use the following console command:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/DeviceToQL.json --header "Content-Type: application/json"
 ```
 
-2.- Para crear la suscripción de la entidad Alert a QuantumLeap utilice el siguiente comando en consola:
+2.- To create the subscription of the Alert entity to QuantumLeap, use the following console command: 
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToQL.json --header "Content-Type: application/json"
 ```
 
-3.- Para crear la suscripción de la entidad Device a Notifications Service utilice el siguiente comando en consola:
+3.- To create the subscription of the Device entity to Notifications Service use the following console command:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToNotifications.json --header "Content-Type: application/json"
 ```
 
-***NOTA***: La creación de estas suscripciones es necesaria para que el sistema funcione correctamente, de lo contrario algunas funciones no estarán disponibles en la aplicación DrivingApp.
+***NOTA***: The creation of these subscriptions is necessary for the system to work properly, otherwise some functions will not be available in the DrivingApp application. 
 
-## [Creación de entidades para la Integración de Servicios](#creacion-de-entidades-para-la-integracion-de-servicios)
+## [Services integration creating entities](#services-integration-creating-entities)
 
-La creación de las siguientes entidades le permiten verificar que los servicios se comunican correctamente entre ellos, es necesario crear las siguientes entidades en el orden que se indica:
+The creation of the following entities allow you to verify that the services communicate correctly between them, it is necessary to create the following test entities in the order indicated:
 
-1.- Crear una entidad de prueba tipo Device en el Orion ContextBroker utilizando el siguiente comando:
+1.- Create a Device entity in the Orion ContextBroker using the following command: 
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/entities -d @"Orion Entities/Device.json" --header "Content-Type: application/json"
 ```
 
-2.- Crear una entidad de prueba tipo DeviceToken en DrivingApp Service utilizando el siguiente comando:
+2.- Create a DeviceToken entity in DrivingApp Service using the following command: 
 
 ```sh
 $ curl -iX POST http://0.0.0.0:4005/api/device/token -d @"Private Entities/DeviceToken.json" --header "Content-Type: application/json"  
 ```
 
-3.- Crear una entidad de prueba tipo Zone en DrivingApp Service utilizando el siguiente comando:
+3.- Create a Zone entity in DrivingApp Service using the following command:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:4005/api/zone  -d @"Private Entities/Zone.json" --header "Content-Type: application/json"
 ```
 
-4.- Crear una entidad de prueba tipo User en DrivingApp Service utilizando el siguiente comando:
+4.- Create a User entity in DrivingApp Service using the following command:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:4005/api/user  -d @"Private Entities/User.json" --header "Content-Type: application/json"
 ```
 
-5.- Crear una entidad de prueba tipo Alert en el Orion Context Broker utilizando el siguiente comando:
+5.- Create an Alert entity in the Orion Context Broker using the following command:
 
 ```sh
 $ curl -iX POST http://0.0.0.0:1026/v2/entities -d @"Orion Entities/Alert.json" --header "Content-Type: application/json"
