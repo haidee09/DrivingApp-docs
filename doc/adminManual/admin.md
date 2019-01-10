@@ -1,126 +1,123 @@
-## Administración del sistema DrivingApp
+## DrivingApp System Administration
 
-Esta Guía proporciona información acerca de cómo administrar el sistema de la aplicación DrivingApp. A continuación se describen las aplicaciones de administración que pueden utilizarse con DrivingApp, además de la administración de la base de datos de la aplicación.
+This Guide provides information about how to administer the DrivingApp application system. The following describes the administration applications that can be used with DrivingApp, in addition to the administration of the application databases.
 
 ### ViVA
 
-ViVA es una aplicación de Video Vigilancia que busca asistir al guardia de seguridad para prevenir situaciones de riesgo y consecuentemente mejorar la calidad de vida de las personas que viven el área vigilada. La aplicación ViVA se enfoca en detectar y analizar situaciones de riesgo, tales como: robo, control de acceso, detección de personas, peleas, análisis de multitudes, etc., a través de la combinación de video cámaras y sensores tanto en interiores como exteriores. Por ejemplo, estacionamientos y edificios. Puede consultar su documentación oficial en el siguiente [enlace](https://video-surveillance-application.readthedocs.io/en/latest/).
+ViVA is a Video Surveillance application that aims to support the security guard to prevent situations of risk and consequently improve the quality of life of the people who live in the monitored area. The ViVA application focuses on detecting and analyzing risk situations, such as: theft, access control, people detection, fights, crowd analysis, etc., through the combination of video cameras and sensors, both indoors and outdoors scenarios. For example, parking lots and buildings. You can check the documentation of ViVA at the following [link](https://video-surveillance-application.readthedocs.io/en/latest/).
 
-ViVA incluye módulos para la administración de datos de zonas, estacionamientos y calles, necesarios para que la aplicación DrivingApp pueda funcionar correctamente. Además ViVA, tiene un módulo para consultar la localización de los usuarios de DrivingApp que se encuentren, o que se encontraron dentro de alguna de las zonas registradas. Puede acceder la aplicación web ViVA en [este](https://viva-smartsdk.duckdns.org/) enlace.
+ViVA includes modules for data management of zones, parking lots and streets; these modules are necessary for the DrivingApp application to work properly. In addition, ViVA has a module to consult the location of the users of DrivingApp that are, or who were within any of the registered zones. You can access the ViVA web application in [this](https://viva-smartsdk.duckdns.org/) link.
 
-### Aplicación de Administración de DrivingApp
+### DrivingApp Administration Application
 
-Con el objetivo de ofrecer una herramienta ligera que incluya los módulos de administración de areas y consulta de localización de usuarios, se desarrolló una aplicación de administración simple para DrivingApp utilizando el framework Web2py. Esta aplicación de administración contiene los módulos que incluye ViVA para manipular la información de zonas, estacionamientos y calles, así como consultar la localización de los usuarios de DrivingApp. El código fuente de esta aplicación está en su repositorio oficial en el siguiente [enlace](https://github.com/smartsdkCenidet/SimpleAdmin).
+In order to offer a lightweight tool that includes area management modules and user location consultation, a simple administration application for DrivingApp was developed using the Web2py framework. This administration application contains the modules that ViVA includes to manipulate the information of zones, parking lots and streets, as well as to consult the location of the users of DrivingApp. The source code of this application is on this [repository](https://github.com/smartsdkCenidet/SimpleAdmin).
 
-#### Requerimientos
+#### Requeriments
 
-- **Sistema de control de versiones Git**, puede consultar la documentación oficial de Git en el siguiente [enlace](https://git-scm.com/).
-- **Python 2.7.X**, puede encontrar información sobre cómo instalar Python en su sistema operativo en el siguiente [enlace](https://www.python.org/downloads/release/python-2715/).
+- **Git version control system**, you can check the official documentation of Git in the following [link](https://git-scm.com/).
+- **Python 2.7.X**, you can check how to install Python on your operating system in the following [link](https://www.python.org/downloads/release/python-2715/).
 
-#### Instalación 
+#### Installation and running
 
-1.- Descargar el proyecto Web2Py con el siguiente comando git:
+1.- Download the web2py project with the following git command: 
 ```sh
 $ git clone --recursive https://github.com/web2py/web2py.git
 ```
-2.-	Descargar el proyecto SimpleAdmin dentro de la carpeta /applications del proyecto Web2py.
+2.-	Download the SimpleAdmin project inside the /applications folder of the web2py project.
 
-Utilice el siguiente comando para moverse a la carpeta applications:
+Use the following command to move to the applications folder:
 ```sh
 $ cd applications
 ```
 
-Ejecute el siguiente comando para descargar el proyecto SimpleAdmin dentro de la carpeta applications:
+Run the following command to download the SimpleAdmin project inside the applications folder:
 ```sh
 $ git clone https://github.com/smartsdkCenidet/SimpleAdmin.git
 ```
 
-3.-	Por último, ejecute el archivo web2py.py que está en la carpeta principal del proyecto Web2py 
+3.-	Finally, run the file web2py.py, this file is in the main folder of the web2py project .
 
-El comando para cambiar de carpeta es:
+Remember to change the folder with the command:
 ```sh
 $ cd ..
 ```
 
-El comando para ejecutar la aplicación web2py es: 
-
-```
+Then, use the following command to run the web2py application: 
+```sh
 $ python web2py.py
 ```
 
-Este comando despliega una ventana donde es necesario configurar una clave para para el servidor, como lo muestra en la siguiente imagen:
+This command displays a window where it is necessary to configure a password for the server, as shown in the following image:
 
 ![Web2py admin](./img/web2pyAdmin.png)
 
-Después de escribir la contraseña, de click en el botón Start Server y el servidor comenzará a ejecutarse. Puede acceder a la aplicación SimpleAdmin en la siguiente dirección: [http://127.0.0.1:8000/appmapasWeb2py/default/index](http://127.0.0.1:8000/appmapasWeb2py/default/index).
+After typing the password, click on the Start Server button and the server will start running. Now you can access the SimpleAdmin application at the following address:[http://127.0.0.1:8000/appmapasWeb2py/default/index](http://127.0.0.1:8000/appmapasWeb2py/default/index).
 
+#### Configuration
 
-#### Configuración
-
-La configuración de la aplicación debe actualizarse cambiando la dirección del servicio DrivingApp Service. Esta configuración se actualiza al modificar la variable smartService del archivo default.py localizado en la carpeta controllers de la aplicación.
+The configuration of the application must be updated by changing the address of the DrivingApp Service. This configuration is updated by modifying the smartService variable in the default.py file located in the controllers folder of the application. Example:
 
 > smartService = T('http://0.0.0.0:4005')
 
 #### Manual de la aplicación de administración de DrivingApp
 
-El siguiente manual describe las funciones de cada vista de la aplicación SimpleAdmin para la administración  del sistema de DrivingApp.
+The following manual describes the functions of each view of the SimpleAdmin application, for the administration of the DrivingApp system.
 
-#### Herramientas del mapa
+#### Map Tools in SimpleAdmin App 
 
-Las herramientas que contienen los mapas de la aplicación de administración son las siguientes: 
+The tools of the maps in the administration application are the following:
 
-- **Mapa en pantalla completa**: esta funcionalidad permite al usuario ver el mapa al tamaño de la pantalla. Active esta opción presionando el botón de cuadro de las herramientas del mapa. Para salir de pantalla completa puede utilizar la tecla Esc  de su teclado o el mismo botón de cuadro de las herramientas del mapa. 
-- **Vista Satelital**: esta funcionalidad permite al usuario ver el mapa en vista satelital. Puede activar esta opción seleccionado la opción SateliteMap en la parte superior derecha del mapa.
-- **Vista Streets**: esta funcionalidad permite al usuario ver el mapa con vista de calles. Puede activar esta opción seleccionando la opción StreetsMap en la parte superior derecha del mapa. Esta opción está seleccionada por defecto en el mapa.
-- **Zoom**: las herramientas + y – permiten al usuario acercar o alejar el área del mapa según sea necesario.
-- **Herramientas de dibujo**: entre las herramientas de dibujo están, la herramienta del para delimitar una nueva área, la herramienta de poli línea para delimitar segmentos de calles y la herramienta del bote de basura para eliminar el área marcada. La herramienta editar está deshabilitada en esta versión del sistema.
+- **Map in full screen**: this functionality allows you to see the map to the size of the screen. Activate this option by pressing the box button on the map tools. To exit full screen you can use the Esc key on your keyboard or the same box button of the map tools.
+- **Satellite View**: this functionality allows you to see the map in satellite view. You can activate this option by selecting the SateliteMap option in the upper right part of the map.
+- **Streets View**: this functionality allows you to see the map with streets view. You can activate this option by selecting the StreetsMap option at the upper right part of the map. This option is selected by default on the map.
+- **Zoom**: the + and - tools allow you to zoom in or zoom out the map area as needed.
+- **Drawing tools**: Among the drawing tools are, the tool to delimit a new area, polygon; the tool to delimit street segments, polyline; and the tool to eliminate the marked area, the trash can. The edit tool is disabled in this version of the system.
 
-#### Adminsitración de zonas en el sistema
+#### Zones administration in the system
 
-La administración de zonas en el sistema está compuesta por dos vistas: la lista de zonas y el registro de nuevas zonas. 
+The administration of zones in the system consists of two views: the list of zones and the registration of new zones.
 
-#### Lista de zonas
+#### List of zones
 
-La lista de zonas registradas en la aplicación presenta la información relevante de cada zona como: el nombre, dirección y descripción. Además, cada registro de zona contiene un botón para eliminar dicho registro de la lista; este registro se elimina de manera lógica en el sistema. En la parte superior derecha del listado la vista muestra el botón Add new zone, el cual sirve  para dirigirse a la vista de Registro de Zona y crear nuevas zonas en el sistema.  La siguiente imagen muestra un ejemplo de esta vista.
+The view of list of zones presents the relevant information of each zone registered in the application, such as: name, address and description. In addition, each zone record contains a button to remove that record from the list; this record is eliminated logically in the system. In the upper right part of the list, the view shows the **Add new zone** button, which is used to go to the Zone Registration view and create new zones in the system. The following image shows an example of this view.
 
 ![Lista de Zonas](./img/zonesList.png)
 
-#### Registro de Zona 
+#### Zones Register 
 
-La vista de Registro de zona muestra un formulario para la creación de nuevas zonas, en este formulario se deben registrar los datos de la zona como: el nombre, la dirección y una descripción de la zona. Es importante que la dirección de la zona sea una dirección real. Cuando escriba la dirección de la zona en el campo de texto, presione el botón Search Address on Map para buscar la dirección de la zona en el mapa. Esta búsqueda se realiza utilizando una API de Google Maps, y el mapa se centra en la dirección de la zona. Por último, se debe delimitar el área de la zona en el mapa con ayuda de la herramienta del polígono. Cuando haya registrado los datos de la zona y su delimitación en el mapa, presione el botón Save para registrar la nueva zona en el sistema. 
-La imagen siguiente muestra un ejemplo de esta vista.
+The zone registration view shows a form for the creation of new zones, in this form you must register the data of the zone as: the name, the address and a description of the zone. It is important that the address of the area is a real address. When you type the address of the area in the text field, press the **Search Address on Map** button to search the address of the area on the map. This search is done using a Google Maps API, centering the map center on the direction of the area. Finally, you must define the area of the zone on the map with the  polygon tool. When you have registered the zone data and marked its delimitation on the map, press the **Save** button to register the new zone in the system.
+The following image shows an example of this view.
 
 ![Registro de Zonas](./img/zonesForm.png)
 
-#### Administración de estacionamientos en el sistema
+#### Parking lots administration in the systema
 
-La administración de estacionamientos en el sistema está compuesto por dos vistas: la lista de estacionamientos y el registro de nuevos estacionamientos.
+The administration of parkings in the system consist of two views: the list of parking lots and the registration of new parking lots.
 
-#### Lista de Estacionamientos 
+#### Parking lots List 
 
-La lista de Estacionamientos registrados en la aplicación presenta la información relevante de cada estacionamiento como: el nombre, su descripción y el nombre de la zona del estacionamiento. Además, cada registro de estacionamiento contiene un botón para eliminar dicho registro de la lista; este registro se elimina de manera lógica en el sistema. En la parte superior derecha del listado la vista muestra el botón Add new parking, el cual redirige a la vista de Registro de Estacionamiento para crear nuevos estacionamientos en el sistema. La imagen siguiente muestra esta vista.
+The view of list of Parking lots presents the relevant information of each parking lot registered in the system as: the name, its description and the name of the parking area. In addition, each parking record contains a button to remove that record from the list; this record is eliminated logically in the system. In the upper right part of the list, the view shows the **Add new parking** button, which redirects to the Parking Registration view to create new parking lots in the system. The following image shows this view.
 
 ![Lista de Estacionamientos](./img/parkingsList.png)
 
 #### Registro de Estacionamiento 
 
-La vista de Registro de Estacionamientos muestra un formulario para la creación de nuevos estacionamientos, en este formulario se deben registrar datos del estacionamiento como: la zona a la que pertenece dicho estacionamiento, su categoría, nombre y una descripción del estacionamiento. Por último, se debe delimitar el área del estacionamiento en el mapa con ayuda de la herramienta del polígono.  Cuando haya registrado los datos del estacionamiento y su delimitación en el mapa, presione el botón Save   para registrar el nuevo estacionamiento en el sistema. La imagen siguiente muestra esta vista.
+The Parking lots Registration view shows a form for the creation of new parking, in this form you must register the parking information such as: the area to which the parking belongs, its category, the name and a description of the parking lot. Finally, you must define the parking area on the map with the polygon tool. Once you have registered the parking information and marked its delimitation on the map, press the **Save** button to register the new parking in the system. The following image shows this view.
 
 ![Registro de estacionamiento](./img/parkingsForm.png)
 
-#### Administración de calles y segmentos de calles
+#### Roads and Roads Segments administration in the system
 
-La administración de calles y segmentos en el sistema está compuesta por tres vistas: la lista de calles, la lista de segmentos de calles y, el registro de calles y segmentos de calles.
+The administration of roads and roads segments in the system consist of three views: the list of roads, the list of roads segments, and the roads and roads segments registration.
+#### Roads List
 
-#### Lista de Calles
-
-La lista de calles registradas en la aplicación presenta la información relevante de las calles como: el nombre, su descripción, y la zona responsable de la calle. Además, cada registro de calle  contiene un botón para eliminar dicho registro de la lista; este registro se elimina de manera lógica en el sistema. En la parte superior derecha del listado de calles la vista muestra dos botones: See roadSegments y Add new Road and Segments. El botón See roadSegments redirige a la vista del listado de segmentos de calles y el botón Add new Road and Segments redirige a la vista de creación de calles y segmentos de calles.
+The list of roads registered presents the relevant road information such as: the name, its description, and the area responsible for the road. In addition, each road record contains a button to remove that record from the list; this record is eliminated logically in the system. In the upper right part of the roads list, the view shows two buttons: **See roadSegments** and **Add new Road and Segments**. The **See roadSegments** button redirects to the view Road segments list and the **Add new Road and Segments** button redirects the view to create new road and road segments.
 
 ![Listado de Calles](./img/roadsList.png)
 
-#### Lista de Segmentos de Calles
+#### Roads Segments List
 
-La lista de segmentos de calles registrados en el sistema muestra la información de los segmentos de calles como: el nombre del segmento de calle, el nombre de la calle, el sentido de la calle, la velocidad permitida del segmento de calle y el ancho de la calle en metros. Además, cada registro de segmento de calle contiene un botón para eliminar dicho registro de la lista; este registro se elimina de manera lógica del sistema. En la parte superior del listado la vista presenta el botón Add new Road and Segments, el cual redirige a la vista de creación de calles y segmentos de calles.
+The list of roads segments registered in the system shows the roads segments information as: the name of the road segment, the name of the road, the direction of the road, the allowed speed and the width of the road in meters. In addition, each road segment record contains a button to remove that record from the list; this record is removed logically from the system. At the top of the list, is shown **Add new Road and Segments** button, which redirects the view to create roads and road segments.
 
 ![Listado de Segmentos de Calles](./img/roadSegmentsList.png)
 
