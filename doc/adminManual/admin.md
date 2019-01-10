@@ -59,7 +59,7 @@ The configuration of the application must be updated by changing the address of 
 
 > smartService = T('http://0.0.0.0:4005')
 
-#### Manual de la aplicación de administración de DrivingApp
+#### Manual of the administration app of DrivingApp
 
 The following manual describes the functions of each view of the SimpleAdmin application, for the administration of the DrivingApp system.
 
@@ -83,7 +83,7 @@ The view of list of zones presents the relevant information of each zone registe
 
 ![Lista de Zonas](./img/zonesList.png)
 
-#### Zones Register 
+#### Zones Registration
 
 The zone registration view shows a form for the creation of new zones, in this form you must register the data of the zone as: the name, the address and a description of the zone. It is important that the address of the area is a real address. When you type the address of the area in the text field, press the **Search Address on Map** button to search the address of the area on the map. This search is done using a Google Maps API, centering the map center on the direction of the area. Finally, you must define the area of the zone on the map with the  polygon tool. When you have registered the zone data and marked its delimitation on the map, press the **Save** button to register the new zone in the system.
 The following image shows an example of this view.
@@ -100,46 +100,47 @@ The view of list of Parking lots presents the relevant information of each parki
 
 ![Lista de Estacionamientos](./img/parkingsList.png)
 
-#### Registro de Estacionamiento 
+#### Parking lot registration
 
-The Parking lots Registration view shows a form for the creation of new parking, in this form you must register the parking information such as: the area to which the parking belongs, its category, the name and a description of the parking lot. Finally, you must define the parking area on the map with the polygon tool. Once you have registered the parking information and marked its delimitation on the map, press the **Save** button to register the new parking in the system. The following image shows this view.
+The Parking lots registration view shows a form for the creation of new parking, in this form you must register the parking information such as: the area to which the parking belongs, its category, the name and a description of the parking lot. Finally, you must define the parking area on the map with the polygon tool. Once you have registered the parking information and marked its delimitation on the map, press the **Save** button to register the new parking in the system. The following image shows this view.
 
 ![Registro de estacionamiento](./img/parkingsForm.png)
 
 #### Roads and Roads Segments administration in the system
 
 The administration of roads and roads segments in the system consist of three views: the list of roads, the list of roads segments, and the roads and roads segments registration.
+
 #### Roads List
 
-The list of roads registered presents the relevant road information such as: the name, its description, and the area responsible for the road. In addition, each road record contains a button to remove that record from the list; this record is eliminated logically in the system. In the upper right part of the roads list, the view shows two buttons: **See roadSegments** and **Add new Road and Segments**. The **See roadSegments** button redirects to the view Road segments list and the **Add new Road and Segments** button redirects the view to create new road and road segments.
+The Roads list view presents the relevant information of each road registered in the system as: the name, its description, and the area responsible for the road. In addition, each road record contains a button to remove that record from the list; this record is eliminated logically in the system. In the upper right part of the roads list, the view shows two buttons: **See roadSegments** and **Add new Road and Segments**. The **See roadSegments** button redirects to the view Road segments list and the **Add new Road and Segments** button redirects the view to create new road and road segments.
 
 ![Listado de Calles](./img/roadsList.png)
 
 #### Roads Segments List
 
-The list of roads segments registered in the system shows the roads segments information as: the name of the road segment, the name of the road, the direction of the road, the allowed speed and the width of the road in meters. In addition, each road segment record contains a button to remove that record from the list; this record is removed logically from the system. At the top of the list, is shown **Add new Road and Segments** button, which redirects the view to create roads and road segments.
+The Roads segments list view shows the data of each road segment registered in the system as: the name of the road segment, the name of the road, the direction of the road, the allowed speed and the width of the road in meters. In addition, each road segment record contains a button to remove that record from the list; this record is removed logically from the system. At the top of the list, is shown **Add new Road and Segments** button, which redirects the view to create roads and road segments.
 
 ![Listado de Segmentos de Calles](./img/roadSegmentsList.png)
 
-#### Registro de calle y segmento de calle
+#### Road and Roads Segments registration
 
-La vista de Registro de calle y segmento de calle muestra un formulario para la creación de nuevos segmentos de calles. Para registrar un segmento de calle se deben seleccionar e ingresar los datos siguientes en la vista.  
+The road registration  and the road segment view shows a form for creating new street segments. To register a segment of road, you must select and enter the following data in the view.
 
-1. Seleccionar si el segmento de calle pertenece a una calle que está dentro de un estacionamiento o a una zona.
-    - Si el segmento de calle pertenece a una calle de una zona, seleccione la zona y el nombre de la calle. 
-    - Si el segmento de calle pertenece a una calle de un estacionamiento, seleccione: la zona del estacionamiento, el nombre del estacionamiento y el nombre de la calle.  
+1. Select if the road segment belongs to a parking lot or an zone. 
+    - If the road segment belongs to a road of an area, select the zone and consequently the name of the road. 
+    - If the road segment belongs to a road of a parking lot, select: the zone of the parking, the name of the parking lot and the name of the road. 
 
-2. Ingresar el nombre del segmento de calle, su velocidad mínima y máxima, el sentido de la calle y el ancho de la calle en metros.   
+2. Enter the name of the road segment, its minimum and maximum speed, the direction of the segment and the width of the segment in meters. 
 
-3. Delimite la calle con la herramienta de dibujo de poli línea. Cuando haya registrado los datos del estacionamiento y su delimitación en el mapa, presione el botón Save   para registrar el nuevo estacionamiento en el sistema.
+3. Delimit the segment with the polyline tool. 
 
-4. Presionar el botón Save  para registrar los datos del segmento de calle y su delimitación.  
+4. Press the Save button to record the data of the road segment and its delimitation. 
 
-La imagen siguiente muestra la vista de registro de segmentos de calles.
+La following image shows the view of roads segments registration.
 
 ![Registro de Road Segments](./img/roadSegmentsForm.png)
 
-Si la calle principal del segmento no está registrada en el sistema, puede crear una nueva calle presionando el botón Add, este muestra un formulario para registrar una nueva calle y relacionar el segmento de calle con la calle principal. Cuando registre los datos de la calle presione el botón Save Road para almacenar la información en el sistema y continúe con el registro del segmento de calle. La imagen siguiente muestra la vista del registro de calle.
+If the main road of the segment is not registered in the system, you can create a new road by pressing the **Add** button, this shows a form to register a new road and link the road segment to this road. When registering the road data press the **Save Road** button to store the information in the system and continue with the road segment registration. The following image shows the road registration view.
 
 ![Registro de Road](./img/roadsForm.png)
 
