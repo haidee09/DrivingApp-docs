@@ -1,10 +1,10 @@
-## Tests services execution 
+## Services execution tests
 
-To review the correct execution of the DrivingApp system, execute the following commands per service:
+To review the correct running of the DrivingApp system, execute the following commands per service:
 
 ### Orion ContextBroker
 
-To review the execution of the Orion ContextBroker use the following console command:
+To review the running of the Orion ContextBroker use the following console command:
 
 ```sh
 $ curl -X GET http://0.0.0.0:1026/version -H 'Accept: application/json'
@@ -14,7 +14,7 @@ The Orion ContextBroker must return **status: 200 OK**
 
 ### API QuantumLeap
 
-To review the execution of the QuantumLeap API use the following console command:
+To review the running of the QuantumLeap API use the following console command:
 ```sh
 $ curl -X GET http://0.0.0.0:8668/v2/version -H 'Accept: application/json'
 ```
@@ -22,7 +22,7 @@ The QuantumLeap API must return **status: 200 OK**
 
 ### DrivingApp Service
 
-Verify the execution of every endpoint of DrivingApp Service API, using the following console commands:
+Verify the running of every endpoint of DrivingApp Service API, using the following console commands:
 
 - To check the endpoint /api use the following command: 
 

@@ -8,7 +8,7 @@ To verify that the services communicate correctly, it is necessary to check the 
 $ docker logs drivingapp-docker_quantumleap_1
 ```
 
-The following image shows the request POST to the endpoint /v2/notify of QuantumLeap, indicated with red arrows. The response that QuantumLeap returns to this request is `status: 200`, which means that the connection between the Orion ContextBroker and QuantumLeap was done correctly.
+The following image shows the POST request to the endpoint `/v2/notify` of QuantumLeap, indicated with red arrows. QuantumLeap returns to this request `status: 200`, which means the connection between the Orion ContextBroker and QuantumLeap was done correctly.
 
 ![Docker Logs QuantumLeap](./img/manualReview1.png)
 
@@ -18,11 +18,11 @@ The following image shows the request POST to the endpoint /v2/notify of Quantum
 $ docker logs drivingapp-docker_notifications_1
 ```
 
-The following image shows the POST request to the endpoint /notify, indicated by red arrows. The response returned by Notifications Service to this request is `status: 201`, which means that the connection between the Orion Context Broker and Notifications Service was done correctly.
+The following image shows the POST request to the endpoint `/notify` of Notifications Service, indicated with red arrows. Notifications Service returns to this request `status: 201`, which means the connection between the Orion Context Broker and Notifications Service was done correctly.
 
 ![Docker Logs Notificatiosn Service](./img/manualReview2.png)
 
-***NOTA***: The name of the QuantumLeap and Notifications Service containers can change, this depends on several factors such as: the name of the folder or the number of times the containers are run with docker compose. 
+***NOTA***: The name of the QuantumLeap and Notifications Service containers can change, this depends on several factors such as: the name of the folder or the number of times the containers are running with docker compose. 
 
 To verify the name of the docker containers use the command:
 

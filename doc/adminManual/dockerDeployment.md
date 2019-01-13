@@ -21,7 +21,7 @@ Docker Compose is a tool for creating and running multi-container Docker applica
 - **Docker**, you can check the installation of Docker in the following [link](https://docs.docker.com/cs-engine/1.12/).
 - **Docker Compose**, you can check the installation of docker-compose in the following [link](https://docs.docker.com/compose/install/).
 
-### Execution 
+### Running
 
 1.- Download the files from the official repository of DrivingApp-docker:
 

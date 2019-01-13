@@ -19,6 +19,6 @@ pages:
     - DrvingApp Web Services: adminManual/webServices.md
     - Web Services Deployment: adminManual/deployment.md 
     - DrivingApp Deployment with Docker: adminManual/dockerDeployment.md
-    - Tests Services Execution: adminManual/tests.md
+    - Services execution Tests: adminManual/tests.md
     - Services Health Check: adminManual/checks.md
     - DrivingApp System Administration: adminManual/admin.md

@@ -5,7 +5,7 @@
 #### General Requirements
 
 - **Git Version Control Software**, you can check the Git documentation in the following [link](https://git-scm.com/).
-- **Execution environment Node.js**, you can check the installation documentation in the following [link](https://nodejs.org/en/download/).
+- **Runtime environment Node.js**, you can check the installation documentation in the following [link](https://nodejs.org/en/download/).
 - **Package manager npm or yarn**, you can check the npm documentation [here](https://docs.npmjs.com/) and the documentation of yarn [here](https://yarnpkg.com/en/docs).
 - **MariaDB database manager system** version 10.4, visit the following [link](https://mariadb.org/download/) to install MariaDB.
 - **FIWARE Orion ContextBroker** in a version higher than 1.15.1, you can check the official documentation in the following [link](https://fiware-orion.readthedocs.io/en/master/). 
@@ -136,7 +136,7 @@ The variables that start with **MYSQL _** refer to the mysql variable in the `co
 - **KEYROCK**: Refers to the keyrock variable in the `config.js` file.
 - **CRATEDB**: Refers to the crate variable in the `config.js` file.
 
-##### Execution 
+##### Running 
 
 The Docker image of DrivingApp Service runs by default in the port 4005, the command to execute the image is:
 ```sh
@@ -305,7 +305,7 @@ The environment variables in the Docker image of NotificationsService are replac
 - **PASSWORD**: Refers to the password variable in the `config.py` file.
 - **USER_NAME**: Refers to the username variable in the `config.py` file.
 
-##### Execution
+##### Running
 
 The Docker image of NotificationsService uses port 3001 by default, the command to execute the image is:
 ```sh
