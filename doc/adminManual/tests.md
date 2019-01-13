@@ -18,8 +18,7 @@ To review the execution of the QuantumLeap API use the following console command
 ```sh
 $ curl -X GET http://0.0.0.0:8668/v2/version -H 'Accept: application/json'
 ```
-
-La respuesta de la API QuantumLeap debe retornar **status: 200 OK**
+The QuantumLeap API must return **status: 200 OK**
 
 ### DrivingApp Service
 
@@ -31,7 +30,7 @@ Verify the execution of every endpoint of DrivingApp Service API, using the foll
 $ curl -X GET http://0.0.0.0:4005/api -H 'Accept: application/json'
 ```
 
-The endpoint /api must return the following message as response: 
+The endpoint /api must return the following message: 
 
 ```json
 { message: 'Welcome to DataModels API REST' }
@@ -43,7 +42,7 @@ The endpoint /api must return the following message as response:
 $ curl -X GET http://0.0.0.0:4005/service -H 'Accept: application/json'
 ```
 
-The endpoint /service must return the following message as response: 
+The endpoint /service must return the following message: 
 
 ```json
 { message: 'Welcome to Special Services API' }
@@ -55,7 +54,7 @@ The endpoint /service must return the following message as response:
 $ curl -X GET http://0.0.0.0:4005/crate -H 'Accept: application/json'
 ```
 
-The endpoint /crate must return the following message as response: 
+The endpoint /crate must return the following message: 
 
 ```json
 { message: 'Welcome to CrateDB-QuantumLeap API' }
@@ -74,7 +73,7 @@ Notifications Service must return the following message in the browser as a resp
 > SmartSecurity Notifications is running....  
 > © Cenidet 2018
 
-***NOTA***: Note that the response of Notifications Service returns the header `Content-Type` :`text/html`, unlike the APIs of DrivingApp Service that return the header `Content-Type`: `application/json`
+***NOTA***: Note that the response of Notifications Service returns the header `Content-Type` : `text/html`, unlike the APIs of DrivingApp Service that return the header `Content-Type`: `application/json`
 
 ### IDM- KEYROCK /KEYSTONE
 
@@ -137,7 +136,7 @@ $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToNo
 
 ## [Services integration creating entities](#services-integration-creating-entities)
 
-The creation of the following entities allow you to verify that the services communicate correctly between them, it is necessary to create the following test entities in the order indicated:
+The creation of the following entities allow you to verify the services communicate correctly among them, it is necessary to create the following test entities in the order indicated:
 
 1.- Create a Device entity in the Orion ContextBroker using the following command: 
 

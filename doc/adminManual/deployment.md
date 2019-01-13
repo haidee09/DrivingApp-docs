@@ -8,8 +8,7 @@
 - **Execution environment Node.js**, you can check the installation documentation in the following [link](https://nodejs.org/en/download/).
 - **Package manager npm or yarn**, you can check the npm documentation [here](https://docs.npmjs.com/) and the documentation of yarn [here](https://yarnpkg.com/en/docs).
 - **MariaDB database manager system** version 10.4, visit the following [link](https://mariadb.org/download/) to install MariaDB.
-- **FIWARE Orion ContextBroker** in a version higher than 1.15.1, you can check the official documentation in the following [link](https://fiware-orion.readthedocs.io/en/master/).
-- **Orion ContextBroker de FIWARE** en una versión superior a la 1.15.1, puede consultar la documentación oficial en el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/). 
+- **FIWARE Orion ContextBroker** in a version higher than 1.15.1, you can check the official documentation in the following [link](https://fiware-orion.readthedocs.io/en/master/). 
 - **IDM - FIWARE KeyRock** in a version less than or equal to 6, or **Keystone from Openstack**. You can check the official repository of IDM - Keyrock in the following [link](https://github.com/ging/fiware-idm-deprecated) and the docs of Keystone - Openstack version 3 in this [link](https://docs.openstack.org/keystone/latest/).
 
 #### Optional requirements
@@ -59,7 +58,7 @@ Next, each of the parameters of the `config.js` file is described in detail:
   * **user**: User name that has the privileges to READ, EDIT, CREATE and DELETE data in the specified database.
   * **password**: Access password for the specified username.
 
-The connection between *DrivingApp Service* and *MariaDB* is done by default through port 3306, if you want to modify the configuration of *Sequelize*  edit the file `DataModelsAPI/db/ sequelize.js`. For more information consult the *Sequelize* documentation on this [link] (http://docs.sequelizejs.com/).
+The connection between *DrivingApp Service* and *MariaDB* is done by default through port 3306, if you want to modify the configuration of *Sequelize*  edit the file `DataModelsAPI/db/sequelize.js`. For more information consult the *Sequelize* documentation on this [link](http://docs.sequelizejs.com/).
 
 - **exports.context**: The variable **context** must contain the URL of the Orion ContextBroker instance used. This URL must include the HTTP or HTTPS protocol so that *DrivingApp Service* can connect to the Orion ContextBroker, as well as the version of the NGSI API used. An URL example of an Orion ContextBroker instance is: [http://35.185.120.11:1026/v2](http://35.185.120.11:1026/v2)
 
@@ -174,7 +173,7 @@ username = 'daniel'
 password = "sm2"
 
 - **smart**: The smart attribute contains the DrivingApp Service URL. Notifications Service uses DrvingApp Service to consume data from registered zones and devices. Remember that the DrivingApp Service uses port 4005 by default.
-- **fcm**: The fcm attribute contains the application code configured in Firebase in this [section](../userManual/configurations#configuration-fcm). To obtain the code of a Firebase project, follow the steps below.
+- **fcm**: The fcm attribute contains the application code configured in Firebase in this [section](../userManual/configurations.md#configuration-fcm). To obtain the code of a Firebase project, follow the steps below.
 
 1.- In the project console on Firebase, select the gear symbol in the **Project Overview** section and in the pop-up menu click on **Project Configuration**.
 ![FCM key Server 1](./img/FCMkeyServer1.png)

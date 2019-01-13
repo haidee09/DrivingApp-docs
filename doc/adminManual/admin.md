@@ -6,7 +6,7 @@ This Guide provides information about how to administer the DrivingApp applicati
 
 ViVA is a Video Surveillance application that aims to support the security guard to prevent situations of risk and consequently improve the quality of life of the people who live in the monitored area. The ViVA application focuses on detecting and analyzing risk situations, such as: theft, access control, people detection, fights, crowd analysis, etc., through the combination of video cameras and sensors, both indoors and outdoors scenarios. For example, parking lots and buildings. You can check the documentation of ViVA at the following [link](https://video-surveillance-application.readthedocs.io/en/latest/).
 
-ViVA includes modules for data management of zones, parking lots and streets; these modules are necessary for the DrivingApp application to work properly. In addition, ViVA has a module to consult the location of the users of DrivingApp that are, or who were within any of the registered zones. You can access the ViVA web application in [this](https://viva-smartsdk.duckdns.org/) link.
+ViVA includes modules for data management of zones, parking lots and streets; these modules are necessary for the DrivingApp application to work properly. In addition, ViVA has a module to consult the location of the users of DrivingApp that are, or who were within any of the registered zones. You can access the ViVA web application in this [link](https://viva-smartsdk.duckdns.org/).
 
 ### DrivingApp Administration Application
 
@@ -51,7 +51,7 @@ This command displays a window where it is necessary to configure a password for
 
 ![Web2py admin](./img/web2pyAdmin.png)
 
-After typing the password, click on the Start Server button and the server will start running. Now you can access the SimpleAdmin application at the following address:[http://127.0.0.1:8000/appmapasWeb2py/default/index](http://127.0.0.1:8000/appmapasWeb2py/default/index).
+After typing the password, click on the Start Server button and the server will start running. Now you can access the SimpleAdmin application at the following address: [http://127.0.0.1:8000/appmapasWeb2py/default/index](http://127.0.0.1:8000/appmapasWeb2py/default/index).
 
 #### Configuration
 

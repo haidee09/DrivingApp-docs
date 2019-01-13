@@ -4,7 +4,7 @@ The web services used by the DrivingApp are: *DrivingApp Service* and *Notificat
 
 ### DrivingApp Service
 
-*DrivingApp Service* is a web service that manipulates the public and private data models of the mobile application and the query services. This service is a REST API implementation created with the NodeJS environment, and allows managing the information provided by three data sources: the FIWARE Orion ContextBroker, which is used to manage the context information; the DBMS MariaDB, which is used to store the information of data models; and finally CrateDB which is used by the FIWARE QuantumLeap API to store time series information. The repository of *DrivingApp Service* is on this [link](https://github.com/smartsdkCenidet/DrivingApp-service).
+*DrivingApp Service* is a web service that manipulates the public and private data models of the mobile application and the query services. This service is a REST API implementation created with the NodeJS environment, and allows managing the information provided by three data sources: the FIWARE Orion ContextBroker, which is used to manage the context information; the DBMS MariaDB, which is used to store the information of data models; and finally CrateDB which is used by the FIWARE QuantumLeap API to store time series information. The repository of *DrivingApp Service* is on this [link][https://github.com/smartsdkCenidet/DrivingApp-service).
 
 *DrivingApp Service* is composed of 1 root endpoint and 3 APIs with specific routes. These routes define the following.
 
@@ -32,11 +32,11 @@ The web services used by the DrivingApp are: *DrivingApp Service* and *Notificat
 { message: 'Welcome to CrateDB-QuantumLeap API' }
 ```
 
-In this [link] (https://drivingappservice.docs.apiary.io/) you can check the specification of the data models used in * DrivingApp Service*.
+In this [link](https://drivingappservice.docs.apiary.io/) you can check the specification of the data models used in * DrivingApp Service*.
 
 ### Notifications Service
 
-*Notifications Service* is a web service that manipulates the information of the Alert entities, obtained through the notification of a subscription created in the Orion ContextBroker. When Notifications Service receives an alert entity sent by the Orion, replicates the alert to the DrivingApp users, using the services of Firebase Cloud Messaging. The Notifications Service repository is on this [link] (https://github.com/smartsdkCenidet/Notifications-service)
+*Notifications Service* is a web service that manipulates the information of the Alert entities, obtained through the notification of a subscription created in the Orion ContextBroker. When Notifications Service receives an alert entity sent by the Orion, replicates the alert to the DrivingApp users, using the services of Firebase Cloud Messaging. The Notifications Service repository is on this [link](https://github.com/smartsdkCenidet/Notifications-service)
 
 Notifications Service has two routes described below.
 
