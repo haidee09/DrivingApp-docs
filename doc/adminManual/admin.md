@@ -150,19 +150,19 @@ The administration application includes a user search module. This module has th
 
 #### 1. Search of user that was in a zone  
 
-The user search that was in a zone shows a form to enter the search data, these data are: the search area, the user's phone number and the search date and time. When you have entered this information, press the Consult button to perform the search. If the system finds the user's record in the zone, date and time indicated, it shows the user's last location on the map. The following image shows the view of this search.
+The user search that was in a zone shows a form to enter the search data, these data are: the search area, the user's phone number and the search date and time. When you have entered this information, press the **Consult** button to perform the search. If the system finds the user's record in the zone, date and time indicated, it shows the user's last location on the map. The following image shows the view of this search.
 
 ![Búsqueda de usuario 1](./img/userSearching1.png)
 
 #### 2. Search of user that is in a zone
 
-The user search that is a zone shows a form to enter the search data, these data are: select the search area and enter the user's phone number. When you have entered this information, press the Consult button to perform the search. If the system finds the user in the zone, it shows on the map its current location. The following image shows the view of this search.
+The user search that is a zone shows a form to enter the search data, these data are: select the search area and enter the user's phone number. When you have entered this information, press the **Consult** button to perform the search. If the system finds the user in the zone, it shows on the map its current location. The following image shows the view of this search.
 
 ![Búsqueda de usuario 2](./img/userSearching2.png)
 
 #### 3. Search of users in a zone
 
-The search of users in a zone shows a form to select the user's search area. When you have selected the search area, press the Consult button. If the system finds users within the zone, it shows on the map the current location of the users. The following view shows the image of this search.
+The search of users in a zone shows a form to select the user's search area. When you have selected the search area, press the **Consult** button. If the system finds users within the zone, it shows on the map the current location of the users. The following view shows the image of this search.
 
 ![Búsqueda de Usuario 3](./img/userSearching3.png)
 
@@ -172,7 +172,7 @@ The alerts panel presents two types of alert searches: alert history and current
 
 ![Panel de Alertas](./img/alertsPanel.png)
 
-### Administración de bases de datos 
+### Databases Administration 
 
 DrivingApp data is managed by three database management systems: MariaDB, Mongo DB and CrateDB. The following image shows a relational diagram of the entities.
 
@@ -186,15 +186,15 @@ Tables of the smartsecurity database in MariaDB
 - offStreetParking: The table offStreetParking is based on the [OffStreetParking](https://github.com/Fiware/dataModels/tree/master/specs/Parking/OffStreetParking) data model of FIWARE. This model is used to define the parking lots in the zone of a organization.
 - road: The table road is based on the [Road]( https://github.com/Fiware/dataModels/tree/master/specs/Transportation/Road) data model of FIWARE.  This model is used in the SmartSecurity application to define roads of the parking lots of a organization; and is also used to define the roads within of the zone of the organization using the responsible attribute.
 - roadSegment: The table roadSegment is based on the [RoadSegment]( https://github.com/Fiware/dataModels/tree/master/specs/Transportation/RoadSegment) data model of FIWARE. This model is used in the Smart Security application to describe the characteristics of the segments in which is divided a road. In addition, this model provides attributes to detail the properties of the road lanes. 
-- mobileUser: The table mobileUser is based on the User data model design for the smart security scenario. This model fulfill with basic attributes used for the authentication service of FIWARE, the Identity Manager - Keyrock. 
-- deviceToken: The table deviceToken is based on the DeviceToken data model, design it for complete the devices information represented in the Device data model of FIWARE. The DeviceToken model includes attributtes for the sending and administration of push notifications in the mobile app. 
+- mobileUser: The table mobileUser is based on the User data model design for the smart security scenario. This model fulfills with basic attributes used for the authentication service of FIWARE, the Identity Manager - Keyrock. 
+- deviceToken: The table deviceToken is based on the DeviceToken data model, design it for complete the devices information to send the notifications of alerts. The DeviceToken model includes attributtes for the sending and administration of push notifications in the mobile app. 
 
-Context entities from the Orion ContextBroker stored in MongoDB 
+Context entities of the Orion ContextBroker stored in MongoDB 
 
-- Device: The entities Device are based on the [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) of FIWARE
-- Alert: The Alert entities are based in the [Alert]( https://github.com/Fiware/dataModels/blob/master/specs/Alert/) of FIWARE.
+- Device: The entities Device are based on the [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) data model of FIWARE
+- Alert: The Alert entities are based in the [Alert]( https://github.com/Fiware/dataModels/blob/master/specs/Alert/) data model of FIWARE.
 
-Tables of the time series databse in CrateDB  
+Tables of the time series database in CrateDB  
 
 - etDevice: The table etDevice is based on the [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) data model of FIWARE. 
 - etAlert: The table etAlert is based on the [Alert](https://github.com/Fiware/dataModels/blob/master/specs/Alert/) data model of FIWARE.  
