@@ -144,61 +144,62 @@ If the main road of the segment is not registered in the system, you can create 
 
 ![Registro de Road](./img/roadsForm.png)
 
-#### Búsqueda de usuarios en zonas
+#### Searhes of users in zones 
 
-La aplicación de administración incluye un módulo de búsqueda de usuarios. Este módulo tiene la función buscar si un usuario está o estuvo en una zona registrada en una fecha y hora determinadas, además de buscar todos los usuarios que se están dentro de una zona. Estos tres tipos de búsquedas se describen a continuación:
+The administration application includes a user search module. This module has the function to search if a user is or was in a zone registered in a certain date and time, besides looking for all the users that are inside a zone. These three types of searches are described below:
 
-#### 1. Búsqueda de usuario que estuvo en una zona 
+#### 1. Search of user that was in a zone  
 
-La búsqueda de usuario que estuvo en una zona muestra un formulario para ingresar los datos de búsqueda, estos datos son: la zona de búsqueda, el número de teléfono del usuario y,  la fecha y hora de búsqueda. Cuando haya ingresado estos datos presione el botón Consult  para realizar la búsqueda. Si el sistema encuentra el registro del usuario en la zona, fecha y hora indicadas, este muestra la última ubicación del usuario en el mapa.   La imagen siguiente muestra la vista de esta búsqueda.
+The user search that was in a zone shows a form to enter the search data, these data are: the search area, the user's phone number and the search date and time. When you have entered this information, press the Consult button to perform the search. If the system finds the user's record in the zone, date and time indicated, it shows the user's last location on the map. The following image shows the view of this search.
 
 ![Búsqueda de usuario 1](./img/userSearching1.png)
 
-#### 2. Búsqueda de usuario que está en una zona
+#### 2. Search of user that is in a zone
 
-La búsqueda de usuario que está una zona muestra un formulario para ingresar los datos de la búsqueda, estos datos son: seleccionar la zona de búsqueda e ingresar el número de teléfono del usuario. Cuando haya ingresado esto estos datos presione le botón Consult para realizar la búsqueda. Si el sistema encuentra al usuario en la zona, este muestra en el mapa su ubicación actual. La imagen siguiente muestra la vista de esta búsqueda.
+The user search that is a zone shows a form to enter the search data, these data are: select the search area and enter the user's phone number. When you have entered this information, press the Consult button to perform the search. If the system finds the user in the zone, it shows on the map its current location. The following image shows the view of this search.
 
 ![Búsqueda de usuario 2](./img/userSearching2.png)
 
-#### 3. Búsqueda de usuarios en una zona
+#### 3. Search of users in a zone
 
-La búsqueda de usuarios en una zona muestra un formulario para seleccionar la zona de búsqueda de los usuarios. Cuando haya seleccionado la zona de búsqueda presione el botón Consult. Si el sistema encuentra usuarios dentro de la zona, este muestra en el mapa la ubicación actual de los usuarios. La vista siguiente muestra la imagen de esta búsqueda.
+The search of users in a zone shows a form to select the user's search area. When you have selected the search area, press the Consult button. If the system finds users within the zone, it shows on the map the current location of the users. The following view shows the image of this search.
 
 ![Búsqueda de Usuario 3](./img/userSearching3.png)
 
-#### Panel de Alertas
+#### Alerts Panel
 
-El panel de alertas presenta dos tipos de búsquedas de alertas: el historial de alertas y las alertas actuales. Para mostrar la ubicación de las alertas en el mapa seleccione en el formulario la zona y el tipo visualización de alertas.  La opción History Alerts muestra en el mapa la ubicación de las últimas 10 alertas y la opción Current Alerts muestra la ubicación de las alertas del día. Cuando haya seleccionado las opciones en el formulario presione el botón Consult. Si el sistema encuentra alertas con los parámetros seleccionados, este muestra la ubicación de las alertas en el mapa.
+The alerts panel presents two types of alert searches: alert history and current alerts. To show the location of alerts on the map, select the zone and type of alert display in the form. The Alert History option shows the location of the last 10 alerts on the map and the Current Alerts option shows the location of the day's alerts. When you have selected the options in the form, press the Consult button. If the system finds alerts with the selected parameters, it shows the location of the alerts on the map.
 
 ![Panel de Alertas](./img/alertsPanel.png)
 
 ### Administración de bases de datos 
 
-Los datos de DrivingApp están administrados por tres Sistemas gestores de bases de datos: MariaDB, Mongo DB y CrateDB. La siguiente imagen muestra un diagrama relacional de las entidades. 
+DrivingApp data is managed by three database management systems: MariaDB, Mongo DB and CrateDB. The following image shows a relational diagram of the entities.
 
-Las entidades almacenadas en  MariaDB se muestran en el diagrama en color amarillo, la base de datos administra las entidades en MariaDB se llama smartsdksecurity. Las entidades almacenadas en MongoDB se muestran en el diagrama color verde, la base de datos de estas entidades es administrada por el Orion ContextBroker para almacenar la información de contexto de cada entidad. Las entidades  almacenadas en CrateDB  registran los datos históricos de las entidades administradas por el Orion ContextBroker, estas entidades se muestran en el diagrama en color rojo.
+The entities stored in MariaDB are shown in the diagram in yellow, the database of these entities is called smartsdksecurity. The entities stored in MongoDB are shown in the diagram in green, the database of these entities is managed by the Orion ContextBroker to store the context information of every entity. The entities stored in CrateDB contains the historical data of the entities managed by the Orion ContextBroker, these entities are shown in the diagram in red color.
 
 ![Modelo Relacional de Base de datos](./img/relationalModelDB.png)
 
-Tablas de la base de datos smartsecurity en MYSQL
+Tables of the smartsecurity database in MariaDB
 
-- zone: La tabla zone está basada en el modelo de datos [Building]( https://github.com/Fiware/dataModels/tree/master/specs/Building/Building) de FIWARE. 
-- offStreetParking: La tabla offStreetParking está basada en el modelo de datos [OffStreetParking](https://github.com/Fiware/dataModels/tree/master/specs/Parking/OffStreetParking) de FIWARE. 
-- road: La tabla road está basada en el modelo de datos [Road]( https://github.com/Fiware/dataModels/tree/master/specs/Transportation/Road) de FIWARE. 
-se utiliza en la aplicación SmartSecurity para definir las calles de estacionamiento de una organización. También este modelo de datos se utiliza para definir las calles que están dentro del espacio geográfico de la organización utilizando el atributo responsible.
-- roadSegment: La tabla roadSegment está basada en el modelo de datos de [RoadSegment]( https://github.com/Fiware/dataModels/tree/master/specs/Transportation/RoadSegment) de FIWARE, este  se utiliza en la aplicación Smart Security para describir las características de los segmentos en los que se puede dividir una calle; además, este modelo proporciona atributos para detallar las propiedades de las líneas o carriles que contiene el segmento de la calle.
-- mobileUser: La tabla mobileUser está basada en el modelo de datos User diseñado para el escenario de seguridad inteligente. Este modelo cumple con los atributos básicos utilizados para el servicio de autenticación de FIWARE, el  Identity Manager – Keyrock.
-- deviceToken: La tabla deviceToken está basada en el modelo de datos DeviceToken diseñado para completar la información de los dispositivos, representada en el modelo de datos Device de FIWARE. El modelo DeviceToken incluye atributos para el funcionamiento del envío y administración de notificaciones push en aplicación móvil.  
+- zone: The table zone is based on the [Building]( https://github.com/Fiware/dataModels/tree/master/specs/Building/Building) data model of FIWARE. This model is used in SmartSecurity application to define the area of a organization or institution. 
+- offStreetParking: The table offStreetParking is based on the [OffStreetParking](https://github.com/Fiware/dataModels/tree/master/specs/Parking/OffStreetParking) data model of FIWARE. This model is used to define the parking lots in the zone of a organization.
+- road: The table road is based on the [Road]( https://github.com/Fiware/dataModels/tree/master/specs/Transportation/Road) data model of FIWARE.  This model is used in the SmartSecurity application to define roads of the parking lots of a organization; and is also used to define the roads within of the zone of the organization using the responsible attribute.
+- roadSegment: The table roadSegment is based on the [RoadSegment]( https://github.com/Fiware/dataModels/tree/master/specs/Transportation/RoadSegment) data model of FIWARE. This model is used in the Smart Security application to describe the characteristics of the segments in which is divided a road. In addition, this model provides attributes to detail the properties of the road lanes. 
+- mobileUser: The table mobileUser is based on the User data model design for the smart security scenario. This model fulfill with basic attributes used for the authentication service of FIWARE, the Identity Manager - Keyrock. 
+- deviceToken: The table deviceToken is based on the DeviceToken data model, design it for complete the devices information represented in the Device data model of FIWARE. The DeviceToken model includes attributtes for the sending and administration of push notifications in the mobile app. 
 
-Entidades de contexto del Orion ContextBroker almacenadas en MongoDB  
+Context entities from the Orion ContextBroker stored in MongoDB 
 
-- Device: Las entidades Device están basadas en el modelo de datos [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) de FIWARE, utilizando los atributos requeridos y algunos opcionales.
-- Alert: Las entidades Alert están basadas en el modelo de datos [Alert]( https://github.com/Fiware/dataModels/blob/master/specs/Alert/) de FIWARE.
+- Device: The entities Device are based on the [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) of FIWARE
+- Alert: The Alert entities are based in the [Alert]( https://github.com/Fiware/dataModels/blob/master/specs/Alert/) of FIWARE.
 
-Tablas de la base de datos de series de tiempo en CrateDB  
+Tables of the time series databse in CrateDB  
 
-- etDevice: La tabla etDevice está basada en el modelo de datos [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) de FIWARE. La API de QuantumLeap convierte las entidades de modelo Device del Orion en registros relacionales, para almacenarlos en la base de datos CrateDB. Para más información consulte esta [sección]( https://smartsdk.github.io/ngsi-timeseries-api/user/#data-insertion) en la documentación oficial de QuantumLeap. 
-- etAlert: La tabla etAlert está basada en el modelo de datos [Alert](https://github.com/Fiware/dataModels/blob/master/specs/Alert/) de FIWARE. La API de QuantumLeap convierte las entidades de modelo Alert del Orion en registros relacionales, para almacenarlos en la base de datos CrateDB. Para más información consulte esta [sección](https://smartsdk.github.io/ngsi-timeseries-api/user/#data-insertion) en la documentación oficial de QuantuamLeap.
+- etDevice: The table etDevice is based on the [Device]( https://github.com/Fiware/dataModels/blob/master/specs/Device/Device/) data model of FIWARE. 
+- etAlert: The table etAlert is based on the [Alert](https://github.com/Fiware/dataModels/blob/master/specs/Alert/) data model of FIWARE.  
+
+The QuantumLeap API converts the Device entities of the Orion in relational records, to store them in the CrateDB database. For more info visit this [section]( https://smartsdk.github.io/ngsi-timeseries-api/user/#data-insertion) in the official documentation of QuantumLeap. 
 
 
 
