@@ -8,13 +8,13 @@ Para verificar que los servicios se comunican correctamente, es necesario revisa
 $ docker logs drivingapp-docker_quantumleap_1
 ```
 
-La siguiente imagen muestra la petición HTTP de tipo POST a la ruta /v2/notify de QuantumLeap, señalada con flechas rojas. La respuesta que retorna QuantumLeap  a esta petición es de `status: 200`, lo que significa que la conexión entre el Orion ContextBroker y QuantumLeap se realizó de manera correcta.
+La siguiente imagen muestra la petición HTTP de tipo POST a la ruta `/v2/notify` de QuantumLeap, señalada con flechas rojas. La respuesta que retorna QuantumLeap  a esta petición es de `status: 200`, lo que significa que la conexión entre el Orion ContextBroker y QuantumLeap se realizó de manera correcta.
 
 ![Docker Logs QuantumLeap](./img/manualReview1.png)
 
 2.- Ejecutar el siguiente comando en consola para revisar los logs de Notifications Service:
 
-La siguiente imagen muestra la petición HTTP de tipo POST a la ruta /notify de Notifications Service, señalada con flechas rojas. La respuesta que retorna Notifications Service a esta petición es de status 201, lo que significa que la conexión entre el Orion Context Broker y Notifications Service se realizó de manera correcta.
+La siguiente imagen muestra la petición HTTP de tipo POST a la ruta `/notify` de Notifications Service, señalada con flechas rojas. La respuesta que retorna Notifications Service a esta petición es de `status: 201`, lo que significa que la conexión entre el Orion Context Broker y Notifications Service se realizó de manera correcta.
 
 ![Docker Logs Notificatiosn Service](./img/manualReview2.png)
 
@@ -51,7 +51,7 @@ El script muestra en consola los siguientes mensajes:
 - El mensaje "OK" en color verde que indica que las acciones se efectuaron correctamente.
 - El mensaje "CREATED" de color verde que indica la creación correcta de las entidades en cada servicio. Junto a este mensaje se muestra la dirección del servicio para consultar la entidad creada.
 
-***NOTA***: El script **test.py** no verifica la comunicación entre servicios, para esto es necesario revisar de forma manual los logs de los contenedores docker de QuantumLeap y Notifications Service, tal como se describe en  esta [sección](./checks.md#chequeo-manual-de-ejecucion-de-servicios-en-contenedores-docker).
+***NOTA***: El script **test.py** no verifica la comunicación entre servicios, para esto es necesario revisar de forma manual los logs de los contenedores docker de QuantumLeap y Notifications Service, tal como se describe en  esta [sección](./checks.md#chequeo-manual-de-ejecucion-de-servicios).
 
 La siguiente imagen muestra un ejemplo de algunos errores que puede retornar el script **test.py**, marcados en color rojo.
 

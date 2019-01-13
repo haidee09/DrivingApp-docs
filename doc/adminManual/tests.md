@@ -135,7 +135,7 @@ $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToNo
 
 ## [Creación de entidades para la Integración de Servicios](#creacion-de-entidades-para-la-integracion-de-servicios)
 
-La creación de las siguientes entidades le permiten verificar que los servicios se comunican correctamente entre ellos, es necesario crear las siguientes entidades en el orden que se indica:
+La creación de las siguientes entidades le permiten verificar que los servicios se comunican correctamente entre ellos, las siguientes entidades en el orden que se indica:
 
 1.- Crear una entidad de prueba tipo Device en el Orion ContextBroker utilizando el siguiente comando:
 
