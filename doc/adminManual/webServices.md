@@ -36,7 +36,7 @@ En este [enlace](https://drivingappservice.docs.apiary.io/) puedes consultar la 
 
 ### Notifications Service
 
-*Notifications Service* es un servicio web que manipula la información de las entidades de Alerta, obtenidas por medio de la notificación de una suscripción creada en el Orion ContextBroker. Cuando este servicio recibe una entidad alerta enviada por el Orion, la replica a los dispositivos móviles que utilizan DrivingApp, utilizando los servicios de Firebase Cloud Messaging. El repositorio de Notifications Service lo puedes encontrar en este [enlace](https://github.com/smartsdkCenidet/Notifications-service) 
+*Notifications Service* es un servicio web que manipula la información de las entidades de Alerta, obtenidas por medio de la notificación de una suscripción creada en el Orion ContextBroker. Cuando este servicio recibe una entidad alerta enviada por el Orion, la replica a los dispositivos móviles que utilizan DrivingApp, utilizando los servicios de Firebase Cloud Messaging. El repositorio de Notifications Service lo puedes encontrar en este [enlace](https://github.com/smartsdkCenidet/Notifications-service).
 
 Notifications Service está compuesto por dos rutas descritas a continuación.
 
@@ -85,6 +85,6 @@ La ruta **/notify** recibe los datos de las entidades de alerta enviadas por  el
 } 
 ```
 
-*Notifications Service* utiliza los servicios de consulta de DrivingApp Service para obtener los datos de las entidades de zonas y realizar el cálculo para determinar la zona en la que se emitió una alerta. Además de obtener los dispositivos que se encuentran en la zona que ocurrió la alerta y los dispositivos que se encuentran a menos de 100 metros de la alerta.
+*Notifications Service* utiliza los servicios de consulta de DrivingApp Service para obtener los datos de las entidades de zonas y determinar la zona en la que se emitió una alerta. Además de, obtener los dispositivos que se encuentran en la zona que ocurrió la alerta y los dispositivos que se encuentran a menos de 100 metros de la alerta.
 
 

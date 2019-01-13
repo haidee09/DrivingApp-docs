@@ -1,4 +1,4 @@
-## [Chequeo manual de ejecución de servicios en contenedores Docker](#chequeo-manual-de-ejecucion-de-servicios-en-contenedores-docker)
+## [Chequeo Manual de Ejecución de Servicios](#chequeo-manual-de-ejecucion-de-servicios)
 
 Para verificar que los servicios se comunican correctamente, es necesario revisar los logs de los contenedores docker de QuantumLeap y Notifications Service. Para revisar estos contenedores sigua las siguientes instrucciones:
 

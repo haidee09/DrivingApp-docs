@@ -1,6 +1,6 @@
 ## Pruebas Unitarias de Ejecución de Servicios
 
-Para revisar la correcta ejecución del sistema de DrivingApp ejecute los siguientes comandos por servicio:
+Para revisar la ejecución correcta del sistema de DrivingApp siga las instrucciones de cada servicio.
 
 ### Orion ContextBroker
 
@@ -71,7 +71,7 @@ Notifications Service debe retornar como respuesta el mensaje siguiente en el na
 > SmartSecurity Notifications is running....  
 > © Cenidet 2018
 
-***NOTA***: Observe que la respuesta de Notifications Service retorna la cabecera `Content-Type`: `text/html`, a diferencia de las APIs de DrivingApp Service que retornan como respuesta la cabecera `Content-Type`: `application/json`
+***NOTA***: Observe que la respuesta de Notifications Service retorna la cabecera `Content-Type`: `text/html`, a diferencia de las APIs de DrivingApp Service que retornan como respuesta la cabecera `Content-Type`: `application/json`.
 
 ### IDM- KEYROCK /KEYSTONE
 
@@ -111,7 +111,7 @@ El IDM- KeyRock o KeyStone debe retornar como respuesta:
 
 ## Creación de Suscripciones 
 
-Para que el sistema de DrivingApp funcione correctamente, es necesario crear algunas suscripciones en el Orion ContextBroker. Con estas suscripciones los componentes Orion ContextBroker, QuantumLeap y Notifications Service pueden comunicarse entre sí. Las suscripciones que deben crearse en el Orion ContextBroker se encuentran en la carpeta Subscriptions del proyecto DrivingApp-docker. Para registrar estas suscripciones en el Orion ContextBroker utilice los siguientes comandos:
+Es necesario crear algunas suscripciones en el Orion ContextBroker, para que el sistema de DrivingApp funcione correctamente. Con estas suscripciones los componentes Orion ContextBroker, QuantumLeap y Notifications Service pueden comunicarse entre sí. Las suscripciones que deben crearse en el Orion ContextBroker se encuentran en la carpeta Subscriptions del proyecto DrivingApp-docker. Para registrar estas suscripciones en el Orion ContextBroker utilice los siguientes comandos:
 
 1.- Para crear la suscripción de la entidad Device a QuantumLeap utilice el siguiente comando en consola:
 
@@ -131,7 +131,7 @@ $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToQL
 $ curl -iX POST http://0.0.0.0:1026/v2/subscriptions -d @Subscriptions/AlertToNotifications.json --header "Content-Type: application/json"
 ```
 
-***NOTA***: La creación de estas suscripciones es necesaria para que el sistema funcione correctamente, de lo contrario algunas funciones no estarán disponibles en la aplicación DrivingApp.
+***NOTA***: La creación de estas suscripciones son requeridas para que el sistema funcione correctamente, de lo contrario algunas funciones no estarán disponibles en la aplicación DrivingApp.
 
 ## [Creación de entidades para la Integración de Servicios](#creacion-de-entidades-para-la-integracion-de-servicios)
 
