@@ -6,7 +6,7 @@ The mobile application is available in the Google Play Store with the name Drivi
 
 To install the DrivingApp application follow the steps shown in the next images.
 
-![Descargar DrivingApp en Google Play Store](img/drivingapp/descargaApp1.png)
+![Descargar DrivingApp en Google Play Store](img/drivingapp/descargaApp2.png)
 
 DrivingApp asks you to accept GPS location permits and phone number usage when opening the application for the first time. It is important to accept these permissions for you can use the features offered by the application. The following images show these permissions:
 
