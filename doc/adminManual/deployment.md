@@ -63,8 +63,7 @@ La conexión entre *DrivingApp Service* y *MariaDB* se realiza por defecto a tra
 
 La conexión entre DrivingApp Service y el Orion ContextBroker se establece a través de la librería NGSI de JavaScript, puede consultar la documentación oficial de esta librería en este [enlace](https://ngsi-js-library.readthedocs.io/en/latest/).
 
-- **exports.keyrock**: La variable **keyrock** hace referencia a la URL del servicio de identificación utilizado: este puede ser *IDM-Keyrock de FIWARE* o *Keystone de Openstack*. *DrivingApp Service* utiliza este servicio de identificación para autenticar a los usuarios en la aplicación móvil *DrivingApp*. Puede consultar en este [enlace]
-(https://developer.openstack.org/api-ref/identity/v3/index.html) la documentación de la API Identity v3 implementada en el IDM-KeyRock y KeyStone.
+- **exports.keyrock**: La variable **keyrock** hace referencia a la URL del servicio de identificación utilizado: este puede ser *IDM-Keyrock de FIWARE* o *Keystone de Openstack*. *DrivingApp Service* utiliza este servicio de identificación para autenticar a los usuarios en la aplicación móvil *DrivingApp*. Puede consultar en este [enlace](https://developer.openstack.org/api-ref/identity/v3/index.html) la documentación de la API Identity v3 implementada en el IDM-KeyRock y KeyStone.
 
 Las versiones del *IDM - KeyRock* menores a las 7 utilizan el puerto 5000 con una versión de *Keystone de Openstack*. Además, el servicio Keystone de Openstack utiliza por defecto el puerto 35357. Debe considerar estos números de puertos al configurar el servicio seleccionado en *DrivingApp Service*, y evitar así confusiones entre ambos servicios.
 
@@ -192,8 +191,8 @@ Atributos **username** y **password**: Estos atributos son utilizados para suscr
 
 #### Creación de Suscripción de Alertas en el Orion ContextBroker
 
-El *Orion ContextBroker* utiliza suscripciones para notificar a aplicaciones o servicios de terceros cambios en las entidades de contexto. Notifications Service se suscribe al Orion ContextBroker para recibir notificaciones sobre cambios en las entidades de alerta, o la creación de nuevas entidades de alerta. Para conocer más acerca de la creación y administración de Suscripciones NGSIv2 en el Orion ContextBroker, consulte el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/user/walkthrough_apiv2/index.html#subscriptions) 
-La suscripción de *Notifications Service* al Orion ContextBroker tiene como objetivo obtener los datos de las entidades de tipo **Alert** que sean actualizadas o creadas. *Notifications Service* recibe los datos de la entidad de alerta en formato `KeyValues`, para más información acerca de este formato consulte este [enlace]( http://fiware.github.io/specifications/ngsiv2/stable/), en la sección **Subscriptions** atributo **attrsFormat**
+El *Orion ContextBroker* utiliza suscripciones para notificar a aplicaciones o servicios de terceros cambios en las entidades de contexto. Notifications Service se suscribe al Orion ContextBroker para recibir notificaciones sobre cambios en las entidades de alerta, o la creación de nuevas entidades de alerta. Para conocer más acerca de la creación y administración de Suscripciones NGSIv2 en el Orion ContextBroker, consulte el siguiente [enlace](https://fiware-orion.readthedocs.io/en/master/user/walkthrough_apiv2/index.html#subscriptions).   
+La suscripción de *Notifications Service* al Orion ContextBroker tiene como objetivo obtener los datos de las entidades de tipo **Alert** que sean actualizadas o creadas. *Notifications Service* recibe los datos de la entidad de alerta en formato `KeyValues`, para más información acerca de este formato consulte este [enlace]( http://fiware.github.io/specifications/ngsiv2/stable/), en la sección **Subscriptions** atributo **attrsFormat**.
 
 Ejemplo de la suscripción de Alerta para Notifications Service.
 
@@ -247,9 +246,9 @@ Ejemplo de la suscripción de Alerta para Notifications Service.
 
 Entre los atributos destacables de esta subscripción se encuentran: 
 
-- **entities**: Este atributo tiene como valor un array que especifica mediante los atributos id y type, las entidades que estarán suscritas a la aplicación o servicio. Se puede utilizar una suscripción para más de un tipo de entidad. En la suscripción de ejemplo se especifica que las entidades suscritas a Notifications Service son todas las entidades con **type: Alert**. Los atributos de las entidades de alerta deben cumplir con el modelo de datos **Alert** de FIWARE. Para conocer la especificación oficial de este modelo, consulta este [enlace](https://github.com/Fiware/dataModels/tree/master/specs/Alert)
+- **entities**: Este atributo es un array que especifica mediante los atributos id y type, las entidades que estarán suscritas a la aplicación o servicio. Es posible utilizar una suscripción para más de un tipo de entidad. En la suscripción de ejemplo se especifica que las entidades suscritas a Notifications Service son todas las entidades con **type: Alert**. Los atributos de las entidades de alerta deben cumplir con el modelo de datos [Alert](https://github.com/Fiware/dataModels/tree/master/specs/Alert) de FIWARE.   
 
-Para suscribir Notifications Service a las alertas de la aplicación móvil DrivingApp, el atributo entities debe contener el atributo idPattern con la siguiente expresión regular: **"Alert:Device_Smartphone_.*"**.Así, el Orion ContextBroker enviará las Alertas que inicien con el texto **"Alert:Device_Smartphone_"** en el atributo **id**
+Para suscribir Notifications Service a las alertas de la aplicación móvil DrivingApp, el atributo entities debe contener el atributo idPattern con la siguiente expresión regular: **"Alert:Device_Smartphone_.*"**.Así, el Orion ContextBroker enviará las Alertas que inicien con el texto **"Alert:Device_Smartphone_"** en el atributo **id**.
 
 - **notification**: Este atributo tiene como valor la URL a la que se enviarán los datos de las alertas que sean creadas o actualizadas. Notifications Service utiliza la ruta **/notify** para recibir las notificaciones de alertas enviadas por el Orion ContextBroker.
 
@@ -298,7 +297,7 @@ Puede consultar la documentación oficial de gunicorn en el siguiente [enlace](h
 
 - **Docker**: Para más información acerca de Docker y su instalación consulta el siguiente [enlace](https://docs.docker.com/cs-engine/1.12/).
 
-La imagen oficial Notifications Service se llama **cenidetiot/notifications-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace]( https://hub.docker.com/r/cenidetiot/notifications-service/)
+La imagen oficial Notifications Service se llama **cenidetiot/notifications-service** y se encuentra el repositorio oficial **cenidetiot** en **DockerHub**, en el siguiente [enlace]( https://hub.docker.com/r/cenidetiot/notifications-service/).
 
 ##### Variables de entorno
 

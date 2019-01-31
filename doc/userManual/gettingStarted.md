@@ -6,7 +6,7 @@ La aplicación móvil está disponible en Google Play Store con el nombre Drivin
 
 Para instalar la aplicación DrivingApp siga los pasos que se muestran en las siguientes imágenes. 
 
-![Descargar DrivingApp en Google Play Store](img/drivingapp/descargaApp1.png)
+![Descargar DrivingApp en Google Play Store](img/drivingapp/descargaApp2.png)
 
 DrivingApp le solicita que acepte los permisos de ubicación GPS y uso de número su de telefónico al abrir la aplicación por primera vez. Es importante aceptar estos permisos para que pueda utilizar las funcionalidades que ofrece la aplicación. Las siguientes imágenes muestran estos permisos:
 
